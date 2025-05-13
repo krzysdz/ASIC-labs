@@ -1,0 +1,15 @@
+**/*.prj
+!**/lab1.prj
+
+**/csrc/
+**/lab1/.*
+**/simv.daidir/
+**/verdiLog/
+**/*_reports/
+**/Run_Summary/
+**/simv
+*.vcd
+*.vvp
+**/Lab_1z/lab1/
+*.fsdb
+*.log

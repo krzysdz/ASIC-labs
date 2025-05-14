@@ -21,6 +21,7 @@ module stopwatch #(
     wire s_10_wrap;
     wire m_1_wrap;
 
+    generate
     if (CYCLES_PER_MS > 1) begin : g_sub_ms
         reg [$clog2(CYCLES_PER_MS)-1:0] sub_ms_r;
         assign sub_ms_wrap = sub_ms_r == CYCLES_PER_MS-1;
@@ -30,6 +31,7 @@ module stopwatch #(
             else sub_ms_r <= sub_ms_wrap ? 0 : (sub_ms_r + 1);
     end else
         assign sub_ms_wrap = 1;
+    endgenerate
     assign ms_1_wrap = ms_1_r == 4'd9 && sub_ms_wrap;
     assign ms_10_wrap = ms_10_r == 4'd9 && ms_1_wrap;
     assign ms_100_wrap = ms_100_r == 4'd9 && ms_10_wrap;

@@ -13,3 +13,5 @@
 **/Lab_1z/lab1/
 *.fsdb
 *.log
+*.fsdb.*
+.vcs_checkpoint_*

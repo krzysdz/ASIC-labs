@@ -15,3 +15,5 @@
 *.log
 *.fsdb.*
 .vcs_checkpoint_*
+ucli.key
+novas.*

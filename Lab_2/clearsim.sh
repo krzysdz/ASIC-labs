@@ -1,16 +1,6 @@
 #!/usr/bin/env bash
-set -ex
+set -e
 
 # Remove previous results
-if [ -d csrc ]; then
-    rm -rf csrc
-fi
-if [ -d simv.daidir ]; then
-    rm -rf simv.daidir
-fi
-if [ -f simv ]; then
-    rm simv
-fi
-if [ -f ucli.key ]; then
-    rm ucli.key
-fi
+rm -rf csrc simv.daidir verdiLog ucli.key
+rm -f simv ucli/key inter.fsdb* .inter.fsdb.* .vcs_checkpoint_* novas* verdi_config_file

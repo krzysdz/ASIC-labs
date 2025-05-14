@@ -1,5 +1,6 @@
 **/*.prj
 !**/lab1.prj
+!/Lab_2/uart.prj
 
 **/csrc/
 **/lab1/.*
@@ -11,6 +12,7 @@
 *.vcd
 *.vvp
 **/Lab_1z/lab1/
+/Lab_2/uart/
 *.fsdb
 *.log
 *.fsdb.*

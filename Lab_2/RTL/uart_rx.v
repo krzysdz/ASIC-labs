@@ -30,14 +30,15 @@ module uart_rx #
 
   uart_baud_gen #
   (
-    .BAUD_RATE  (BAUD_RATE),
-    .CLOCK_RATE (CLOCK_RATE)
+    .BAUD_RATE      (BAUD_RATE),
+    .CLOCK_RATE     (CLOCK_RATE),
+    .OVERSAMPLE_MUL (16)
   )
   uart_baud_gen_rx_i0
   (
     .i_clk         (i_clk),
     .i_rst         (i_rst),
-    .o_baud_x16_en (baud_x16_en)
+    .o_baud_en (baud_x16_en)
   );
 
   uart_rx_ctl uart_rx_ctl_i0

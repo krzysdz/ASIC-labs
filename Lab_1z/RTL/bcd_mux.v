@@ -1,66 +1,47 @@
 module bcd_mux #
 (
-    parameter DISPLAYS_NUM        = 4,
-    parameter MULTIPLEX_CLK_COUNT = 10
+    parameter DISP_NUM        = 4,
+    parameter CC_PER_D = 10
 )
 (
-    input                           i_clk,
-    input                           i_rst,
-    input  [(DISPLAYS_NUM*4) - 1:0] i_bcd_data,
+    input                           clk,
+    input                           rst,
+    input  [(DISP_NUM*4) - 1:0] i_bcd_data,
 
     output [3:0]                    o_bcd_muxed,
-    output [DISPLAYS_NUM-1:0]       o_bcd_sel
+    output [DISP_NUM-1:0]       o_bcd_sel
 );
 
-   reg  [clogb2(MULTIPLEX_CLK_COUNT)-1:0] r_sel_counter;
-   wire [clogb2(MULTIPLEX_CLK_COUNT)-1:0] sel_counter;
+   reg  [clogb2(CC_PER_D)-1:0] sel_counter_r;
+   wire [clogb2(CC_PER_D)-1:0] sel_counter;
    wire                                   allow_display_count;
 
-   always @ (posedge i_clk, negedge i_rst)
-        if (!i_rst) r_sel_counter <= 0;
+   always @ (posedge clk, negedge rst)
+        if (!rst) sel_counter_r <= 0;
          else
             begin
-                if (r_sel_counter == (MULTIPLEX_CLK_COUNT-1)) r_sel_counter <= 0;
-                else r_sel_counter <= r_sel_counter + 1;
+                if (sel_counter_r == (CC_PER_D-1)) sel_counter_r <= 0;
+                else sel_counter_r <= sel_counter_r + 1;
             end
 
-   assign allow_display_count = (r_sel_counter == (MULTIPLEX_CLK_COUNT-1)) ? 1 : 0;
+   assign allow_display_count = (sel_counter_r == (CC_PER_D-1)) ? 1 : 0;
 
-   reg  [clogb2(DISPLAYS_NUM)-1:0] r_display_count;
+   reg  [clogb2(DISP_NUM)-1:0] display_count_r;
    wire [0:3]                      bcd_out;
 
-   // wire [clogb2(DISPLAYS_NUM)-1:0] c_display_count;
-   // assign c_display_count = !allow_display_count ? r_display_count : (
-   //    r_display_count == DISPLAYS_NUM ? 0 : r_display_count + 1
-   // );
+   wire [clogb2(DISP_NUM)-1:0] c_display_count;
+   assign c_display_count = (display_count_r == DISP_NUM-1) ? 0 : (display_count_r + 1);
 
-   // always @ (posedge i_clk, negedge i_rst)
-   //      if (!i_rst) r_display_count <= 0;
-   //      else r_display_count <= c_display_count;
-
-   // TODO: Test this in spyglass
-   wire [clogb2(DISPLAYS_NUM)-1:0] c_display_count;
-   assign c_display_count = (r_display_count == DISPLAYS_NUM-1) ? 0 : (r_display_count + 1);
-
-   always @ (posedge i_clk, negedge i_rst)
-        if (!i_rst) r_display_count <= 0;
-        else if (allow_display_count) r_display_count <= c_display_count;
+   always @ (posedge clk, negedge rst)
+        if (!rst) display_count_r <= 0;
+        else if (allow_display_count) display_count_r <= c_display_count;
 
 
-   assign bcd_out = i_bcd_data[4*(DISPLAYS_NUM - r_display_count - 1)+:4];
+   assign bcd_out = i_bcd_data[4*(DISP_NUM - display_count_r - 1)+:4];
 
    assign o_bcd_muxed = bcd_out;
 
-   assign o_bcd_sel = {{(DISPLAYS_NUM-1){1'b0}},1'b1} << r_display_count;
+   assign o_bcd_sel = {{(DISP_NUM-1){1'b0}},1'b1} << display_count_r;
 
-   function automatic integer clogb2;
-      input integer value;
-      begin
-         value = value - 1;
-         for (clogb2 = 0; value > 0; clogb2 = clogb2 + 1) begin
-            value = value >> 1;
-         end
-      end
-   endfunction
-
+   `include "RTL/clogb2.v"
 endmodule

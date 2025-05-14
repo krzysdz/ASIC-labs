@@ -3,20 +3,20 @@
 module s7_tb
 (
 );
- parameter DISPLAYS_NUM        = 6;  //number of the 7s displays
- parameter MULTIPLEX_CLK_COUNT = 10; //single display activity time in clocks cycles
+ parameter DISP_NUM       = 6;  //number of the 7s displays
+ parameter CC_PER_D       = 10; //single display activity time in clocks cycles
 
- parameter CLK_F_HZ            = 5000; //clock freq in HZ
- parameter CLK_T               = 10000 / CLK_F_HZ;
- parameter CYCLES_PER_MS       = CLK_F_HZ / 1000;
+ parameter CLK_F_HZ       = 1000; //clock freq in HZ
+ parameter CLK_T          = 10000 / CLK_F_HZ;
+ parameter CYCLES_PER_MS  = CLK_F_HZ / 1000;
 
  reg                            clk;
  reg                            rst;
 
-//  reg  [(DISPLAYS_NUM*4) - 1:0]  bcd_in;
+//  reg  [(DISP_NUM*4) - 1:0]  bcd_in;
 
  wire [6:0]                     segments;
- wire [DISPLAYS_NUM-1:0]        segments_sel;
+ wire [DISP_NUM-1:0]        segments_sel;
 
  wire [7:0]                     ascii;
 
@@ -24,13 +24,13 @@ module s7_tb
 
 // s7_display #
 // (
-//   .DISPLAYS_NUM (DISPLAYS_NUM),
-//   .MULTIPLEX_CLK_COUNT (MULTIPLEX_CLK_COUNT)
+//   .DISP_NUM (DISP_NUM),
+//   .CC_PER_D (CC_PER_D)
 // )
 // s7_display_i
 // (
-//     .i_clk          (clk),
-//     .i_rst          (rst),
+//     .clk          (clk),
+//     .rst          (rst),
 //     .i_bcd_data     (bcd_in),
 
 //     .o_segments     (segments),
@@ -38,12 +38,12 @@ module s7_tb
 // );
 
 s7_stopwatch #(
-    .DISPLAYS_NUM(DISPLAYS_NUM),
-    .MULTIPLEX_CLK_COUNT(MULTIPLEX_CLK_COUNT),
+    .DISP_NUM(DISP_NUM),
+    .CC_PER_D(CC_PER_D),
     .CYCLES_PER_MS(CYCLES_PER_MS)
 ) s7_stopwatch_i(
-    .i_clk          (clk),
-    .i_rst          (rst),
+    .clk          (clk),
+    .rst          (rst),
     .o_segments     (segments),
     .o_segments_sel (segments_sel)
 );
@@ -59,9 +59,9 @@ assign ascii = segments_to_ascii(segments);
 `endif
            clk = 1'b1;
            rst = 1'b0;
-        //    bcd_in  = {(DISPLAYS_NUM*4){1'b0}};
+        //    bcd_in  = {(DISP_NUM*4){1'b0}};
 
-           #(MULTIPLEX_CLK_COUNT*CLK_T*DISPLAYS_NUM+CLK_T)
+           #(CC_PER_D*CLK_T*DISP_NUM+CLK_T)
            rst = 1'b1;
            repeat (60*1000*CYCLES_PER_MS) @(posedge clk);
            #10000 $finish;
@@ -69,11 +69,11 @@ assign ascii = segments_to_ascii(segments);
 
     always #(CLK_T/2) clk = ~clk; //clock
 
-    // always #(MULTIPLEX_CLK_COUNT*CLK_T*DISPLAYS_NUM) //stymulus bcd input code
+    // always #(CC_PER_D*CLK_T*DISP_NUM) //stymulus bcd input code
     //     begin
     //         bcd_in[3:0] = bcd_in[3:0] + 1;
 
-    //         for (i = 0 ; i < DISPLAYS_NUM ; i=i+1)
+    //         for (i = 0 ; i < DISP_NUM ; i=i+1)
     //             begin
     //                 if (bcd_in[(i*4)+:4] > 9)
     //                     begin

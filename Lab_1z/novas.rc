@@ -222,7 +222,7 @@ Selection-LineWidth = 1
 [FSM_Dlg-Print]
 Orientation = Landscape
 [FileBrowser]
-nWaveRestoreRCDirHistory = "\"/home/student/Documents/kdz/ASIC/Lab_1z/novas.rc\"" "\"/home/student/Documents/kdz/ASIC/Lab_1z/signal.rc\"" "\"/home/student/Documents/kdz/ASIC/labs/Lab_1z/signal.rc\""
+nWaveRestoreRCDirHistory = "\"/home/student/Documents/kdz/ASIC/Lab_1z/novas.rc\"" "\"/home/student/Documents/kdz/ASIC/Lab_1z/signal.rc\""
 [Form]
 version = Verdi_V-2023.12
 [General]
@@ -381,11 +381,11 @@ saveWaveformStat = TRUE
 savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
+QwWarnMsgDlg = 1655,967,600,250
+restoreSigDlg = 1608,866,551,438
 QwInfoMsgDlg = 1580,967,750,250
 saveSigDlg = 1608,892,551,386
-QwWarnMsgDlg = 605,467,600,250
-restoreSigDlg = 61,92,551,438
-QwUserAskDlg = 61,92,324,127
+QwUserAskDlg = 1794,1048,324,127
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -397,11 +397,11 @@ ErrorObject = ID_GRAY5
 AnnotateSignal = TRUE
 HighlightSafetyObject = TRUE
 [Session Cache]
+2 = string (session file name)
 3 = string (session file name)
 4 = string (session file name)
 5 = string (session file name)
-1 = /home/student/Documents/kdz/ASIC/labs/Lab_1z/verdiLog/novas_autosave.ses
-2 = /home/student/Documents/kdz/ASIC/Lab_1z/verdiLog/novas_autosave.ses
+1 = /home/student/Documents/kdz/ASIC/Lab_1z/verdiLog/novas_autosave.ses
 [Simulation]
 scsPath = scsim
 scsOption = 
@@ -591,7 +591,7 @@ pdmlMacro = ID_BLACK
 font = COURIER12
 annotFont = FIXED10
 [Text.1]
-viewport = 0 32 1366 699 45
+viewport = 0 0 3768 2096 45
 [TextPrinter]
 Orientation = Landscape
 Indicator = FALSE
@@ -683,45 +683,45 @@ DefaultLogTimeUnit = "1.000000ns"
 parRuleSets = "/eda/synopsys/2023-24/RHELx86/VERDI_2023.12/share/VIA/Apps/PredefinedParRules/par_rule_OVM.rc /eda/synopsys/2023-24/RHELx86/VERDI_2023.12/share/VIA/Apps/PredefinedParRules/par_rule_UVM.rc /eda/synopsys/2023-24/RHELx86/VERDI_2023.12/share/VIA/Apps/Predefin\
 edParRules/par_rule_LP.rc /eda/synopsys/2023-24/RHELx86/VERDI_2023.12/share/VIA/Apps/PredefinedParRules/par_rule_VCS.rc "
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column0]
-name = "Type"
+name = "Severity"
 width = 60
-visualIndex = 5
-isHidden = TRUE
+visualIndex = 2
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column1]
-name = "Code"
-width = 60
-visualIndex = 4
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column2]
-name = "Block's First Line"
-width = 120
-visualIndex = 1
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column3]
-name = "Time"
-width = 60
-visualIndex = 0
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column4]
-name = "Message"
-width = 2000
-visualIndex = 6
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column5]
 name = "Reporter"
 width = 60
 visualIndex = 3
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column6]
-name = "Severity"
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column2]
+name = "Type"
 width = 60
-visualIndex = 2
+visualIndex = 5
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column3]
+name = "Code"
+width = 60
+visualIndex = 4
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column4]
+name = "Time"
+width = 60
+visualIndex = 0
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column5]
+name = "Block's First Line"
+width = 120
+visualIndex = 1
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column6]
+name = "Message"
+width = 2000
+visualIndex = 6
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference]
@@ -732,40 +732,40 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = "Block's First Line"
-width = 120
-visualIndex = 1
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
 name = "Severity"
 width = 60
 visualIndex = 2
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
+name = "Block's First Line"
+width = 120
+visualIndex = 1
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
-name = "Code"
-width = 60
-visualIndex = 3
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
-name = "Type"
-width = 60
-visualIndex = 4
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
 name = "Message"
 width = 2000
 visualIndex = 5
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = "Time"
 width = 60
 visualIndex = 0
 isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = "Code"
+width = 60
+visualIndex = 3
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+name = "Type"
+width = 60
+visualIndex = 4
+isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.parRule]
 parRulePathInterForm = ""
@@ -844,7 +844,7 @@ scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
 getSignalForm = 0 0 800 479 100 30 100 30
-viewPort = 0 25 702 237 185 65
+viewPort = 0 25 3104 936 185 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -1010,10 +1010,8 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/student/Documents/kdz/ASIC/labs/Lab_1z/signal.rc\""
-RecentFile2 = "\"/home/student/Documents/kdz/ASIC/labs/Lab_1z/inter.fsdb\""
-RecentFile3 = "\"/home/student/Documents/kdz/ASIC/Lab_1z/inter.fsdb\""
-RecentFile4 = "\"/home/student/Documents/kdz/ASIC/Lab_1z/signal.rc\""
+RecentFile1 = "\"/home/student/Documents/kdz/ASIC/Lab_1z/inter.fsdb\""
+RecentFile2 = "\"/home/student/Documents/kdz/ASIC/Lab_1z/signal.rc\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5
@@ -1384,7 +1382,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 25 702 237 185 65
+viewPort = 0 25 3104 936 185 65
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

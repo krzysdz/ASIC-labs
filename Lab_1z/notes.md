@@ -178,10 +178,53 @@ This is because in `decoder.v` the case has no case for `5`.
 
 ![Waveform after fixing](./screenshots/sim_2.png)
 
-## 5. Additional rules
+## 5. Additional "guideline" rules
 
-Where to find them?
+1. **ClkName (2) : Clock name does not follow the naming convention.**
+
+   Description: _Clock signal name 'i_clk' should be clk or start with clk\__\
+   Locations: `RTL/s7_display.v:26`, `RTL/bcd_mux.v:19`\
+   Solution: rename clock signal to `clk` (remember about .sgdc)
+2. **ParamName (4) : Parameter/generic name does not follow the naming convention**
+
+   1. Description: _Parameter name DISPLAYS_NUM does not follow naming convention_\
+      Locations: `RTL/s7_display.v:3`, `RTL/bcd_mux.v:3`\
+      Reason: parameter name must not be longer than 8 characters\
+      Solution: rename parameter to `DISP_NUM`
+   2. Description: _Parameter name MULTIPLEX_CLK_COUNT does not follow naming convention_\
+      Locations: `RTL/s7_display.v:4`, `RTL/bcd_mux.v:4`\
+      Reason: parameter name must not be longer than 8 characters\
+      Solution: rename parameter to `CC_PER_D`
+3. **RegOutName (2) : Register output signal does not follow naming convention.**
+
+   1. Description: _Register output name 'r_sel_counter' should end with \_r_\
+      Location: `RTL/bcd_mux.v:24`\
+      Solution: rename to `sel_counter_r`
+   2. Description: _Register output name 'r_display_count' should end with \_r_
+      Location: `RTL/bcd_mux.v:37`
+      Solution: rename to `display_count_r`
+4. **ResetName (1) : Reset name does not follow the naming convention.**
+
+   Description: _Reset signal name 'i_rst' should start with rst_\
+   Location: `RTL/bcd_mux.v:36`\
+   Solution: rename to `rst` (remember about .sgdc)
+5. **SepTFMacro-ML (1) : Task/functions/macros should be defined in separate file**
+
+   Description: _Define task/functions/macros in a separate file_\
+   Location: `RTL/bcd_mux.v:46`\
+   Solution: Move the function to a separate file (`clogb2.v`) and `` `include`` it
+
+
+The _ParamName_ rule (amongst other things) restricts the name length to 8 characters, because longer _reduce readability_. Changing parameter names to adhere to this rule, changes readability much more...
 
 ## 6. Stopwatch
 
 The stopwatch implementation required changing the number of displays to 6, which revealed another problem in `bcd_mux.v`. `r_display_count` has a range [0, `DISPLAYS_NUM`] (inclusive), but the upper bound should be exclusive (max `DISPLAYS_NUM-1`). This could not be observed with `DISPLAYS_NUM` equal to a power of 2, such as 4 previously, because of `r_display_count` width.
+
+Goals `lint/lint_rtl` and `lint/lint_turbo_rtl` report violation in `RTL/stopwatch.v:51`:
+
+> FlopEConst (1) : Flip-flop enable pin is permanently disabled or enabled
+>
+> Enable pin EN on Flop s7_stopwatch.stopwatch_i.ms_1_r[0] (master RTL_FDCE) is  always enabled (tied high)(connected to s7_stopwatch.stopwatch_i.sub_ms_wrap)
+
+This violation occurs, because when `CYCLES_PER_MS` is `1`, signal `sub_ms_wrap` is assigned constant `1`, by design. This is expected and for greater values of `CYCLES_PER_MS` there is no violation, as contitional generate follows a different path, that does not assign a constant.

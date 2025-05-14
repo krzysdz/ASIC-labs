@@ -89,6 +89,11 @@ module uart_tb
            bit_num = bit_num + 1;
            rx_in = bits_to_send[bit_num];
            if (bit_num >= BIT_TO_SEND_NUM) rx_in = 1'b1;
+           if (bit_num < BIT_TO_SEND_NUM) begin
+            if ((bit_num-1) % 10 == 0) $display("Start Bit, at time: %t", $time);
+            else if ((bit_num-1) % 10 == 9) $display("Stop Bit, at time %t", $time);
+            else $display("Data send = %0d, at time: %t", rx_in, $time);
+           end
         end
 
    always @ (posedge data_rdy) //data monitor

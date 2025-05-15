@@ -1,0 +1,4 @@
+[submodule "pandoc-include-code-files"]
+	path = pandoc-include-code-files
+	url = https://gitlab.univ-lille.fr/b3/pandoc-include-code-files.git
+	branch = main

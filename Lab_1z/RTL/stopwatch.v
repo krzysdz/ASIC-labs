@@ -1,8 +1,8 @@
 module stopwatch #(
     parameter CYCLES_PER_MS = 1
 ) (
-    input clk,
-    input rst,
+    input i_clk,
+    input i_rst,
     output [23:0] o_bcd_time
 );
     reg [3:0] ms_1_r;
@@ -26,8 +26,8 @@ module stopwatch #(
         reg [$clog2(CYCLES_PER_MS)-1:0] sub_ms_r;
         assign sub_ms_wrap = sub_ms_r == CYCLES_PER_MS-1;
 
-        always @(posedge clk, negedge rst)
-            if (!rst) sub_ms_r <= 0;
+        always @(posedge i_clk, negedge i_rst)
+            if (!i_rst) sub_ms_r <= 0;
             else sub_ms_r <= sub_ms_wrap ? 0 : (sub_ms_r + 1);
     end else
         assign sub_ms_wrap = 1;
@@ -39,8 +39,8 @@ module stopwatch #(
     assign s_10_wrap = s_10_r == 4'd5 && s_1_wrap;
     assign m_1_wrap = m_1_r == 4'd9 && s_10_wrap;
 
-    always @(posedge clk, negedge rst) begin
-        if (!rst) begin
+    always @(posedge i_clk, negedge i_rst) begin
+        if (!i_rst) begin
             ms_1_r <= 0;
             ms_10_r <= 0;
             ms_100_r <= 0;
@@ -62,14 +62,14 @@ endmodule
 //     parameter int WIDTH = 3,
 //     parameter int MAX = 9
 // ) (
-//     input logic clk,
-//     input logic rst,
+//     input logic i_clk,
+//     input logic i_rst,
 //     input logic en,
 //     output logic [WIDTH-1:0] val,
 //     output logic overflow
 // );
-//     always_ff @(posedge clk) begin
-//         if (rst)
+//     always_ff @(posedge i_clk) begin
+//         if (i_rst)
 //             val <= 0;
 //         else
 //             if (en)

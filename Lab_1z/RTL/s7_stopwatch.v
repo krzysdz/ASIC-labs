@@ -13,8 +13,8 @@ module s7_stopwatch #(
     stopwatch #(
         .CYCLES_PER_MS(CYCLES_PER_MS)
     ) stopwatch_i(
-        .clk(clk),
-        .rst(rst),
+        .i_clk(clk),
+        .i_rst(rst),
         .o_bcd_time(bcd_time)
     );
     s7_display #(

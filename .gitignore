@@ -19,3 +19,5 @@
 .vcs_checkpoint_*
 ucli.key
 novas.*
+
+.vscode

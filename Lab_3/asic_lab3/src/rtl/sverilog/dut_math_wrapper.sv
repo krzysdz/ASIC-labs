@@ -20,7 +20,10 @@ module dut_math_wrapper #(
   //output interface:
   output logic            [FIFO_WIDTH-1:0] fifo_data,
   output logic                             fifo_we,
-  input  logic                             fifo_full
+  input  logic                             fifo_full,
+
+  input logic VDD,
+  input logic VSS
 );
 
 
@@ -46,26 +49,28 @@ module dut_math_wrapper #(
   logic                                     in_data_ready_c;
   logic                                     fifo_we_c;
 
-  
+
   //===========================================================================
   // internal logic
   //===========================================================================
 
   always_comb in_a_c = in_data[MULTIPLICAND_WIDTH-1:0];
   always_comb in_b_c = in_data[(2*MULTIPLICAND_WIDTH)-1:MULTIPLICAND_WIDTH];
-  
+
   //prod = a*b
   dut_multiplier_18x18_comb dut_multiplier_18x18_comb_inst (
   .a(in_a_c),
   .b(in_b_c),
-  .result(prod_c)
+  .result(prod_c),
+  .VDD(VDD),
+  .VSS(VSS)
   );
 
-  // handshake logic 
+  // handshake logic
 
   always_comb new_data_nxt_c = (in_data_valid && in_data_ready);
   always_comb unconsumed_data_nxt_c = (new_data_r && !fifo_we) ? 1'b1 :
-                                      (fifo_we) ? 1'b0 : 
+                                      (fifo_we) ? 1'b0 :
                                       unconsumed_data_r;
 
   always_ff @ (posedge clk or negedge nreset) begin
@@ -98,7 +103,7 @@ module dut_math_wrapper #(
   end
 
   //---------------------------------------------------------------------------
-  // pack data, last indicator and source ID into one word 
+  // pack data, last indicator and source ID into one word
   //---------------------------------------------------------------------------
   always_comb fifo_in_data_packed_c = {
     out_data_r,
@@ -106,11 +111,11 @@ module dut_math_wrapper #(
     out_data_source_id_r
   };
 
-  
+
   //===========================================================================
   // output assignments
   //===========================================================================
-  
+
   always_comb in_data_ready = in_data_ready_c;
 
   always_comb fifo_data = fifo_in_data_packed_c;

@@ -65,7 +65,10 @@ module dut_toplevel #(
   input logic                               out_ready,                         // ready flag
   output logic             [DATA_WIDTH-1:0] out_data,                          // data
   output logic  [IN_INTERFACE_ID_WIDTH-1:0] out_data_source_id,                // source ID (indicator of an input interface from which the data is taken)
-  output logic                              out_data_last                      // indicator of last data in a frame
+  output logic                              out_data_last,                      // indicator of last data in a frame
+
+  input logic VDD,
+  input logic VSS
 );
 
   //===========================================================================
@@ -163,7 +166,7 @@ module dut_toplevel #(
   ) dut_processing_control_INST (
     .clk(clk),
     .nreset(nreset),
-  
+
     .proc_req                          (proc_req),
     .proc_ack                          (proc_ack_c),
     .proc_req_in0_en                   (proc_req_in0_en),
@@ -172,9 +175,9 @@ module dut_toplevel #(
     .proc_req_in1_arb_mode_id          (proc_req_in1_arb_mode_id),
     .proc_req_in2_en                   (proc_req_in2_en),
     .proc_req_in2_arb_mode_id          (proc_req_in2_arb_mode_id),
-  
+
     .out_last_data_sent                (out_last_data_sent_c),
-    
+
     .in0_en                            (in0_en_c),
     .in1_en                            (in1_en_c),
     .in2_en                            (in2_en_c),
@@ -182,9 +185,12 @@ module dut_toplevel #(
     .in0_arb_mode_id_en                (in0_arb_mode_id_en_c),
     .in1_arb_mode_id_en                (in1_arb_mode_id_en_c),
     .in2_arb_mode_id_en                (in2_arb_mode_id_en_c),
-  
-    .first_cycle_of_proc_req           (first_cycle_of_proc_req_c)
-  
+
+    .first_cycle_of_proc_req           (first_cycle_of_proc_req_c),
+
+    .VDD(VDD),
+    .VSS(VSS)
+
   );
 
   //===========================================================================
@@ -195,21 +201,24 @@ module dut_toplevel #(
   ) dut_input_channel_control_0_INST (
     .clk                               (clk),
     .nreset                            (nreset),
-  
+
     .first_cycle_of_proc_req           (first_cycle_of_proc_req_c),
-  
+
     // input interface:
     .in_en                             (in0_en_c),
     .in_valid                          (in0_valid),
     .in_ready                          (in0_ready_c),
     .in_data                           (in0_data),
     .in_data_last                      (in0_data_last),
-  
+
     // arbiter interface:
     .in_valid_arb                      (in0_valid_c),
     .in_data_arb                       (in0_data_c),
     .in_data_last_arb                  (in0_data_last_c),
-    .arb_in_transferring               (arb_in0_transferring_c)
+    .arb_in_transferring               (arb_in0_transferring_c),
+
+    .VDD(VDD),
+    .VSS(VSS)
   );
 
   //===========================================================================
@@ -220,21 +229,24 @@ module dut_toplevel #(
   ) dut_input_channel_control_1_INST (
     .clk                               (clk),
     .nreset                            (nreset),
-  
+
     .first_cycle_of_proc_req           (first_cycle_of_proc_req_c),
-  
+
     // input interface:
     .in_en                             (in1_en_c),
     .in_valid                          (in1_valid),
     .in_ready                          (in1_ready_c),
     .in_data                           (in1_data),
     .in_data_last                      (in1_data_last),
-  
+
     // arbiter interface:
     .in_valid_arb                      (in1_valid_c),
     .in_data_arb                       (in1_data_c),
     .in_data_last_arb                  (in1_data_last_c),
-    .arb_in_transferring               (arb_in1_transferring_c)
+    .arb_in_transferring               (arb_in1_transferring_c),
+
+    .VDD(VDD),
+    .VSS(VSS)
   );
 
   //===========================================================================
@@ -245,21 +257,24 @@ module dut_toplevel #(
   ) dut_input_channel_control_2_INST (
     .clk                               (clk),
     .nreset                            (nreset),
-  
+
     .first_cycle_of_proc_req           (first_cycle_of_proc_req_c),
-  
+
     // input interface:
     .in_en                             (in2_en_c),
     .in_valid                          (in2_valid),
     .in_ready                          (in2_ready_c),
     .in_data                           (in2_data),
     .in_data_last                      (in2_data_last),
-  
+
     // arbiter interface:
     .in_valid_arb                      (in2_valid_c),
     .in_data_arb                       (in2_data_c),
     .in_data_last_arb                  (in2_data_last_c),
-    .arb_in_transferring               (arb_in2_transferring_c)
+    .arb_in_transferring               (arb_in2_transferring_c),
+
+    .VDD(VDD),
+    .VSS(VSS)
   );
 
   //===========================================================================
@@ -274,7 +289,7 @@ module dut_toplevel #(
     // clocks and resets
     .clk                               (clk),
     .nreset                            (nreset),
-    
+
     // indicator of first cycle of processing, acts as a soft reset
     .first_cycle_of_proc_req           (first_cycle_of_proc_req_c),
 
@@ -307,7 +322,10 @@ module dut_toplevel #(
     .arb_data_source_id                (arb_data_source_id_c),
     .arb_data_last                     (arb_data_last_c),
     .arb_data_valid                    (arb_data_valid_c),
-    .arb_data_ready                    (arb_data_ready_c)
+    .arb_data_ready                    (arb_data_ready_c),
+
+    .VDD(VDD),
+    .VSS(VSS)
   );
 
   //===========================================================================
@@ -331,7 +349,10 @@ module dut_toplevel #(
     //output interface:
     .fifo_data                         (fifo_wdata_c),
     .fifo_we                           (fifo_we_c),
-    .fifo_full                         (fifo_full_c)
+    .fifo_full                         (fifo_full_c),
+
+    .VDD(VDD),
+    .VSS(VSS)
   );
 
   //===========================================================================
@@ -349,10 +370,13 @@ module dut_toplevel #(
     .fifo_we                           (fifo_we_c),
     .fifo_wdata                        (fifo_wdata_c),
     .fifo_full                         (fifo_full_c),
-    
+
     .fifo_re                           (fifo_re_c),
     .fifo_rdata                        (fifo_rdata_packed_c),
-    .fifo_empty                        (fifo_empty_c)
+    .fifo_empty                        (fifo_empty_c),
+
+    .VDD(VDD),
+    .VSS(VSS)
     );
 
 
@@ -361,7 +385,7 @@ module dut_toplevel #(
   //===========================================================================
 
     dut_output_control #(
-    .DATA_WIDTH                        (DATA_WIDTH), 
+    .DATA_WIDTH                        (DATA_WIDTH),
     .IN_INTERFACE_ID_WIDTH             (IN_INTERFACE_ID_WIDTH)
   ) dut_output_control_INST (
     .clk                               (clk),
@@ -377,7 +401,10 @@ module dut_toplevel #(
     .out_data                          (out_data_c),
     .out_data_source_id                (out_data_source_id_c),
     .out_data_last                     (out_data_last_c),
-    .out_last_data_sent                (out_last_data_sent_c)              // indicator that last output data has been sent out in a given frame - register
+    .out_last_data_sent                (out_last_data_sent_c),              // indicator that last output data has been sent out in a given frame - register
+
+    .VDD(VDD),
+    .VSS(VSS)
   );
 
   //===========================================================================

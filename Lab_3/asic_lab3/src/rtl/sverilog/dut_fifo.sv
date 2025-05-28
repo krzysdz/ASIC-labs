@@ -25,7 +25,7 @@ module dut_fifo #(
   // configurable parameters:
   parameter FIFO_HEIGHT = 'x,
   parameter FIFO_WIDTH = 'x,
-  
+
   // local parameters used in port definitions:
   localparam FIFO_DEPTH = (FIFO_HEIGHT == 1) ? 1 : $clog2(FIFO_HEIGHT) // width of the FIFO address bus
 )(
@@ -44,7 +44,10 @@ module dut_fifo #(
   // read interface
   input logic fifo_re,
   output logic[FIFO_WIDTH-1:0] fifo_rdata,
-  output logic fifo_empty
+  output logic fifo_empty,
+
+  input logic VDD,
+  input logic VSS
 );
 
   // other local parameters

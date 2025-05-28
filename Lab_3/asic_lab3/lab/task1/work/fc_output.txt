@@ -1,0 +1,109 @@
+ 
+                              Fusion Compiler (TM)
+
+                  Version V-2023.12 for linux64 - Nov 23, 2023
+  This release has significant feature enhancements. Please review the Release
+                       Notes associated with this release.
+
+                    Copyright (c) 1988 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Error: This script has expired. Please contact Aditya/Amir/Wei-Chih.
+source -echo ../../setup/main_setup.tcl
+#####################################################################
+#####                   Main Setup Script for Fusion Compiler                   #####
+#####################################################################
+set LabRootDir                  "[pwd]/../../.."     ; # root dir for the labs
+set LabDir                              "${LabRootDir}/lab" ; # directory for lab exercises
+set SrcDir                              "${LabRootDir}/src"  ; # directory for source files (RTL, SDC)
+set TechLibDir                  "/eda/synopsys/files/FC_Labs/common" ; # technology library path
+set SetupDir                    "${LabDir}/setup"   ; # directory with setup files
+set TechLibName                 "saed14rvt"                      ; # define library name
+set CellPrefix                  "SAEDRVT14"                      ; # define cell prefix
+set TechNodeName                "saed14nm"                       ; # define technology node name
+set MetalStack                  "1p9m"                           ; # define metal stack
+set RefNdmType                  "frame_timing"           ; # define reference ndm type: "frame_only" or "frame_timing"
+set RefLibDir                   "${TechLibDir}/ndm" ; # reference library path
+set RefLib                              "${RefLibDir}/${TechLibName}_${RefNdmType}.ndm" ; # reference library
+set TechFileDir                 "${TechLibDir}/tf"  ; # directory with technology file(s)
+set TechFile                    "${TechFileDir}/${TechNodeName}_${MetalStack}.tf" ; # technology file
+#set TechNdm                            ""
+set LibertyDir                  "${TechLibDir}/liberty" ; # 
+set TlupDir                             "${TechLibDir}/tlup" ; # 
+set TlupMinFile                 "${TlupDir}/${TechNodeName}_${MetalStack}_Cmin.tlup" ; # 
+set TlupNomFile                 "${TlupDir}/${TechNodeName}_${MetalStack}_Cnom.tlup" ; # 
+set TlupMaxFile                 "${TlupDir}/${TechNodeName}_${MetalStack}_Cmax.tlup" ; # 
+set NxtGrdDir                   "${TechLibDir}/nxtgrd" ; # 
+set NxtGrdMinFile               "${NxtGrdDir}/${TechNodeName}_${MetalStack}_Cmin.nxtgrd" ; # 
+set NxtGrdNomFile               "${NxtGrdDir}/${TechNodeName}_${MetalStack}_Cnom.nxtgrd" ; # 
+set NxtGrdMaxFile               "${NxtGrdDir}/${TechNodeName}_${MetalStack}_Cmax.nxtgrd" ; # 
+set MapDir                              "${TechLibDir}/map" ; # 
+set GdsDir                              "${TechLibDir}/gds" ; # 
+set RunsetDir                   "${TechLibDir}/runsets" ; # 
+set GdsFile                             "${GdsDir}/saed14rvt.gds" ; # 
+set GdsMapFile                  "${MapDir}/saed14nm_1p9m_gdsout_mw.map" ; # 
+set LayerMapFile                "${MapDir}/${TechNodeName}_tf_itf_tluplus.map" ; # 
+set DrcRunsetFile               "${RunsetDir}/saed14nm_1p9m_drc_rules.rs" ; # 
+set MetalFillRunsetFile "${RunsetDir}/saed14nm_1p9m_mfill_rules.rs" ; # 
+set RtlDir                              "${SrcDir}/rtl" ; # directory with source files
+set SystemVerilogDir    "${RtlDir}/sverilog" ; # directory containing SystemVerilog HDL source files
+set VerilogDir                  "${RtlDir}/verilog" ; # directory containing Verilog HDL source files
+set VhdlDir                             "${RtlDir}/vhdl" ; # directory containing VHDL source files
+set SdcDir                              "${SrcDir}/sdc" ; # directory with constraint files
+set ResultsDir                  "${LabDir}/results" ; # directory for outcomes of the lab
+set ReportsDir                  "${LabDir}/reports" ; # directory for report files
+echo                                    ${SetupDir}
+/home/student/Documents/kdz/ASIC/labs/Lab_3/asic_lab3/lab/task1/work/../../../lab/setup
+source                                  ${SetupDir}/utilities.tcl
+source -echo ${SetupDir}/design_setup.tcl
+#####################################################################
+#####           Design Setup Script for Fusion Compiler         #####
+#####################################################################
+set DesignName          "dut_toplevel"                  ; # define design name # 
+set DesignLibrary       "${DesignName}.dlib"    ; # define design library name # 
+set WorkDir                     "[pwd]"                                 ; # define current working directory # 
+set TechFlowType        "tf"                                    ; # set "tf" for TECH_FILE-based flow or set "ndm" for TECH_NDM-based flow. # 
+set ParasiticModel      "tlup"                                  ; # set "tlup" for using TLUP files or  set "nxtgrd" for using NXTGRD files. # 
+set HDL                         "sverilog"                              ; # set "sverilog", "verilog" or "vhdl" for reading SystemVerilog, Verilog or VHDL RTL, respectively.
+set SdcFile                     "${SdcDir}/${DesignName}.sdc" ; # specify file with design constraints # 
+set PVT_FF                      "ff0p88v125c"                   ; # set FF PVT
+set PVT_TT                      "tt0p8v25c"                             ; # set TT PVT
+set PVT_SS                      "ss0p72vm40c"                   ; # set SS PVT
+set DB_FF                       "${LibertyDir}/${TechLibName}_${PVT_FF}.db"
+set DB_TT                       "${LibertyDir}/${TechLibName}_${PVT_TT}.db"
+set DB_SS                       "${LibertyDir}/${TechLibName}_${PVT_SS}.db"
+#Configure host file/options
+set_host_options -max_cores 12
+1
+1
+fc_shell> create_lib ${ResultsDir}/${DesignLibrary} -technology $TechFile -ref_libs ${RefLib}
+Information: Loading technology file '/eda/synopsys/files/FC_Labs/common/tf/saed14nm_1p9m.tf' (FILE-007)
+{dut_toplevel.dlib}
+fc_shell> report_ref_libs
+****************************************
+Report : Reference Library Report
+Library: dut_toplevel.dlib
+Version: V-2023.12
+Date   : Wed May 28 10:56:48 2025
+****************************************
+
+    Name                   Path                                                              Location
+    -------------------------------------------------------------------------------------------------
+*+  saed14rvt_frame_timing /eda/synopsys/files/FC_Labs/common/ndm/saed14rvt_frame_timing.ndm /eda/synopsys/files/FC_Labs/common/ndm/saed14rvt_frame_timing.ndm
+    "*" = Library currently open
+    "+" = Library has technology information
+1
+fc_shell> 

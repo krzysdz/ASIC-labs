@@ -1,7 +1,10 @@
 module dut_multiplier_18x18_comb (
   input  logic[17:0] a,
   input  logic[17:0] b,
-  output logic[35:0] result
+  output logic[35:0] result,
+
+  input logic VDD,
+  input logic VSS
 );
 
   //===========================================================================
@@ -32,29 +35,33 @@ module dut_multiplier_18x18_comb (
   dut_multiplier_9x9_comb mult_a0b0 (
     .a(a_0),
     .b(b_0),
-    .product(prd_a0_b0)
-
+    .product(prd_a0_b0),
+    .VDD(VDD),
+    .VSS(VSS)
   );
 
   dut_multiplier_9x9_comb mult_a1b0 (
     .a(a_1),
     .b(b_0),
-    .product(prd_a1_b0)
-
+    .product(prd_a1_b0),
+    .VDD(VDD),
+    .VSS(VSS)
   );
 
   dut_multiplier_9x9_comb mult_a0b1 (
     .a(a_0),
     .b(b_1),
-    .product(prd_a0_b1)
-
+    .product(prd_a0_b1),
+    .VDD(VDD),
+    .VSS(VSS)
   );
 
   dut_multiplier_9x9_comb mult_a1b1 (
     .a(a_1),
     .b(b_1),
-    .product(prd_a1_b1)
-
+    .product(prd_a1_b1),
+    .VDD(VDD),
+    .VSS(VSS)
   );
 
   always_comb sum_of_prd = {{18{1'b0}},prd_a0_b0} +

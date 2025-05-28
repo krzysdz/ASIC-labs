@@ -66,7 +66,10 @@ module dut_arbiter #(
   output logic[IN_INTERFACE_ID_WIDTH-1:0]   arb_data_source_id,
   output logic                              arb_data_last,
   output logic                              arb_data_valid,
-  input logic                               arb_data_ready
+  input logic                               arb_data_ready,
+
+  input logic VDD,
+  input logic VSS
 );
 
   //===========================================================================
@@ -231,7 +234,7 @@ module dut_arbiter #(
   always_comb arb_in0_transferring = arb_in0_transferring_c;
   always_comb arb_in1_transferring = arb_in1_transferring_c;
   always_comb arb_in2_transferring = arb_in2_transferring_c;
-  
+
   always_comb arb_data = arb_data_c;
   always_comb arb_data_source_id = arb_data_source_id_c;
   always_comb arb_data_last = arb_data_last_c;

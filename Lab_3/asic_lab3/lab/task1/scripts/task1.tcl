@@ -17,3 +17,5 @@ compile_fusion -to initial_map
 report_timing
 report_power
 report_area
+
+write_verilog ${ResultsDir}/${DesignName}_initial_synthesis.v

@@ -797,4 +797,6 @@ Macro/Black Box area:                    0.00
 
 Total cell area:                       906.51
 1
+fc_shell> write_verilog ${ResultsDir}/${DesignName}_initial_synthesis.v
+1
 fc_shell> 

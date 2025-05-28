@@ -1,3 +1,4 @@
 **/work/HDL_LIBRARIES/
 **/work/*.svf
-asic_lab3/lab/results/
+asic_lab3/lab/results/**/*
+!asic_lab3/lab/results/*.v

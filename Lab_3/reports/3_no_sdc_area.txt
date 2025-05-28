@@ -1,0 +1,24 @@
+fc_shell> report_area
+****************************************
+Report : area
+Design : dut_toplevel
+Version: V-2023.12
+Date   : Wed May 28 11:55:21 2025
+****************************************
+
+Number of ports:                          242
+Number of nets:                          1714
+Number of cells:                         1211
+Number of combinational cells:            872
+Number of sequential cells:               339
+Number of macros/black boxes:               0
+Number of buf/inv:                         58
+Number of references:                      25
+
+Combinational area:                    475.39
+Buf/Inv area:                           10.30
+Noncombinational area:                 431.12
+Macro/Black Box area:                    0.00
+
+Total cell area:                       906.51
+1

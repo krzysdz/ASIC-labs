@@ -96,7 +96,7 @@ report_ref_libs
 Report : Reference Library Report
 Library: dut_toplevel.dlib
 Version: V-2023.12
-Date   : Wed May 28 11:29:40 2025
+Date   : Wed May 28 11:50:14 2025
 ****************************************
 
     Name                   Path                                                              Location
@@ -120,7 +120,7 @@ Compiling source file /home/student/Documents/kdz/ASIC/labs/Lab_3/asic_lab3/lab/
 Compiling source file /home/student/Documents/kdz/ASIC/labs/Lab_3/asic_lab3/lab/task1/work/../../../src/rtl/sverilog/dut_output_control.sv
 Compiling source file /home/student/Documents/kdz/ASIC/labs/Lab_3/asic_lab3/lab/task1/work/../../../src/rtl/sverilog/dut_math_wrapper.sv
 Presto compilation completed successfully.
-Elapsed = 00:00:00.02, CPU = 00:00:00.02
+Elapsed = 00:00:00.03, CPU = 00:00:00.03
 1
 elaborate ${DesignName}
 Presto compilation completed successfully. (dut_toplevel)
@@ -292,12 +292,12 @@ Total in all modules
   Ports:                816
   Nets:                 1510
   Instances:            429
-Elapsed = 00:00:00.18, CPU = 00:00:00.18
+Elapsed = 00:00:00.18, CPU = 00:00:00.17
 1
 set_top_module ${DesignName}
 Information: User units loaded from library 'saed14rvt_frame_timing' (LNK-040)
 Information: Added key list 'DesignWare' to design 'dut_toplevel'. (DWS-0216)
-Elapsed = 00:00:00.36, CPU = 00:00:00.31
+Elapsed = 00:00:00.36, CPU = 00:00:00.33
 1
 save_block -as ${DesignName}/rtl_read
 Information: Saving 'dut_toplevel.dlib:dut_toplevel.design' to 'dut_toplevel.dlib:dut_toplevel/rtl_read.design'. (DES-028)
@@ -317,9 +317,9 @@ Information: Timer using 12 threads
 INFO: compile_fusion is running in balanced flow mode.
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting 'compile_fusion -to initial_map' (FLW-8000)
-Information: Time: 2025-05-28 11:30:50 / Session:  00:01:16 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 771 MB (FLW-8100)
-Information: CPU Load: 4%, Ram Free: 49 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
-CPU Load: 4%, Ram Free: 49 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB
+Information: Time: 2025-05-28 11:51:27 / Session:  00:01:19 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 771 MB (FLW-8100)
+Information: CPU Load: 2%, Ram Free: 49 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
+CPU Load: 2%, Ram Free: 49 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB
 Warning: No site rows found in floorplan. (LGL-397)
 INFO: Start environment monitoring: recipes
 INFO: compile_fusion is running in balanced flow mode.
@@ -367,12 +367,12 @@ Information: 3 out of 8 SQM-1079 messages were not printed due to limit 5  (MSG-
 Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting compile_fusion / initial_map (FLW-8000)
-Information: Time: 2025-05-28 11:30:51 / Session:  00:01:17 / Command:  00:00:00 / CPU:  00:00:01 / Memory: 804 MB (FLW-8100)
-Information: CPU Load: 5%, Ram Free: 49 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
+Information: Time: 2025-05-28 11:51:28 / Session:  00:01:20 / Command:  00:00:00 / CPU:  00:00:01 / Memory: 809 MB (FLW-8100)
+Information: CPU Load: 2%, Ram Free: 49 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting compile_fusion / initial_map / Load Design (FLW-8000)
-Information: Time: 2025-05-28 11:30:51 / Session:  00:01:17 / Command:  00:00:00 / CPU:  00:00:01 / Memory: 804 MB (FLW-8100)
-Information: CPU Load: 5%, Ram Free: 49 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
+Information: Time: 2025-05-28 11:51:28 / Session:  00:01:20 / Command:  00:00:00 / CPU:  00:00:01 / Memory: 809 MB (FLW-8100)
+Information: CPU Load: 2%, Ram Free: 49 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Warning: Cannot infer functionality of libcell 'saed14rvt_frame_timing/SAEDRVT14_FDNRBSBQ_V2_0P5' and will be excluded from sequential mapping. (SQM-1061)
 Warning: Cannot infer functionality of libcell 'saed14rvt_frame_timing/SAEDRVT14_FDNRBSBQ_V2_1' and will be excluded from sequential mapping. (SQM-1061)
 Warning: Cannot infer functionality of libcell 'saed14rvt_frame_timing/SAEDRVT14_FDNRBSBQ_V2_2' and will be excluded from sequential mapping. (SQM-1061)
@@ -417,17 +417,17 @@ Warning: No valid clocks available in mode 'default'. Setting clock frequency to
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Ending   compile_fusion / initial_map / Load Design (FLW-8001)
-Information: Time: 2025-05-28 11:30:51 / Session:  00:01:17 / Command:  00:00:01 / CPU:  00:00:01 / Memory: 850 MB (FLW-8100)
-Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
+Information: Time: 2025-05-28 11:51:29 / Session:  00:01:21 / Command:  00:00:01 / CPU:  00:00:01 / Memory: 855 MB (FLW-8100)
+Information: CPU Load: 2%, Ram Free: 49 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Starting compile_fusion / initial_map / MV Cell Insertion (FLW-8000)
-Information: Time: 2025-05-28 11:30:51 / Session:  00:01:17 / Command:  00:00:01 / CPU:  00:00:01 / Memory: 850 MB (FLW-8100)
-Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
+Information: Time: 2025-05-28 11:51:29 / Session:  00:01:21 / Command:  00:00:01 / CPU:  00:00:01 / Memory: 855 MB (FLW-8100)
+Information: CPU Load: 2%, Ram Free: 49 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Ending   compile_fusion / initial_map / MV Cell Insertion (FLW-8001)
-Information: Time: 2025-05-28 11:30:51 / Session:  00:01:17 / Command:  00:00:01 / CPU:  00:00:01 / Memory: 850 MB (FLW-8100)
-Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
+Information: Time: 2025-05-28 11:51:29 / Session:  00:01:21 / Command:  00:00:01 / CPU:  00:00:01 / Memory: 855 MB (FLW-8100)
+Information: CPU Load: 2%, Ram Free: 49 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Starting compile_fusion / initial_map / Logic Simplification (1) (FLW-8000)
-Information: Time: 2025-05-28 11:30:51 / Session:  00:01:17 / Command:  00:00:01 / CPU:  00:00:01 / Memory: 850 MB (FLW-8100)
-Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
+Information: Time: 2025-05-28 11:51:29 / Session:  00:01:21 / Command:  00:00:01 / CPU:  00:00:01 / Memory: 855 MB (FLW-8100)
+Information: CPU Load: 2%, Ram Free: 49 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: The hierarchy math_wrapper_INST/dut_multiplier_18x18_comb_inst/mult_a0b0 is ungrouped due to auto_ungrouping. (UNG-1001)
 Information: The hierarchy math_wrapper_INST/dut_multiplier_18x18_comb_inst/mult_a0b1 is ungrouped due to auto_ungrouping. (UNG-1001)
 Information: The hierarchy math_wrapper_INST/dut_multiplier_18x18_comb_inst/mult_a1b0 is ungrouped due to auto_ungrouping. (UNG-1001)
@@ -448,8 +448,8 @@ Auto ungrouped hierarchies                                  13
 -------------------------------------------------------------------
 Information: 3 out of 13 UNG-1001 messages were not printed due to limit 10  (MSG-3913)
 Information: Starting compile_fusion / initial_map / Logic Simplification (1) / Constant and Equal Register Detection (FLW-8000)
-Information: Time: 2025-05-28 11:30:51 / Session:  00:01:17 / Command:  00:00:01 / CPU:  00:00:01 / Memory: 850 MB (FLW-8100)
-Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
+Information: Time: 2025-05-28 11:51:29 / Session:  00:01:21 / Command:  00:00:01 / CPU:  00:00:01 / Memory: 855 MB (FLW-8100)
+Information: CPU Load: 2%, Ram Free: 49 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Warning: Cannot infer functionality of libcell 'saed14rvt_frame_timing/SAEDRVT14_FDNRBSBQ_V2_0P5' and will be excluded from sequential mapping. (SQM-1061)
 Warning: Cannot infer functionality of libcell 'saed14rvt_frame_timing/SAEDRVT14_FDNRBSBQ_V2_1' and will be excluded from sequential mapping. (SQM-1061)
 Warning: Cannot infer functionality of libcell 'saed14rvt_frame_timing/SAEDRVT14_FDNRBSBQ_V2_2' and will be excluded from sequential mapping. (SQM-1061)
@@ -485,16 +485,16 @@ Information: Register Bits Before Sharing = 328, After Sharing = 328, Savings = 
 Information: 6 out of 16 SQM-1061 messages were not printed due to limit 10  (MSG-3913)
 Information: 3 out of 8 SQM-1079 messages were not printed due to limit 5  (MSG-3913)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (1) / Constant and Equal Register Detection (FLW-8001)
-Information: Time: 2025-05-28 11:30:54 / Session:  00:01:20 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 902 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:32 / Session:  00:01:24 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 907 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Starting compile_fusion / initial_map / Logic Simplification (1) / Register Merging (FLW-8000)
-Information: Time: 2025-05-28 11:30:54 / Session:  00:01:20 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 902 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:32 / Session:  00:01:24 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 907 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (1) / Register Merging (FLW-8001)
-Information: Time: 2025-05-28 11:30:54 / Session:  00:01:20 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 902 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:32 / Session:  00:01:24 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 907 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Starting compile_fusion / initial_map / Logic Simplification (1) / Constant Propagation and Register Optimization (FLW-8000)
-Information: Time: 2025-05-28 11:30:54 / Session:  00:01:20 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 902 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:32 / Session:  00:01:24 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 907 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
@@ -507,10 +507,10 @@ Warning: No valid clocks available in mode 'default'. Setting clock frequency to
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (1) / Constant Propagation and Register Optimization (FLW-8001)
-Information: Time: 2025-05-28 11:30:54 / Session:  00:01:20 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 902 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:32 / Session:  00:01:24 / Command:  00:00:04 / CPU:  00:00:05 / Memory: 907 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (1) (FLW-8001)
-Information: Time: 2025-05-28 11:30:54 / Session:  00:01:20 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 902 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:32 / Session:  00:01:24 / Command:  00:00:04 / CPU:  00:00:05 / Memory: 907 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
@@ -518,41 +518,41 @@ Warning: No valid clocks available in mode 'default'. Setting clock frequency to
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting compile_fusion / initial_map / High-Level Optimization and Technology Mapping (1) (FLW-8000)
-Information: Time: 2025-05-28 11:30:54 / Session:  00:01:21 / Command:  00:00:04 / CPU:  00:00:05 / Memory: 902 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:32 / Session:  00:01:24 / Command:  00:00:04 / CPU:  00:00:05 / Memory: 907 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
 Information: Timer using 12 threads
 Information: Ending   compile_fusion / initial_map / High-Level Optimization and Technology Mapping (1) (FLW-8001)
-Information: Time: 2025-05-28 11:30:57 / Session:  00:01:23 / Command:  00:00:07 / CPU:  00:00:09 / Memory: 912 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:35 / Session:  00:01:27 / Command:  00:00:07 / CPU:  00:00:09 / Memory: 917 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
 Information: Starting compile_fusion / initial_map / High-Level Optimization and Technology Mapping (2) (FLW-8000)
-Information: Time: 2025-05-28 11:30:57 / Session:  00:01:23 / Command:  00:00:07 / CPU:  00:00:09 / Memory: 912 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:35 / Session:  00:01:27 / Command:  00:00:07 / CPU:  00:00:09 / Memory: 917 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Added key list 'DesignWare' to design 'dut_toplevel'. (DWS-0216)
 Warning: No cell bus will be mapped to multibit because multibit mapping has been disabled by user. (SQM-1034)
 Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
 Information: Ending   compile_fusion / initial_map / High-Level Optimization and Technology Mapping (2) (FLW-8001)
-Information: Time: 2025-05-28 11:30:58 / Session:  00:01:24 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 912 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:36 / Session:  00:01:28 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 917 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Starting compile_fusion / initial_map / DFT Core Wrapper Analysis (FLW-8000)
-Information: Time: 2025-05-28 11:30:58 / Session:  00:01:24 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 912 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:36 / Session:  00:01:28 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 917 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Ending   compile_fusion / initial_map / DFT Core Wrapper Analysis (FLW-8001)
-Information: Time: 2025-05-28 11:30:58 / Session:  00:01:24 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 912 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:36 / Session:  00:01:28 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 917 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Starting compile_fusion / initial_map / Logic Simplification (2) (FLW-8000)
-Information: Time: 2025-05-28 11:30:58 / Session:  00:01:24 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 912 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:36 / Session:  00:01:28 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 917 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Register Bits Before Sharing = 328, After Sharing = 328, Savings = 0 (SQM-2000)
 Information: Starting compile_fusion / initial_map / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8000)
-Information: Time: 2025-05-28 11:30:58 / Session:  00:01:24 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 931 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:36 / Session:  00:01:28 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 936 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8001)
-Information: Time: 2025-05-28 11:30:58 / Session:  00:01:25 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 931 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:36 / Session:  00:01:28 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 936 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (2) (FLW-8001)
-Information: Time: 2025-05-28 11:30:58 / Session:  00:01:25 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 931 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:36 / Session:  00:01:28 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 936 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 Information: Result of compile_fusion / initial_map / Clock Gate Insertion (FLW-8500)
 --------------------------------------------------------------------------------
@@ -582,9 +582,9 @@ Regular Clock Gating                |          11 |            319 |        319
  Partial Minimum Bitwidth Not Met.                         |     7 |        7
 --------------------------------------------------------------------------------
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
-Compile-fusion                                          -           -         -         -        906.51           -        1211              0.02       930
+Compile-fusion                                          -           -         -         -        906.51           -        1211              0.02       935
 Information: Ending   compile_fusion / initial_map (FLW-8001)
-Information: Time: 2025-05-28 11:30:58 / Session:  00:01:25 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 931 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:36 / Session:  00:01:28 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 936 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
 
 Information: >>>>>>> 7 unique error and warning message tags while observing compile_fusion / initial_map: (MSG-3100)
@@ -661,7 +661,140 @@ Information:    30    30  0 NEX-001   WARNING   Warning: Technology layer 'MRDL'
 Information:   137   163  6        9  <------   Total sum of messages (MSG-3038)
 Information: >>>>>>> Summary: 163 error&warning MSGs observed during fusion (MSG-3103)
 Information: Ending   'compile_fusion -to initial_map' (FLW-8001)
-Information: Time: 2025-05-28 11:30:59 / Session:  00:01:25 / Command:  00:00:08 / CPU:  00:00:11 / Memory: 931 MB (FLW-8100)
+Information: Time: 2025-05-28 11:51:36 / Session:  00:01:28 / Command:  00:00:09 / CPU:  00:00:12 / Memory: 936 MB (FLW-8100)
 Information: CPU Load: 5%, Ram Free: 48 GB, Swap Free: 1 GB, Work Disk Free: 309 GB, Tmp Disk Free: 309 GB (MSG-3995)
+1
+fc_shell> 
+Launching firefox to view document
+fc_shell> report_timing
+Information: Corner default: no PVT mismatches. (PVT-032)
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for default corner(EARLY) (NEX-018)
+Warning: no valid parasitic for (all corners) corner((both specs)) (NEX-018)
+Information: The stitching and editing of coupling caps is turned OFF for design 'dut_toplevel.dlib:dut_toplevel.design'. (TIM-125)
+Warning: No physical information exists for design 'dut_toplevel'. Zero interconnect delay is used in timing analysis. (TIM-101)
+Warning: The extractor can not be initialized for design 'dut_toplevel'. Zero interconnect delay is used in timing analysis. (TIM-102)
+Warning: Batch extraction is skipped for block "dut_toplevel"
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 1641, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 0, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+LLE:                                       disabled
+ML Acceleration:                           off
+************************************************************
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : dut_toplevel
+Version: V-2023.12
+Date   : Wed May 28 11:53:21 2025
+****************************************
+No paths.
+1
+fc_shell> report_power
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+****************************************
+Report : power
+        -significant_digits 2
+Design : dut_toplevel
+Version: V-2023.12
+Date   : Wed May 28 11:54:32 2025
+****************************************
+Information: Activity propagation will be performed for scenario default.
+Information: Doing activity propagation for mode 'default' and corner 'default' with effort level 'medium'. (POW-024)
+Information: Timer-derived activity data is cached on scenario default (POW-052)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Infomation: Fast mode activity propagation power.rtl_activity_annotation setup is ignored. Always use accurate mode.
+Information: Running switching activity propagation with 12 threads!
+
+ **** Information : No. of simulation cycles = 6 ****
+Mode: default
+Corner: default
+Scenario: default
+Voltage: 0.70
+Temperature: 125.00
+
+Voltage Unit         : 1V
+Capacitance Unit     : 1fF
+Time Unit            : 1ns
+Temperature Unit     : 1C
+Dynamic Power Unit   : 1pW
+Leakage Power Unit   : 1pW
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+
+Switched supply net power scaling:
+scaling for leakage power
+
+Supply nets:
+VDD (power) probability 1.00 (default)
+VSS (ground) probability 1.00 (default)
+Warning: Power table extrapolation (extrapolation mode) for port X on cell ctmi_2100 for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.002594 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port D on cell dut_input_channel_control_2_INST/in_data_arb_r_reg[22] for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port D on cell dut_input_channel_control_0_INST/in_data_arb_r_reg[1] for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CK on cell dut_input_channel_control_1_INST/in_valid_arb_r_reg for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port RD on cell dut_fifo_INST/fifo_data_r_reg[1][23] for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CK on cell math_wrapper_INST/out_data_r_reg[28] for parameter Tinp. Lowest table value = inf, highest table value = inf, value = 0.040569 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CK on cell math_wrapper_INST/out_data_r_reg[11] for parameter Tinp. Lowest table value = inf, highest table value = inf, value = 0.040569 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CK on cell dut_input_channel_control_0_INST/in_valid_arb_r_reg for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port RD on cell math_wrapper_INST/out_data_r_reg[11] for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port RD on cell dut_input_channel_control_0_INST/in_valid_arb_r_reg for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.000000 (POW-046)
+Note - message 'POW-046' limit (10) exceeded. Remainder will be suppressed.
+
+  Cell Internal Power    = 9.17e+06 pW ( 74.6%)
+  Net Switching Power    = 3.12e+06 pW ( 25.4%)
+Total Dynamic Power      = 1.23e+07 pW (100.0%)
+
+Cell Leakage Power       = 2.34e+07 pW
+
+
+  Attributes
+  ----------
+      u  -  User defined power group
+
+Power Group         Internal Power        Switching Power          Leakage Power            Total Power    (   %  )    Attrs
+-----------------------------------------------------------------------------------------------------------------------------
+io_pad                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+memory                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+black_box                 0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+clock_network             0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+register                  0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+sequential                7.63e+06               5.61e+05               9.78e+06               1.80e+07    ( 50.4%)         
+combinational             1.53e+06               2.56e+06               1.36e+07               1.77e+07    ( 49.6%)         
+-----------------------------------------------------------------------------------------------------------------------------
+Total                     9.17e+06 pW            3.12e+06 pW            2.34e+07 pW            3.57e+07 pW
+1
+fc_shell> report_area
+****************************************
+Report : area
+Design : dut_toplevel
+Version: V-2023.12
+Date   : Wed May 28 11:55:21 2025
+****************************************
+
+Number of ports:                          242
+Number of nets:                          1714
+Number of cells:                         1211
+Number of combinational cells:            872
+Number of sequential cells:               339
+Number of macros/black boxes:               0
+Number of buf/inv:                         58
+Number of references:                      25
+
+Combinational area:                    475.39
+Buf/Inv area:                           10.30
+Noncombinational area:                 431.12
+Macro/Black Box area:                    0.00
+
+Total cell area:                       906.51
 1
 fc_shell> 

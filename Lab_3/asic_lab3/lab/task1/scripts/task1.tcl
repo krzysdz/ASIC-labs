@@ -13,3 +13,7 @@ save_block -as ${DesignName}/rtl_read
 # start_gui
 
 compile_fusion -to initial_map
+
+report_timing
+report_power
+report_area

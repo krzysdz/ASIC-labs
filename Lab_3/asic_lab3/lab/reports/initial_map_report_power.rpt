@@ -1,0 +1,87 @@
+Information: Corner Typical: no PVT mismatches. (PVT-032)
+****************************************
+Report : power
+        -significant_digits 2
+Design : dut_toplevel
+Version: V-2023.12
+Date   : Wed May 28 13:19:42 2025
+****************************************
+Information: Activity propagation will be performed for scenario Normal_Typical.
+Information: Doing activity propagation for mode 'Normal' and corner 'Typical' with effort level 'medium'. (POW-024)
+Information: Timer-derived activity data is cached on scenario Normal_Typical (POW-052)
+Infomation: Fast mode activity propagation power.rtl_activity_annotation setup is ignored. Always use accurate mode.
+Information: Running switching activity propagation with 12 threads!
+
+ **** Information : No. of simulation cycles = 6 ****
+Information: The stitching and editing of coupling caps is turned OFF for design 'dut_toplevel.dlib:dut_toplevel/compile_flow.design'. (TIM-125)
+Warning: No physical information exists for design 'dut_toplevel'. Zero interconnect delay is used in timing analysis. (TIM-101)
+Warning: The extractor can not be initialized for design 'dut_toplevel'. Zero interconnect delay is used in timing analysis. (TIM-102)
+Warning: Batch extraction is skipped for block "dut_toplevel"
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 1643, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 0, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+LLE:                                       disabled
+ML Acceleration:                           off
+************************************************************
+Mode: Normal
+Corner: Typical
+Scenario: Normal_Typical
+Voltage: 0.80
+Temperature: 25.00
+
+Voltage Unit         : 1V
+Capacitance Unit     : 1fF
+Time Unit            : 1ns
+Temperature Unit     : 1C
+Dynamic Power Unit   : 1pW
+Leakage Power Unit   : 1pW
+
+Switched supply net power scaling:
+scaling for leakage power
+
+Supply nets:
+VDD (power) probability 1.00 (default)
+VSS (ground) probability 1.00 (default)
+Warning: Power table extrapolation (extrapolation mode) for port A1 on cell ctmi_2135 for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.002899 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port A2 on cell ctmi_2184 for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.002975 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port X on cell ctmi_2135 for parameter Cout. Lowest table value = 0.000150, highest table value = 0.020740, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port B2 on cell ctmi_2184 for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.002747 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port X on cell ctmi_2135 for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.002899 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port X on cell ctmi_2184 for parameter Cout. Lowest table value = 0.000150, highest table value = 0.020740, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port X on cell ctmi_2184 for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.002975 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port A2 on cell ctmi_2186 for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.002975 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port B2 on cell ctmi_2186 for parameter Tinp. Lowest table value = 0.003000, highest table value = 0.133000, value = 0.002747 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port X on cell ctmi_2186 for parameter Cout. Lowest table value = 0.000150, highest table value = 0.020740, value = 0.000000 (POW-046)
+
+  Cell Internal Power    = 2.76e+07 pW ( 78.3%)
+  Net Switching Power    = 7.66e+06 pW ( 21.7%)
+Total Dynamic Power      = 3.53e+07 pW (100.0%)
+
+Cell Leakage Power       = 3.68e+05 pW
+
+
+  Attributes
+  ----------
+      u  -  User defined power group
+      i  -  Includes clock pin internal power
+
+Power Group         Internal Power        Switching Power          Leakage Power            Total Power    (   %  )    Attrs
+-----------------------------------------------------------------------------------------------------------------------------
+io_pad                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+memory                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+black_box                 0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+clock_network             2.05e+07               2.65e+06               3.55e+03               2.32e+07    ( 64.9%)        i
+register                  4.03e+06               3.16e+05               1.72e+05               4.52e+06    ( 12.7%)         
+sequential                0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+combinational             3.10e+06               4.69e+06               1.93e+05               7.99e+06    ( 22.4%)         
+-----------------------------------------------------------------------------------------------------------------------------
+Total                     2.76e+07 pW            7.66e+06 pW            3.68e+05 pW            3.57e+07 pW
+1

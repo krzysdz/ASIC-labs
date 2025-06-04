@@ -21,3 +21,4 @@ clean:
 	rm -rf ../../results/*.def
 	cp -rf ../../solution/*.dlib ../../results
 	cp -rf ../../solution/*.v ../../results
+	rm -f ../../screenshots/floorplan_layout_*.png

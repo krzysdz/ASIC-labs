@@ -2,7 +2,7 @@
 Report : qor
 Design : dut_toplevel
 Version: V-2023.12
-Date   : Wed Jun  4 14:57:01 2025
+Date   : Wed Jun  4 15:47:20 2025
 ****************************************
 
 
@@ -17,20 +17,20 @@ No. of Hold Violations:               0
 Scenario           'Normal_Slow'
 Timing Path Group  'clk'
 ----------------------------------------
-Levels of Logic:                     45
-Critical Path Length:              1.79
-Critical Path Slack:              -0.09
+Levels of Logic:                     43
+Critical Path Length:              1.74
+Critical Path Slack:              -0.04
 Critical Path Clk Period:          2.00
-Total Negative Slack:             -0.22
-No. of Violating Paths:               4
+Total Negative Slack:             -0.07
+No. of Violating Paths:               3
 ----------------------------------------
 
 Scenario           'Normal_Typical'
 Timing Path Group  'clk'
 ----------------------------------------
-Levels of Logic:                     45
-Critical Path Length:              1.29
-Critical Path Slack:               0.40
+Levels of Logic:                     43
+Critical Path Length:              1.27
+Critical Path Slack:               0.43
 Critical Path Clk Period:          2.00
 Total Negative Slack:              0.00
 No. of Violating Paths:               0
@@ -50,9 +50,9 @@ No. of Hold Violations:               0
 Scenario           'PowerSave_Slow'
 Timing Path Group  'clk'
 ----------------------------------------
-Levels of Logic:                     45
-Critical Path Length:              1.85
-Critical Path Slack:               7.49
+Levels of Logic:                     43
+Critical Path Length:              1.80
+Critical Path Slack:               7.53
 Critical Path Clk Period:         10.00
 Total Negative Slack:              0.00
 No. of Violating Paths:               0
@@ -61,9 +61,9 @@ No. of Violating Paths:               0
 Scenario           'PowerSave_Typical'
 Timing Path Group  'clk'
 ----------------------------------------
-Levels of Logic:                     45
-Critical Path Length:              1.32
-Critical Path Slack:               8.00
+Levels of Logic:                     43
+Critical Path Length:              1.29
+Critical Path Slack:               8.02
 Critical Path Clk Period:         10.00
 Total Negative Slack:              0.00
 No. of Violating Paths:               0
@@ -104,19 +104,19 @@ Macro Count:                          0
 
 Area
 ----------------------------------------
-Combinational Area:              473.97
-Noncombinational Area:           431.35
-Buf/Inv Area:                      3.24
+Combinational Area:              473.79
+Noncombinational Area:           431.12
+Buf/Inv Area:                      3.20
 Total Buffer Area:                 0.00
-Total Inverter Area:               3.24
+Total Inverter Area:               3.20
 Macro/Black Box Area:              0.00
 Net Area:                             0
-Net XLength:                    6812.54
-Net YLength:                    8801.06
+Net XLength:                    7563.71
+Net YLength:                    5653.31
 ----------------------------------------
-Cell Area (netlist):                            905.32
-Cell Area (netlist and physical only):         1027.33
-Net Length:                    15613.61
+Cell Area (netlist):                            904.92
+Cell Area (netlist and physical only):         1026.93
+Net Length:                    13217.02
 
 
 Design Rules

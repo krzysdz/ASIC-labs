@@ -88,11 +88,13 @@ save_block
 close_blocks
 reset_app_options {compile.auto_floorplan.enable}
 save_lib
-# do not close the library - it'll be used in the next step
+# Close library - otherwise it'll use previous floorplan
+close_lib
 
 #####################################################################
 #####                       Manual Floorplan                    #####
 #####################################################################
+open_lib ${ResultsDir}/${DesignLibrary}
 copy_block -from ${DesignName}/auto_floorplan -to ${DesignName}/manual_floorplan
 open_block ${DesignName}/manual_floorplan
 report_app_options -non_default
@@ -139,11 +141,13 @@ save_block
 save_lib
 
 close_blocks
-# do not close the library - it'll be used in the next step
+# Close library - otherwise it'll use previous floorplan
+close_lib
 
 #####################################################################
 #####             Creating power and ground network             #####
 #####################################################################
+open_lib ${ResultsDir}/${DesignLibrary}
 copy_block -from ${DesignName}/rtl_read -to ${DesignName}/final_floorplan
 open_block ${DesignName}/final_floorplan
 

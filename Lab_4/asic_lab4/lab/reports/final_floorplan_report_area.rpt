@@ -2,7 +2,7 @@
 Report : area
 Design : dut_toplevel
 Version: V-2023.12
-Date   : Wed Jun  4 14:57:45 2025
+Date   : Wed Jun  4 15:48:13 2025
 ****************************************
 
 Number of ports:                          170
@@ -14,10 +14,10 @@ Number of macros/black boxes:               0
 Number of buf/inv:                         21
 Number of references:                      48
 
-Combinational area:                    473.88
+Combinational area:                    473.79
 Buf/Inv area:                            3.73
-Noncombinational area:                 431.48
+Noncombinational area:                 431.21
 Macro/Black Box area:                    0.00
 
-Total cell area:                       905.36
+Total cell area:                       905.01
 1

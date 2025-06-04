@@ -1,6 +1,6 @@
 ################################################################################
 #
-# Created by fc write_floorplan on Wed Jun  4 14:56:59 2025
+# Created by fc write_floorplan on Wed Jun  4 15:47:18 2025
 #
 ################################################################################
 
@@ -62,10 +62,10 @@ remove_voltage_area_shapes [get_voltage_area_shapes -of_objects DEFAULT_VA]
 # Site arrays
 ################################################################################
 
-create_site_array -name unit_row -site unit -default -boundary { {10.0000 \
-    10.0000} {36.1220 88.0000} } -flip_first_row true -flip_alternate_row true \
+create_site_array -name unit_row -site unit -default -boundary { {5.0000 \
+    5.0000} {57.3180 36.2000} } -flip_first_row true -flip_alternate_row true \
     -transparent false -direction horizontal -x_margin 0.0000 -y_margin 0.0000 \
-    -core_offset { 10.0000 10.0000 } -aligned true
+    -core_offset { 5.0000 5.0000 } -aligned true
 
 ################################################################################
 # User attributes of site arrays
@@ -275,46 +275,46 @@ set_attribute -objects [get_layers MRDL] -name routing_direction -value vertical
 
 remove_tracks -all
 
-set track [create_track -layer M1 -count 1325 -dir Y -space 0.0740 -coord \
-    0.0100 -bbox {{0.0000 0.0100 } {46.1220 97.9860 }}]
-set track [create_track -layer M1 -count 624 -dir X -space 0.0740 -coord 0.0100 \
-    -bbox {{0.0100 0.0000 } {46.1120 98.0000 }}]
-set track [create_track -layer M2 -count 1633 -dir Y -space 0.0600 -coord \
-    0.0400 -bbox {{0.0000 0.0400 } {46.1220 97.9600 }}]
-set track [create_track -layer M2 -count 769 -dir X -space 0.0600 -coord 0.0400 \
-    -bbox {{0.0400 0.0000 } {46.1200 98.0000 }}]
-set track [create_track -layer M3 -count 1325 -dir Y -space 0.0740 -coord \
-    0.0100 -bbox {{0.0000 0.0100 } {46.1220 97.9860 }}]
-set track [create_track -layer M3 -count 624 -dir X -space 0.0740 -coord 0.0100 \
-    -bbox {{0.0100 0.0000 } {46.1120 98.0000 }}]
-set track [create_track -layer M4 -count 981 -dir Y -space 0.1000 -coord 0.0000 \
-    -bbox {{0.0000 0.0000 } {46.1220 98.0000 }}]
-set track [create_track -layer M4 -count 462 -dir X -space 0.1000 -coord 0.0000 \
-    -bbox {{0.0000 0.0000 } {46.1000 98.0000 }}]
-set track [create_track -layer M5 -count 981 -dir Y -space 0.1000 -coord 0.0000 \
-    -bbox {{0.0000 0.0000 } {46.1220 98.0000 }}]
-set track [create_track -layer M5 -count 462 -dir X -space 0.1000 -coord 0.0000 \
-    -bbox {{0.0000 0.0000 } {46.1000 98.0000 }}]
-set track [create_track -layer M6 -count 981 -dir Y -space 0.1000 -coord 0.0000 \
-    -bbox {{0.0000 0.0000 } {46.1220 98.0000 }}]
-set track [create_track -layer M6 -count 462 -dir X -space 0.1000 -coord 0.0000 \
-    -bbox {{0.0000 0.0000 } {46.1000 98.0000 }}]
-set track [create_track -layer M7 -count 981 -dir Y -space 0.1000 -coord 0.0000 \
-    -bbox {{0.0000 0.0000 } {46.1220 98.0000 }}]
-set track [create_track -layer M7 -count 462 -dir X -space 0.1000 -coord 0.0000 \
-    -bbox {{0.0000 0.0000 } {46.1000 98.0000 }}]
-set track [create_track -layer M8 -count 981 -dir Y -space 0.1000 -coord 0.0000 \
-    -bbox {{0.0000 0.0000 } {46.1220 98.0000 }}]
-set track [create_track -layer M8 -count 462 -dir X -space 0.1000 -coord 0.0000 \
-    -bbox {{0.0000 0.0000 } {46.1000 98.0000 }}]
-set track [create_track -layer M9 -count 981 -dir Y -space 0.1000 -coord 0.0000 \
-    -bbox {{0.0000 0.0000 } {46.1220 98.0000 }}]
-set track [create_track -layer M9 -count 462 -dir X -space 0.1000 -coord 0.0000 \
-    -bbox {{0.0000 0.0000 } {46.1000 98.0000 }}]
-set track [create_track -layer MRDL -count 25 -dir Y -space 4.0000 -coord \
-    2.0000 -bbox {{0.0000 2.0000 } {46.1220 98.0000 }}]
-set track [create_track -layer MRDL -count 12 -dir X -space 4.0000 -coord \
-    2.0000 -bbox {{2.0000 0.0000 } {46.0000 98.0000 }}]
+set track [create_track -layer M1 -count 557 -dir Y -space 0.0740 -coord 0.0420 \
+    -bbox {{0.0000 0.0420 } {62.3180 41.1860 }}]
+set track [create_track -layer M1 -count 842 -dir X -space 0.0740 -coord 0.0420 \
+    -bbox {{0.0420 0.0000 } {62.2760 41.2000 }}]
+set track [create_track -layer M2 -count 687 -dir Y -space 0.0600 -coord 0.0200 \
+    -bbox {{0.0000 0.0200 } {62.3180 41.1800 }}]
+set track [create_track -layer M2 -count 1039 -dir X -space 0.0600 -coord \
+    0.0200 -bbox {{0.0200 0.0000 } {62.3000 41.2000 }}]
+set track [create_track -layer M3 -count 557 -dir Y -space 0.0740 -coord 0.0420 \
+    -bbox {{0.0000 0.0420 } {62.3180 41.1860 }}]
+set track [create_track -layer M3 -count 842 -dir X -space 0.0740 -coord 0.0420 \
+    -bbox {{0.0420 0.0000 } {62.2760 41.2000 }}]
+set track [create_track -layer M4 -count 413 -dir Y -space 0.1000 -coord 0.0000 \
+    -bbox {{0.0000 0.0000 } {62.3180 41.2000 }}]
+set track [create_track -layer M4 -count 624 -dir X -space 0.1000 -coord 0.0000 \
+    -bbox {{0.0000 0.0000 } {62.3000 41.2000 }}]
+set track [create_track -layer M5 -count 413 -dir Y -space 0.1000 -coord 0.0000 \
+    -bbox {{0.0000 0.0000 } {62.3180 41.2000 }}]
+set track [create_track -layer M5 -count 624 -dir X -space 0.1000 -coord 0.0000 \
+    -bbox {{0.0000 0.0000 } {62.3000 41.2000 }}]
+set track [create_track -layer M6 -count 413 -dir Y -space 0.1000 -coord 0.0000 \
+    -bbox {{0.0000 0.0000 } {62.3180 41.2000 }}]
+set track [create_track -layer M6 -count 624 -dir X -space 0.1000 -coord 0.0000 \
+    -bbox {{0.0000 0.0000 } {62.3000 41.2000 }}]
+set track [create_track -layer M7 -count 413 -dir Y -space 0.1000 -coord 0.0000 \
+    -bbox {{0.0000 0.0000 } {62.3180 41.2000 }}]
+set track [create_track -layer M7 -count 624 -dir X -space 0.1000 -coord 0.0000 \
+    -bbox {{0.0000 0.0000 } {62.3000 41.2000 }}]
+set track [create_track -layer M8 -count 413 -dir Y -space 0.1000 -coord 0.0000 \
+    -bbox {{0.0000 0.0000 } {62.3180 41.2000 }}]
+set track [create_track -layer M8 -count 624 -dir X -space 0.1000 -coord 0.0000 \
+    -bbox {{0.0000 0.0000 } {62.3000 41.2000 }}]
+set track [create_track -layer M9 -count 413 -dir Y -space 0.1000 -coord 0.0000 \
+    -bbox {{0.0000 0.0000 } {62.3180 41.2000 }}]
+set track [create_track -layer M9 -count 624 -dir X -space 0.1000 -coord 0.0000 \
+    -bbox {{0.0000 0.0000 } {62.3000 41.2000 }}]
+set track [create_track -layer MRDL -count 11 -dir Y -space 4.0000 -coord \
+    1.0000 -bbox {{0.0000 1.0000 } {62.3180 41.0000 }}]
+set track [create_track -layer MRDL -count 16 -dir X -space 4.0000 -coord \
+    1.0000 -bbox {{1.0000 0.0000 } {61.0000 41.2000 }}]
 
 ################################################################################
 # Terminals/shapes/vias of ports with user attributes
@@ -324,6 +324,7 @@ set track [create_track -layer MRDL -count 12 -dir X -space 4.0000 -coord \
 # User attributes of ports
 ################################################################################
 
+define_user_attribute -classes port -type int PORT_PERSIST_FLAG
 
 ################################################################################
 # Anchors
@@ -333,4 +334,6 @@ set track [create_track -layer MRDL -count 12 -dir X -space 4.0000 -coord \
 # User attributes of current block
 ################################################################################
 
+define_user_attribute -classes design -type int buf_inv_counts
+define_user_attribute -classes design -type int ldp_flow_stage
 

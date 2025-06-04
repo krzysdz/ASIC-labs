@@ -53,6 +53,7 @@ set SdcDir				"${SrcDir}/sdc" ; # directory with constraint files
 set ResultsDir			"${LabDir}/results" ; # directory for outcomes of the lab
 set ReportsDir			"${LabDir}/reports" ; # directory for report files
 set SolutionDir         "${LabDir}/solution"
+set ScreenshotsDir      "${LabDir}/screenshots"
 
 echo					${SetupDir}
 source 					${SetupDir}/utilities.tcl

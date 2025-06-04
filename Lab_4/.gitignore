@@ -3,3 +3,4 @@
 **/HDL_LIBRARIES/
 *.ems
 **/*.dlib/
+!**/work/logs/*.log

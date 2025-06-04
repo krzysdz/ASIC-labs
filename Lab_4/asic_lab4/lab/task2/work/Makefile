@@ -11,9 +11,10 @@ help:
 
 run:
 	test -d ./logs	|| mkdir ./logs
-	fc_shell  -no_log -f ../scripts/task1.tcl | tee ./logs/task1.log 
+	fc_shell  -no_log -f ../scripts/task2.tcl | tee ./logs/task2.log
 
 clean:
 	rm -rf default* *.dlib fc.log HDL* CLIBs fc* check* lm_command.log work* logs/*
 	rm -rf ../../results/*.dlib
 	rm -rf ../../results/*.v
+	rm -rf ../../solution/*

@@ -1,0 +1,5 @@
+*.svf
+**/CLIBs/
+**/HDL_LIBRARIES/
+*.ems
+**/*.dlib/

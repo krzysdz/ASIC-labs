@@ -4,6 +4,12 @@
 
 .PHONY: help general area power timing all clean
 
+ifeq ($(FULL_RUN),1)
+full_compile := full_
+else
+full_compile :=
+endif
+
 help:
 	@echo ""
 	@echo " To printing usage: 			make help "
@@ -18,22 +24,22 @@ help:
 
 general:
 	test -d ./logs || mkdir ./logs
-	fc_shell -no_log -f ../scripts/task3_general.tcl | tee ./logs/task3_general.log
+	fc_shell -no_log -f ../scripts/task3_general.tcl | tee ./logs/task3_$(full_compile)general.log
 	cp -rf ../../results/*.v ../../solution
 
 area:
 	test -d ./logs || mkdir ./logs
-	fc_shell -no_log -f ../scripts/task3_area.tcl | tee ./logs/task3_area.log
+	fc_shell -no_log -f ../scripts/task3_area.tcl | tee ./logs/task3_$(full_compile)area.log
 	cp -rf ../../results/*.v ../../solution
 
 power:
 	test -d ./logs || mkdir ./logs
-	fc_shell -no_log -f ../scripts/task3_power.tcl | tee ./logs/task3_power.log
+	fc_shell -no_log -f ../scripts/task3_power.tcl | tee ./logs/task3_$(full_compile)power.log
 	cp -rf ../../results/*.v ../../solution
 
 timing:
 	test -d ./logs || mkdir ./logs
-	fc_shell -no_log -f ../scripts/task3_timing.tcl | tee ./logs/task3_timing.log
+	fc_shell -no_log -f ../scripts/task3_timing.tcl | tee ./logs/task3_$(full_compile)timing.log
 	cp -rf ../../results/*.v ../../solution
 
 all: general area power timing

@@ -3,12 +3,12 @@ module my_synchronizer_RDC #
 )
 (
   input                       i_clk,
-  
-  input                       i_rst_a,  
 
-  input                       i_rst_b,  
+  input                       i_rst_a,
 
-  input                       i_data_a,   
+  input                       i_rst_b,
+
+  input                       i_data_a,
 
   output                      o_data_b
 
@@ -16,6 +16,7 @@ module my_synchronizer_RDC #
 );
 
  reg   r_data_a;
+ reg   r_data_b_sync;
  reg   r_data_b;
 
  // reset A
@@ -24,17 +25,20 @@ module my_synchronizer_RDC #
     if (!i_rst_a)
         r_data_a <= 1'b0;
     else
-        r_data_a <= i_data_a; 
+        r_data_a <= i_data_a;
   end
- 
+
  // reset B
  always @(posedge i_clk or negedge i_rst_b)
   begin
-    if (!i_rst_b)
+    if (!i_rst_b) begin
        r_data_b <= 1'b0;
-    else
-       r_data_b <= r_data_a; 
+       r_data_b_sync <= 1'b0;
+    end else begin
+       r_data_b_sync <= r_data_a;
+       r_data_b <= r_data_b_sync;
+    end
   end
-  
+
  assign o_data_b = r_data_b;
 endmodule

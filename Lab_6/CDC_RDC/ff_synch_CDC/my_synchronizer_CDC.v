@@ -3,12 +3,12 @@ module my_synchronizer_CDC #
 )
 (
   input                       i_clk_a,
-  input                       i_rst_a,  
+  input                       i_rst_a,
 
   input                       i_clk_b,
-  input                       i_rst_b,  
+  input                       i_rst_b,
 
-  input                       i_data_clk_a,   
+  input                       i_data_clk_a,
 
   output                      o_data_clk_b
 
@@ -17,6 +17,7 @@ module my_synchronizer_CDC #
 
 
  reg   r_data_clk_a;
+ reg   r_data_clk_b_sync;
  reg   r_data_clk_b;
 
   //capture data in clock domain A
@@ -25,17 +26,20 @@ module my_synchronizer_CDC #
     if (!i_rst_a)
         r_data_clk_a <= 1'b0;
     else
-        r_data_clk_a <= i_data_clk_a; 
+        r_data_clk_a <= i_data_clk_a;
   end
- 
+
   //capture data in clock domain B
   always @(posedge i_clk_b or negedge i_rst_b)
   begin
-    if (!i_rst_b)
+    if (!i_rst_b) begin
+       r_data_clk_b_sync <= 1'b0;
        r_data_clk_b <= 1'b0;
-    else
-       r_data_clk_b <= r_data_clk_a; 
+    end else begin
+       r_data_clk_b_sync <= r_data_clk_a;
+       r_data_clk_b <= r_data_clk_b_sync;
+    end
   end
-  
+
  assign o_data_clk_b = r_data_clk_b;
 endmodule

@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi_V-2023.12
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 25 2500 927 176 65
+viewPort 0 25 2500 929 181 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,8 +16,8 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 640000.000000
-cursor 2000000.000000
+zoom 0.000000 638577.145398
+cursor 1200000.000000
 marker 0.000000
 
 ; user define markers
@@ -25,7 +25,7 @@ marker 0.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 4
+markerPos 5
 
 ; event list
 ; addEvent event_name event_expression
@@ -51,6 +51,7 @@ addSignal -h 15 /my_synchronizer_CDC_tb/my_synchronizer_i/i_clk_a
 addSignal -h 15 /my_synchronizer_CDC_tb/my_synchronizer_i/i_rst_a
 addSignal -h 15 /my_synchronizer_CDC_tb/my_synchronizer_i/i_data_clk_a
 addSignal -h 15 /my_synchronizer_CDC_tb/my_synchronizer_i/r_data_clk_a
+addSignal -h 15 /my_synchronizer_CDC_tb/my_synchronizer_i/r_data_clk_b_sync
 addSignal -h 15 /my_synchronizer_CDC_tb/my_synchronizer_i/o_data_clk_b
 addSignal -h 15 /my_synchronizer_CDC_tb/my_synchronizer_i/i_rst_b
 addSignal -h 15 /my_synchronizer_CDC_tb/my_synchronizer_i/i_clk_b

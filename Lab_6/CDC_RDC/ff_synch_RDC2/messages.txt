@@ -1,0 +1,9 @@
+- Ac_unsync01 (1) : Checks unsynchronized crossings for scalar signals
+  - Unsynchronized Crossing: destination flop my_synchronizer_RDC2.r_data_clk_b, clocked by my_synchronizer_RDC2.i_clk_b, source flop my_synchronizer_RDC2.r_data_clk_a, clocked by my_synchronizer_RDC2.i_clk_a. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]
+
+- Clock_sync05a (1) : Reports primary inputs (for which domain is auto-inferred using abstract_module constraint) sampled by multiple clock domains
+  - Primary input signal 'i_rst' is sampled by multiple clock-domains, clock 'my_synchronizer_RDC2.i_clk_a' (at flop 'my_synchronizer_RDC2.r_data_clk_a') and clock 'my_synchronizer_RDC2.i_clk_b' (at flop 'my_synchronizer_RDC2.r_data_clk_b')
+
+- Reset_sync02 (2) : Reports asynchronous reset signals which are generated in asynchronous clock domain
+  - Reset signal 'my_synchronizer_RDC2.i_rst' used to reset signal 'my_synchronizer_RDC2.r_data_clk_a' (domain 'my_synchronizer_RDC2.i_clk_a') is generated from domain 'my_synchronizer_RDC2.i_clk_b'
+  - Reset signal 'my_synchronizer_RDC2.i_rst' used to reset signal 'my_synchronizer_RDC2.r_data_clk_b' (domain 'my_synchronizer_RDC2.i_clk_b') is generated from domain 'my_synchronizer_RDC2.i_clk_a'

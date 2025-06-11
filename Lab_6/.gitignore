@@ -1,4 +1,5 @@
 .config/
 /CDC_RDC/ff_synch_CDC/ff_synch_CDC/
 /CDC_RDC/ff_synch_RDC/ff_synch_RDC/
+/CDC_RDC/ff_synch_RDC2/ff_synch_RDC2/
 !*.prj

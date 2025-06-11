@@ -4,7 +4,7 @@ module req_ack_sender #
 )
 (
   input                       i_clk,
-  input                       i_rst,  
+  input                       i_rst,
 
   //input valid ready
   input                       i_valid,
@@ -18,116 +18,139 @@ module req_ack_sender #
 
 );
 
- parameter  FSM_A_SIZE = 2;  
- 
+ parameter  FSM_A_SIZE = 2;
+
  localparam ACK_WAIT_0 = 2'd0; //Waiting for the acknowledgment to be deasserted
  localparam VALID      = 2'd1; //Waiting for the transmitter's valid signal
  localparam CAPTURE    = 2'd2; //Capturing the data
  localparam ACK_WAIT_1 = 2'd3; //Waiting for acknowledgment of data reception
- 
+
  reg [(FSM_A_SIZE-1):0] r_state;
  reg [(FSM_A_SIZE-1):0] next_state;
- 
+
  reg  r_req;
  reg  r_ready;
- 
+
  reg [(DATA_WIDTH-1):0] r_data;
 
-  always @ (*) 
+  // Reset sync
+  reg [1:0] r_rst;
+  wire rst;
+  assign rst = r_rst[0];
+  always @(posedge i_clk or negedge i_rst) begin
+    if (!i_rst) r_rst <= 2'b0;
+    else r_rst <= {1'b1, r_rst[1]};
+  end
+
+  // Input control signal sync
+  reg r_ack_sync;
+  reg r_ack;
+
+  always @(posedge i_clk or negedge rst) begin
+    if (!rst) begin
+      r_ack_sync <= 0;
+      r_ack <= 0;
+    end else begin
+      r_ack_sync <= i_ack;
+      r_ack <= r_ack_sync;
+    end
+  end
+
+  always @ (*)
     begin: FSM_COMBO
         case (r_state)
-           ACK_WAIT_0: 
+           ACK_WAIT_0:
            begin
             next_state = ACK_WAIT_0;
-            if (i_ack == 1'b0) 
+            if (r_ack == 1'b0)
                 begin
                     next_state = VALID;
-                end    
+                end
            end
-           
-           VALID: 
+
+           VALID:
            begin
             next_state = VALID;
-            if ((i_valid) && (i_ack == 1'b0) && (o_ready))
+            if ((i_valid) && (r_ack == 1'b0) && (o_ready))
                 begin
                     next_state = CAPTURE;
-                end    
+                end
            end
-           
-           CAPTURE: 
-           begin
-            next_state = ACK_WAIT_1; 
-           end
-           
-           ACK_WAIT_1: 
+
+           CAPTURE:
            begin
             next_state = ACK_WAIT_1;
-            if (i_ack == 1'b1)
+           end
+
+           ACK_WAIT_1:
+           begin
+            next_state = ACK_WAIT_1;
+            if (r_ack == 1'b1)
                 begin
                     next_state = ACK_WAIT_0;
-                end    
+                end
            end
-           
-           default: 
+
+           default:
            begin
             next_state = ACK_WAIT_0;
            end
         endcase
     end
-  
-  
-   always @(posedge i_clk or negedge i_rst)
+
+
+   always @(posedge i_clk or negedge rst)
    begin: FSM_SEQ
-    if (!i_rst)
+    if (!rst)
         begin
             r_state <= ACK_WAIT_0;
-        end    
+        end
     else
-        begin 
+        begin
             r_state <= next_state;
         end
-   end 
-  
-   always @(posedge i_clk or negedge i_rst)
+   end
+
+   always @(posedge i_clk or negedge rst)
    begin: OUTPUT_LOGIC
-    if (!i_rst)
+    if (!rst)
         begin
             r_req <= 1'b0;
             r_data <= {DATA_WIDTH{1'b0}};
             r_ready <= 1'b0;
-        end    
+        end
     else
         begin
            case (next_state)
-                      ACK_WAIT_0: 
-                      begin  
+                      ACK_WAIT_0:
+                      begin
                         r_req   <= 1'b0;
                         r_data  <= r_data;
                         r_ready <= 1'b0;
                       end
-                      
-                      VALID: 
-                      begin 
+
+                      VALID:
+                      begin
                         r_req   <= 1'b0;
                         r_data  <= r_data;
                         r_ready <= 1'b1;
                       end
-                      
-                      CAPTURE: 
-                      begin 
+
+                      CAPTURE:
+                      begin
                         r_req   <= 1'b0;
                         r_data  <= i_data;
                         r_ready <= 1'b0;
                       end
-                      
-                      ACK_WAIT_1: 
-                      begin  
+
+                      ACK_WAIT_1:
+                      begin
                         r_req   <= 1'b1;
                         r_data  <= r_data;
                         r_ready <= 1'b0;
                       end
-                      
-                      default: 
+
+                      default:
                       begin
                         r_req   <= 1'b0;
                         r_data  <= {DATA_WIDTH{1'b0}};
@@ -136,13 +159,13 @@ module req_ack_sender #
                    endcase
         end
      end
- 
- 
+
+
  //output signals
  assign o_ready = r_ready;
- 
+
  assign o_req  = r_req;
  assign o_data = r_data;
-  
-  
+
+
 endmodule

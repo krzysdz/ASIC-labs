@@ -20,6 +20,8 @@ set_option language_mode mixed
 set_option designread_enable_synthesis no
 set_option designread_disable_flatten no
 set_option active_methodology $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff
+set_option param { my_synchronizer_CDC.CLK_a_F_HZ=80_000_000}
+set_option param { my_synchronizer_CDC.CLK_b_F_HZ=50_000_000}
 
 
 ##Goal Setup Section

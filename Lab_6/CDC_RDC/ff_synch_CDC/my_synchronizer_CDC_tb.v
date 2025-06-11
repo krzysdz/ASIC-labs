@@ -41,7 +41,7 @@ module my_synchronizer_CDC_tb
 
  //----------------------- SANDBOX Start -------------------------------------
 
-my_synchronizer_CDC my_synchronizer_i
+my_synchronizer_CDC #(.CLK_a_F_HZ(CLK_a_F_HZ), .CLK_b_F_HZ(CLK_b_F_HZ)) my_synchronizer_i
 (
   .i_clk_a      (clk_a),
   .i_rst_a      (rst_a),
@@ -51,11 +51,9 @@ my_synchronizer_CDC my_synchronizer_i
 
   .i_data_clk_a (data_a),
 
-  .o_data_clk_b (data_clk_b)
-
+  .o_data_clk_b (data_clk_b),
+  .o_next_data_clk_a(next_data_clk_a)
 );
-
- assign next_data_clk_a = 1'b1;
 
  //----------------------- SANDBOX Stop -------------------------------------
 

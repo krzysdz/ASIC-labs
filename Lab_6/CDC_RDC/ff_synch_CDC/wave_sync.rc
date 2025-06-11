@@ -16,8 +16,8 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 638577.145398
-cursor 1200000.000000
+zoom 0.000000 640000.000000
+cursor 2388000.000000
 marker 0.000000
 
 ; user define markers
@@ -25,7 +25,7 @@ marker 0.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 5
+markerPos 3
 
 ; event list
 ; addEvent event_name event_expression
@@ -49,6 +49,7 @@ addGroup "G1"
 activeDirFile "" "/home/student/Documents/kdz/ASIC/labs/Lab_6/CDC_RDC/ff_synch_CDC/inter.fsdb"
 addSignal -h 15 /my_synchronizer_CDC_tb/my_synchronizer_i/i_clk_a
 addSignal -h 15 /my_synchronizer_CDC_tb/my_synchronizer_i/i_rst_a
+addSignal -h 15 /my_synchronizer_CDC_tb/next_data_clk_a
 addSignal -h 15 /my_synchronizer_CDC_tb/my_synchronizer_i/i_data_clk_a
 addSignal -h 15 /my_synchronizer_CDC_tb/my_synchronizer_i/r_data_clk_a
 addSignal -h 15 /my_synchronizer_CDC_tb/my_synchronizer_i/r_data_clk_b_sync

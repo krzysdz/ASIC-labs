@@ -7,7 +7,7 @@ module fifo_synch #
 )
 (
     input                       i_rst,    // Global asyn active low reset
-    
+
     // Write clock domain
     input                       i_clk_a,
     input                       i_valid_clk_a,
@@ -21,6 +21,12 @@ module fifo_synch #
     output [DATA_WIDTH-1:0]     o_data_clk_b
 );
 
+reg [1:0] rst_a_r;
+wire rst_a;
+
+reg [1:0] rst_b_r;
+wire rst_b;
+
 wire                        wr_en;
 wire [(DATA_WIDTH-1):0]     data_i;
 wire                        fifo_full;
@@ -28,6 +34,34 @@ wire                        fifo_full;
 wire [(DATA_WIDTH-1):0]     data_o;
 wire [(PTR_WIDTH-1):0]      wr_ptr_gray_clk_a;
 wire [(PTR_WIDTH-1):0]      rd_ptr_gray_clk_b;
+
+// Synchronised control signals (and intermediate registers)
+reg [(PTR_WIDTH-1):0]      wr_ptr_gray_clk_b_sync;
+reg [(PTR_WIDTH-1):0]      wr_ptr_gray_clk_b;
+reg [(PTR_WIDTH-1):0]      rd_ptr_gray_clk_a_sync;
+reg [(PTR_WIDTH-1):0]      rd_ptr_gray_clk_a;
+
+always @(posedge i_clk_a, negedge i_rst) begin
+  if (!i_rst) rst_a_r <= 2'b00;
+  else rst_a_r <= {1'b1, rst_a_r[1]};
+end
+assign rst_a = rst_a_r[0];
+
+always @(posedge i_clk_b, negedge i_rst) begin
+  if (!i_rst) rst_b_r <= 2'b00;
+  else rst_b_r <= {1'b1, rst_b_r[1]};
+end
+assign rst_b = rst_b_r[0];
+
+always @(posedge i_clk_b, negedge rst_b) begin
+  if (!rst_b) {wr_ptr_gray_clk_b_sync, wr_ptr_gray_clk_b} <= 0;
+  else {wr_ptr_gray_clk_b_sync, wr_ptr_gray_clk_b} <= {wr_ptr_gray_clk_a, wr_ptr_gray_clk_b_sync};
+end
+
+always @(posedge i_clk_a, negedge rst_a) begin
+  if (!rst_a) {rd_ptr_gray_clk_a_sync, rd_ptr_gray_clk_a} <= 0;
+  else {rd_ptr_gray_clk_a_sync, rd_ptr_gray_clk_a} <= {rd_ptr_gray_clk_b, rd_ptr_gray_clk_a_sync};
+end
 
 fifo_writer #
 (
@@ -37,7 +71,7 @@ fifo_writer_a
 (
   //source clock
   .i_clk (i_clk_a),
-  .i_rst (i_rst),
+  .i_rst (rst_a),
 
   //input valid ready
   .i_valid   (i_valid_clk_a),
@@ -53,24 +87,24 @@ fifo_writer_a
 
 fifo_mem #
 (
-    .DATA_WIDTH (DATA_WIDTH),         
+    .DATA_WIDTH (DATA_WIDTH),
     .PTR_WIDTH  (PTR_WIDTH)
 )
 fifo_mem_i
 (
   //source clock
   .i_clk               (i_clk_a),
-  .i_rst               (i_rst), 
+  .i_rst               (rst_a),
 
   //FIFO writer interface
   .i_wr_en             (wr_en),
   .i_data              (data_i),
   .o_fifo_full         (fifo_full),
-  
+
   //FIFO reader interface
   .o_wr_ptr_gray       (wr_ptr_gray_clk_a),
   .o_data              (data_o),
-  .i_rd_ptr_gray       (rd_ptr_gray_clk_b),
+  .i_rd_ptr_gray       (rd_ptr_gray_clk_a),
   .i_rd_ptr_gray_clk_b (rd_ptr_gray_clk_b)
 
 
@@ -80,18 +114,18 @@ fifo_mem_i
 fifo_reader #
 (
   .DATA_WIDTH     (DATA_WIDTH),
-  .PTR_WIDTH      (PTR_WIDTH) 
+  .PTR_WIDTH      (PTR_WIDTH)
 )
 fifo_reader_b
 (
   .i_clk          (i_clk_b),
-  .i_rst          (i_rst),  
+  .i_rst          (rst_b),
 
   //FIFO reader interface
-  .i_wr_ptr_gray  (wr_ptr_gray_clk_a),
+  .i_wr_ptr_gray  (wr_ptr_gray_clk_b),
   .i_data         (data_o),
   .o_rd_ptr_gray  (rd_ptr_gray_clk_b),
-  
+
   //output valid ready
   .o_valid        (o_valid_clk_b),
   .i_ready        (i_ready_clk_b),

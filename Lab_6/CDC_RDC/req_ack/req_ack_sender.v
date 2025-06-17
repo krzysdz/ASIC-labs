@@ -38,7 +38,7 @@ module req_ack_sender #
   wire rst;
   assign rst = r_rst[0];
   always @(posedge i_clk or negedge i_rst) begin
-    if (!i_rst) r_rst <= 2'b0;
+    if (!i_rst) r_rst <= 2'b00;
     else r_rst <= {1'b1, r_rst[1]};
   end
 

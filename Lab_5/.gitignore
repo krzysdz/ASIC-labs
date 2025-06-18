@@ -1,0 +1,6 @@
+**/HDL_LIBRARIES/
+*.svf
+!**/logs/task*.log
+**/*.dlib/
+**/run_details/
+**/task5/work/*_run/

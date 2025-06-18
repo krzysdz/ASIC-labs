@@ -1,0 +1,75 @@
+****************************************
+Report : design
+Design : dut_toplevel
+Version: V-2023.12
+Date   : Wed Jun 18 14:52:30 2025
+****************************************
+
+Total number of std cells in library : 860
+Total number of dont_use lib cells   : 67
+Total number of dont_touch lib cells : 17
+Total number of buffers              : 59
+Total number of inverters            : 46
+Total number of flip-flops           : 173
+Total number of latches              : 45
+Total number of ICGs                 : 30
+
+Cell Instance Type  Count         Area
+--------------------------------------
+TOTAL LEAF CELLS     1730     1042.423
+unit                 1252      930.002
+Standard cells       1252      930.002
+unit                 1252      930.002
+Hard macro cells        0        0.000
+unit                 1252      930.002
+Soft macro cells        0        0.000
+unit                 1252      930.002
+Always on cells         0        0.000
+unit                 1252      930.002
+Physical only         478      112.421
+unit                 1252      930.002
+Fixed cells           478      112.421
+unit                 1252      930.002
+Moveable cells       1252      930.002
+unit                 1252      930.002
+Placed cells         1227      914.995
+unit                 1252      930.002
+Sequential            339      431.435
+unit                 1252      930.002
+Buffer/inverter        60       16.694
+unit                 1252      930.002
+ICG cells              11        9.102
+unit                 1252      930.002
+
+Logic Hierarchies                    : 0
+Design Masters count                 : 62
+Total Flat nets count                : 1676
+Total FloatingNets count             : 0
+Total no of Ports                    : 170
+Number of Master Clocks in design    : 2
+Number of Generated Clocks in design : 0
+Number of Path Groups in design      : 14 (2 of them Non Default)
+Number of Scan Chains in design      : 0
+List of Modes                        : Normal, PowerSave
+List of Corners                      : Fast, Typical, Slow
+List of Scenarios                    : Normal_Fast, Normal_Slow, Normal_Typical, PowerSave_Fast, PowerSave_Slow, PowerSave_Typical
+
+Core Area                            : 1385.280
+Chip Area                            : 2254.280
+Total Site Row Area                  : 1385.280
+Number of Blockages                  : 2
+Total area of Blockages              : 103.426
+Number of Power Domains              : 1
+Number of Voltage Areas              : 1
+Number of Group Bounds               : 0
+Number of Exclusive MoveBounds       : 0
+Number of Hard or Soft MoveBounds    : 0
+Number of Multibit Registers         : 0
+Number of Multibit LS/ISO Cells      : 0
+Number of Top Level RP Groups        : 0
+Number of Tech Layers                : 64 (54 of them have unknown routing dir.)
+
+Total wire length                    : 11799.46 micron
+Total number of wires                : 13346
+Total number of contacts             : 12926
+1

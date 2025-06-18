@@ -1,0 +1,12 @@
+/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/lab/tasks/task5/work/../../../../lab/results/dut_toplevel.spef.minTLU_125.spef for scenarios: 
+	 scenario: Normal_Fast, corner type: late/early
+	 scenario: PowerSave_Fast, corner type: late/early
+
+/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/lab/tasks/task5/work/../../../../lab/results/dut_toplevel.spef.nomTLU_25.spef for scenarios: 
+	 scenario: Normal_Typical, corner type: late/early
+	 scenario: PowerSave_Typical, corner type: late/early
+
+/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/lab/tasks/task5/work/../../../../lab/results/dut_toplevel.spef.maxTLU_-40.spef for scenarios: 
+	 scenario: Normal_Slow, corner type: late/early
+	 scenario: PowerSave_Slow, corner type: late/early
+

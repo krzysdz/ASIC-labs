@@ -1,0 +1,15 @@
+****************************************
+Report : congestion
+Design : dut_toplevel
+Version: V-2023.12
+Date   : Wed Jun 18 13:00:53 2025
+****************************************
+
+Layer     |    overflow     |              # GRCs has
+Name      |  total  |  max  | overflow (%)      | max overflow
+---------------------------------------------------------------
+Both Dirs |      40 |     3 |      27  ( 0.22%) |       1
+H routing |      40 |     3 |      27  ( 0.44%) |       1
+V routing |       0 |     0 |       0  ( 0.00%) |       0
+
+1

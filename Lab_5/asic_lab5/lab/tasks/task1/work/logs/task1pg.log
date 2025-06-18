@@ -1,0 +1,812 @@
+
+
+
+                              Fusion Compiler (TM)
+
+                  Version V-2023.12 for linux64 - Nov 23, 2023
+  This release has significant feature enhancements. Please review the Release
+                       Notes associated with this release.
+
+                    Copyright (c) 1988 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+Error: This script has expired. Please contact Aditya/Amir/Wei-Chih.
+Loading user preference file /home/student/.synopsys_fc_gui/preferences.tcl
+#####################################################################
+#####     Task 1 - Creating power and ground network                           
+#####################################################################
+set DesignStage create_pg_network
+create_pg_network
+#### Sourcing main setup script
+source -echo  ../../../setup/main_setup.tcl
+#####################################################################
+###           Main Setup Script for Fusion Compiler
+#####################################################################
+set LabRootDir			"[pwd]/../../../.."     ; # root dir for the labs
+set LabDir				"${LabRootDir}/lab" ; # directory for lab exercises
+set SrcDir				"${LabRootDir}/src"  ; # directory for source files (RTL, SDC)
+#set TechLibDir			"${LabRootDir}/tech" ; # technology library path
+set TechLibDir			"/eda/synopsys/files/FC_Labs/common" ; # technology library path
+set SetupDir			"${LabDir}/setup"   ; # directory with setup files
+set TechLibName			"saed14rvt"			 ; # define library name
+set CellPrefix			"SAEDRVT14"			 ; # define cell prefix
+set TechNodeName		"saed14nm"			 ; # define technology node name
+set MetalStack			"1p9m"				 ; # define metal stack
+#set RefNdmType			"frame_only"		 ; # define reference ndm type: "frame_only" or "frame_timing"
+set RefNdmType			"frame_timing"		 ; # define reference ndm type: "frame_only" or "frame_timing"
+set RefLibDir			"${TechLibDir}/ndm" ; # reference library path
+set RefLib				"${RefLibDir}/${TechLibName}_${RefNdmType}.ndm" ; # reference library
+set TechFileDir    		"${TechLibDir}/tf"  ; # directory with technology file(s)
+set TechFile			"${TechFileDir}/${TechNodeName}_${MetalStack}.tf" ; # technology file
+#set TechNdm				""
+set LibertyDir			"${TechLibDir}/liberty" ; # 
+set TlupDir				"${TechLibDir}/tlup" ; # 
+set TlupMinFile			"${TlupDir}/${TechNodeName}_${MetalStack}_Cmin.tlup" ; # 
+set TlupNomFile			"${TlupDir}/${TechNodeName}_${MetalStack}_Cnom.tlup" ; # 
+set TlupMaxFile			"${TlupDir}/${TechNodeName}_${MetalStack}_Cmax.tlup" ; # 
+set NxtGrdDir			"${TechLibDir}/nxtgrd" ; # 
+set NxtGrdMinFile		"${NxtGrdDir}/${TechNodeName}_${MetalStack}_Cmin.nxtgrd" ; # 
+set NxtGrdNomFile		"${NxtGrdDir}/${TechNodeName}_${MetalStack}_Cnom.nxtgrd" ; # 
+set NxtGrdMaxFile		"${NxtGrdDir}/${TechNodeName}_${MetalStack}_Cmax.nxtgrd" ; # 
+set MapDir				"${TechLibDir}/map" ; # 
+set GdsDir				"${TechLibDir}/gds" ; # 
+set RunsetDir			"${TechLibDir}/runsets" ; # 
+set GdsFile				"${GdsDir}/saed14rvt.gds" ; # 
+set GdsMapFile			"${MapDir}/saed14nm_1p9m_gdsout_mw.map" ; # 
+set LayerMapFile		"${MapDir}/${TechNodeName}_tf_itf_tluplus.map" ; # 
+set DrcRunsetFile		"${RunsetDir}/saed14nm_1p9m_drc_rules.rs" ; # 
+set MetalFillRunsetFile	"${RunsetDir}/saed14nm_1p9m_mfill_rules.rs" ; # 
+set RtlDir				"${SrcDir}/rtl" ; # directory with source files
+set SystemVerilogDir	"${RtlDir}/sverilog" ; # directory containing SystemVerilog HDL source files
+set VerilogDir			"${RtlDir}/verilog" ; # directory containing Verilog HDL source files
+set VhdlDir				"${RtlDir}/vhdl" ; # directory containing VHDL source files
+set SdcDir				"${SrcDir}/sdc" ; # directory with constraint files
+set ResultsDir			"${LabDir}/results" ; # directory for outcomes of the lab
+set SolutionDir			"${LabDir}/solution" ; # backup directory for outcomes of the lab
+set ReportsDir			"${LabDir}/reports" ; # directory for report files
+echo					${SetupDir}
+/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/lab/tasks/task1/work/../../../../lab/setup
+source 					${SetupDir}/utilities.tcl
+#### Sourcing project specyfic setup script
+source -echo  ${SetupDir}/design_setup.tcl
+#####################################################################
+###                           Design Setup Script for Fusion Compiler
+#####################################################################
+set DesignName				"dut_toplevel"			; # define design name # 
+set DesignLibrary			"${DesignName}.dlib"	; # define design library name # 
+set WorkDir					"[pwd]"					; # define current working directory # 
+set TechFlowType			"tf"					; # set "tf" for TECH_FILE-based flow or set "ndm" for TECH_NDM-based flow. # 
+set ParasiticModel			"tlup"					; # set "tlup" for using TLUP files or  set "nxtgrd" for using NXTGRD files. # 
+set HDL						"sverilog"				; # set "sverilog", "verilog" or "vhdl" for reading SystemVerilog, Verilog or VHDL RTL, respectively.
+set SdcFile					"${SdcDir}/${DesignName}.sdc" ; # specify file with design constraints # 
+set NormalModeSdcFile		"${SdcDir}/${DesignName}_normal.sdc" ; # specify file with design constraints for normal mode 
+set PowerSaveModeSdcFile	"${SdcDir}/${DesignName}_power_save.sdc" ; # specify file with design constraints for low power mode 
+set PVT_FF					"ff0p88v125c"			; # set FF PVT
+set PVT_TT					"tt0p8v25c"				; # set TT PVT
+set PVT_SS					"ss0p72vm40c"			; # set SS PVT
+set DB_FF					"${LibertyDir}/${TechLibName}_${PVT_FF}.db"
+set DB_TT					"${LibertyDir}/${TechLibName}_${PVT_TT}.db"
+set DB_SS					"${LibertyDir}/${TechLibName}_${PVT_SS}.db"
+set ClockName               "clk"
+set CoreUtilization         0.65
+set CoreOffset              5
+set CoreShape               "R"
+set CoreSideRatio           [list 2.5 1.5]
+set FlipFirstRow            "true"
+set BlockPinLayers          [list "M3" "M4"]
+set BlockPinSides           [list 1 2 3]
+set BlockPinSpacing         1
+set BlockPinWidth           0.11
+set BlockPinLength          0.11
+set ClockPinLayers          "M5"
+set ClockPinSides           4
+set TapCellDistance			40
+#Configure host file/options
+set_host_options -max_cores 12
+1
+# Open the design library
+open_lib ${ResultsDir}/${DesignLibrary}
+Information: Loading library file '/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/lab/results/dut_toplevel.dlib' (FILE-007)
+Information: Loading library file '/eda/synopsys/files/FC_Labs/common/ndm/saed14rvt_frame_timing.ndm' (FILE-007)
+{dut_toplevel.dlib}
+# Copy and open block
+copy_block -from ${DesignName}/rtl_read -to ${DesignName}/final_floorplan
+Information: User units loaded from library 'saed14rvt_frame_timing' (LNK-040)
+{dut_toplevel.dlib:dut_toplevel/final_floorplan.design}
+open_block ${DesignName}/final_floorplan
+Information: Incrementing open_count of block 'dut_toplevel.dlib:dut_toplevel/final_floorplan.design' to 2. (DES-021)
+{dut_toplevel.dlib:dut_toplevel/final_floorplan.design}
+# Source tech setup script
+source -echo ${SetupDir}/technology_setup.tcl
+#####################################################################
+#####                                        Technology Setup Script                                       #####
+#####################################################################
+set_attribute [get_site_defs unit] symmetry Y
+set_attribute [get_site_defs unit] is_default true
+if {[string equal tlup ${ParasiticModel}]} {
+	read_parasitic_tech -layermap ${LayerMapFile} -tlup ${TlupMaxFile} -name maxTLU
+	read_parasitic_tech -layermap ${LayerMapFile} -tlup ${TlupNomFile} -name nomTLU
+	read_parasitic_tech -layermap ${LayerMapFile} -tlup ${TlupMinFile} -name minTLU
+} elseif {[string equal nxtgrd ${ParasiticModel}]} {
+	read_parasitic_tech -layermap ${LayerMapFile} -tlup ${NxtGrdMaxFile} -name maxTLU
+	read_parasitic_tech -layermap ${LayerMapFile} -tlup ${NxtGrdNomFile} -name nomTLU
+	read_parasitic_tech -layermap ${LayerMapFile} -tlup ${NxtGrdMinFile} -name minTLU
+} 
+Information: The command 'read_parasitic_tech' cleared the undo history. (UNDO-016)
+WARNING: Layer mapping file warning. Tech layer 'M1_3' mapped in layer mapping file cannot be found in technology section.
+WARNING: Layer mapping file warning. Tech layer 'M2_3' mapped in layer mapping file cannot be found in technology section.
+WARNING: Layer mapping file warning. Tech layer 'M3_3' mapped in layer mapping file cannot be found in technology section.
+NEX(WARNING): parasitic_tech file: /eda/synopsys/files/FC_Labs/common/tlup/saed14nm_1p9m_Cmax.tlup already read in, mandatory 1-to-1 map between tluplus file and paraTech
+WARNING: Layer mapping file warning. Tech layer 'M1_3' mapped in layer mapping file cannot be found in technology section.
+WARNING: Layer mapping file warning. Tech layer 'M2_3' mapped in layer mapping file cannot be found in technology section.
+WARNING: Layer mapping file warning. Tech layer 'M3_3' mapped in layer mapping file cannot be found in technology section.
+NEX(WARNING): parasitic_tech file: /eda/synopsys/files/FC_Labs/common/tlup/saed14nm_1p9m_Cnom.tlup already read in, mandatory 1-to-1 map between tluplus file and paraTech
+WARNING: Layer mapping file warning. Tech layer 'M1_3' mapped in layer mapping file cannot be found in technology section.
+WARNING: Layer mapping file warning. Tech layer 'M2_3' mapped in layer mapping file cannot be found in technology section.
+WARNING: Layer mapping file warning. Tech layer 'M3_3' mapped in layer mapping file cannot be found in technology section.
+NEX(WARNING): parasitic_tech file: /eda/synopsys/files/FC_Labs/common/tlup/saed14nm_1p9m_Cmin.tlup already read in, mandatory 1-to-1 map between tluplus file and paraTech
+#suppress_message ATTR-12
+set_attribute [get_layers {M1 M3 M5 M7 M9}]   routing_direction vertical
+Information: The design specific attribute override for layer 'M1' is set in the current block 'dut_toplevel', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M3' is set in the current block 'dut_toplevel', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M5' is set in the current block 'dut_toplevel', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M7' is set in the current block 'dut_toplevel', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M9' is set in the current block 'dut_toplevel', because the actual library setting may not be overwritten. (ATTR-12)
+set_attribute [get_layers {M2 M4 M6 M8 MRDL}] routing_direction horizontal
+Information: The design specific attribute override for layer 'M2' is set in the current block 'dut_toplevel', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M4' is set in the current block 'dut_toplevel', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M6' is set in the current block 'dut_toplevel', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M8' is set in the current block 'dut_toplevel', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'MRDL' is set in the current block 'dut_toplevel', because the actual library setting may not be overwritten. (ATTR-12)
+#unsuppress_message ATTR-12
+# Read the constraints
+read_sdc -echo ${SdcFile}
+Information: The command 'read_sdc' cleared the undo history. (UNDO-016)
+Using libraries: dut_toplevel.dlib saed14rvt_frame_timing
+Visiting block dut_toplevel.dlib:dut_toplevel/final_floorplan.design
+Design 'dut_toplevel' was successfully linked.
+Information: Loading SDC version 2.1 file '/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/src/sdc/dut_toplevel.sdc' (FILE-007)
+set ClockName clk
+set Period 2
+set RiseTransition 0.3
+set FallTransition 0.2
+set Uncertainty 0.4
+create_clock -period $Period -name $ClockName [get_ports $ClockName]
+set_clock_uncertainty -setup $Uncertainty [get_clocks $ClockName]
+set_clock_transition -rise $RiseTransition [get_clocks $ClockName]
+set_clock_transition -fall $FallTransition [get_clocks $ClockName]
+1
+# MCMM setup
+source -echo ${SetupDir}/mcmm_setup.tcl
+#####################################################################
+#####						MCMM Setup Script					#####
+#####################################################################
+# Remove all MCMM related info
+remove_corners   -all
+remove_modes     -all
+remove_scenarios -all
+# Create Corner(s)
+create_corner Fast
+create_corner Typical
+create_corner Slow
+# Set parasitics parameters
+set_parasitics_parameters -early_spec minTLU -late_spec  minTLU -corners {Fast}
+set_parasitics_parameters -early_spec nomTLU -late_spec  nomTLU -corners {Typical}
+set_parasitics_parameters -early_spec maxTLU -late_spec  maxTLU -corners {Slow}
+foreach mode_name {Normal PowerSave} {
+
+	echo "Current mode: ${mode_name}"
+	
+	# Create Mode 
+	create_mode  ${mode_name}
+	current_mode ${mode_name}
+	
+	# Create Scenario(s) for current mode
+	create_scenario -mode ${mode_name} -corner Fast    -name ${mode_name}_Fast
+	create_scenario -mode ${mode_name} -corner Typical -name ${mode_name}_Typical
+	create_scenario -mode ${mode_name} -corner Slow    -name ${mode_name}_Slow
+
+	# Read Constraints for each scenario
+	set scenarios [get_attribute [get_scenarios -modes ${mode_name}] name]
+	
+	echo "Current mode scenarios: ${scenarios}"
+	
+	foreach scenario ${scenarios} {
+		echo "Current scenario: ${scenario}"
+		current_scenario ${scenario}
+		read_sdc [set ${mode_name}ModeSdcFile]
+	}
+
+	# Set operating conditions for each corner and scenario
+	current_corner Fast
+	current_scenario ${mode_name}_Fast
+	set_operating_conditions ${PVT_FF}
+
+	current_corner Typical
+	current_scenario ${mode_name}_Typical
+	set_operating_conditions ${PVT_TT}
+
+	current_corner Slow
+	current_scenario ${mode_name}_Slow
+	set_operating_conditions ${PVT_SS}
+
+	# Scenario configuration 
+	set_scenario_status ${mode_name}_Fast -all -active tru
+	set_scenario_status ${mode_name}_Typical -all -active true
+	set_scenario_status ${mode_name}_Slow -all -active true
+
+}
+Current mode: Normal
+Created scenario Normal_Fast for mode Normal and corner Fast
+All analysis types are activated.
+Created scenario Normal_Typical for mode Normal and corner Typical
+All analysis types are activated.
+Created scenario Normal_Slow for mode Normal and corner Slow
+All analysis types are activated.
+Current mode scenarios: Normal_Fast Normal_Slow Normal_Typical
+Current scenario: Normal_Fast
+Information: Loading SDC version 2.1 file '/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/src/sdc/dut_toplevel_normal.sdc' (FILE-007)
+Current scenario: Normal_Slow
+Information: Loading SDC version 2.1 file '/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/src/sdc/dut_toplevel_normal.sdc' (FILE-007)
+Warning: Redefining clock 'clk'.  
+        Previously defined at: /home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/src/sdc/dut_toplevel_normal.sdc, line 8 (UIC-034)
+Current scenario: Normal_Typical
+Information: Loading SDC version 2.1 file '/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/src/sdc/dut_toplevel_normal.sdc' (FILE-007)
+Warning: Redefining clock 'clk'.  
+        Previously defined at: /home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/src/sdc/dut_toplevel_normal.sdc, line 8 (UIC-034)
+Information: Cellem using advance interpolation.
+Scenario Normal_Fast (mode Normal corner Fast) is active for setup/hold/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance/cell_em/signal_em analysis.
+Scenario Normal_Typical (mode Normal corner Typical) is active for setup/hold/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance/cell_em/signal_em analysis.
+Scenario Normal_Slow (mode Normal corner Slow) is active for setup/hold/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance/cell_em/signal_em analysis.
+Current mode: PowerSave
+Created scenario PowerSave_Fast for mode PowerSave and corner Fast
+All analysis types are activated.
+Created scenario PowerSave_Typical for mode PowerSave and corner Typical
+All analysis types are activated.
+Created scenario PowerSave_Slow for mode PowerSave and corner Slow
+All analysis types are activated.
+Current mode scenarios: PowerSave_Fast PowerSave_Slow PowerSave_Typical
+Current scenario: PowerSave_Fast
+Information: Loading SDC version 2.1 file '/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/src/sdc/dut_toplevel_power_save.sdc' (FILE-007)
+Current scenario: PowerSave_Slow
+Information: Loading SDC version 2.1 file '/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/src/sdc/dut_toplevel_power_save.sdc' (FILE-007)
+Warning: Redefining clock 'clk'.  
+        Previously defined at: /home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/src/sdc/dut_toplevel_power_save.sdc, line 8 (UIC-034)
+Current scenario: PowerSave_Typical
+Information: Loading SDC version 2.1 file '/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/src/sdc/dut_toplevel_power_save.sdc' (FILE-007)
+Warning: Redefining clock 'clk'.  
+        Previously defined at: /home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/src/sdc/dut_toplevel_power_save.sdc, line 8 (UIC-034)
+Scenario PowerSave_Fast (mode PowerSave corner Fast) is active for setup/hold/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance/cell_em/signal_em analysis.
+Scenario PowerSave_Typical (mode PowerSave corner Typical) is active for setup/hold/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance/cell_em/signal_em analysis.
+Scenario PowerSave_Slow (mode PowerSave corner Slow) is active for setup/hold/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance/cell_em/signal_em analysis.
+#### Read floorplan from DEF
+read_def ${ResultsDir}/manual_floorplan.def
+Information: Loading DEF file '/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/lab/results/manual_floorplan.def' (FILE-007)
+Information: Reading 'VERSION' statement. (DEFR-016)
+Information: Reading 'DIVIDERCHAR' statement. (DEFR-016)
+Information: Reading 'BUSBITCHARS' statement. (DEFR-016)
+Information: Reading 'DESIGN' statement. (DEFR-016)
+Information: Reading 'UNITS' statement. (DEFR-016)
+Information: Reading 'PROPERTYDEFINITIONS' section. (DEFR-016)
+Information: Reading 'DIEAREA' statement. (DEFR-016)
+Information: Reading 'ROW' statements. (DEFR-016)
+Information: Reading 'TRACKS' statements. (DEFR-016)
+Information: Reading 'PINS' section. (DEFR-016)
+Information: Reading 'PINPROPERTIES' section. (DEFR-016)
+--------------------------------
+Number of Ignored DEF Constructs
+--------------------------------
+PROPERTYDEFINITIONS            : 0/1
+---------------------------------------
+Number of Processed/Read DEF Constructs
+---------------------------------------
+VERSION                        : 1/1
+DIVIDERCHAR                    : 1/1
+BUSBITCHARS                    : 1/1
+DESIGN                         : 1/1
+UNITS                          : 1/1
+PROPERTYDEFINITIONS            : 1/1
+DIEAREA                        : 1/1
+ROW                            : 48/48
+TRACKS                         : 20/20
+PINS                           : 170/170
+PINPROPERTIES                  : 168/168
+1
+#### Insert Boundary and TAP cells in the design
+source -echo ../scripts/insert_special_physical_cells.tcl
+#####################################################################
+#####     Boundary/TAP cell insertion
+#####################################################################         
+#### Inserting boundary cells
+set_boundary_cell_rules  \
+        -top_boundary_cells                */${CellPrefix}_CAPT2 \
+        -bottom_boundary_cells             */${CellPrefix}_CAPB2 \
+	-left_boundary_cell                */${CellPrefix}_CAPT2 \
+	-right_boundary_cell               */${CellPrefix}_CAPB2 \
+        -top_left_outside_corner_cell      */${CellPrefix}_CAPTIN13 \
+        -top_right_outside_corner_cell     */${CellPrefix}_CAPTIN13 \
+        -bottom_left_outside_corner_cell   */${CellPrefix}_CAPBIN13 \
+        -bottom_right_outside_corner_cell  */${CellPrefix}_CAPBIN13 \
+        -mirror_left_outside_corner_cell \
+        -mirror_right_outside_corner_cell 
+Information: The command 'set_boundary_cell_rules' cleared the undo history. (UNDO-016)
+compile_boundary_cells
+Warning: Detected use of obsolete/unsupported feature.  The following
+        	will not be available in a future release of the application:
+        	compile_boundary_cells. Use compile_targeted_boundary_cells instead (CMD-100)
+Using AL to insert boundary cells
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 0 total shapes.
+Layer M2: cached 0 shapes out of 0 total shapes.
+Layer M3: cached 0 shapes out of 0 total shapes.
+Cached 0 vias out of 0 total vias.
+Warning: No 1x or 2x + 3x wide cells provided for top or bottom option. (CHF-125)
+Information: Starting boundary cell insertion into dut_toplevel/final_floorplan using site master "unit". (CHF-200)
+	20% complete ...
+	40% complete ...
+	50% complete ...
+	60% complete ...
+	70% complete ...
+	80% complete ...
+Information: Total 46 left cells inserted successfully into dut_toplevel/final_floorplan. (CHF-100)
+Information: Total 0 bottom cells inserted successfully into dut_toplevel/final_floorplan. (CHF-100)
+Information: Total 46 right cells inserted successfully into dut_toplevel/final_floorplan. (CHF-100)
+Information: Total 310 top cells inserted successfully into dut_toplevel/final_floorplan. (CHF-100)
+Information: Total 0 bottom left outside cells inserted successfully into dut_toplevel/final_floorplan. (CHF-100)
+Information: Total 0 bottom right outside cells inserted successfully into dut_toplevel/final_floorplan. (CHF-100)
+Information: Total 2 top left outside cells inserted successfully into dut_toplevel/final_floorplan. (CHF-100)
+Information: Total 2 top right outside cells inserted successfully into dut_toplevel/final_floorplan. (CHF-100)
+Information: Total 406 boundary cells inserted successfully into dut_toplevel/final_floorplan. (CHF-100)
+#### Inserting TAP cells
+create_tap_cells   \
+         -lib_cell  */${CellPrefix}_TAPDS \
+         -distance ${TapCellDistance}  \
+         -pattern stagger \
+         -skip_fixed_cells         
+* Disjointed site row process : FALSE
+Using AL to insert tap cells
+Information: tap_to_tap_distance is not a hard rule at tap insertion stage. Please set place.legalize.ignore_tap_to_tap_distance_rule to true to bypass the check.
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 0 total shapes.
+Layer M2: cached 0 shapes out of 0 total shapes.
+Layer M3: cached 0 shapes out of 0 total shapes.
+Cached 0 vias out of 0 total vias.
+Information: Starting tap cell insertion into dut_toplevel/final_floorplan using site master "unit". (CHF-200)
+	20% complete ...
+	40% complete ...
+	50% complete ...
+	60% complete ...
+	70% complete ...
+	80% complete ...
+Information: Total 72 tap cells inserted successfully into dut_toplevel/final_floorplan. (CHF-100)
+#### Create Power/Ground Network
+source -echo ../scripts/create_pg_network.tcl
+#####################################################################
+#####        Create PG Network
+#####################################################################
+#### Remove PG related data
+remove_pg_via_master_rules -all
+No via def rule is found.
+remove_pg_patterns -all
+No pattern is found.
+remove_pg_strategies -all
+All strategies have been removed.
+remove_pg_strategy_via_rules -all
+All strategy via rules have been removed.
+remove_routes -ring -stripe -lib_cell_pin_connect 
+Remove no route shapes with specified net types and shape uses.
+#### Set PG net attribute
+set_attribute -objects [get_nets VDD] -name net_type -value power
+set_attribute -objects [get_nets VSS] -name net_type -value ground
+#### Create VIA strategy rule NO_PG_VIAS # VIA_NIL
+set_pg_strategy_via_rule NO_PG_VIAS -via_rule { {intersection: undefined} {via_master: NIL} }
+Information: The command 'set_pg_strategy_via_rule' cleared the undo history. (UNDO-016)
+Successfully set strategy via rule NO_PG_VIAS.
+#### Create PG Rails for standard cells
+create_pg_std_cell_conn_pattern M1_rail -layers {M1} -rail_width {@wtop @wbottom} -parameters {wtop wbottom}
+Successfully create standard cell rail pattern M1_rail.
+set_pg_strategy M1_rail_strategy_pwr -core -pattern {{name: M1_rail} {nets: VDD} {parameters: {0.094 0.094}}}
+Successfully set PG strategy M1_rail_strategy_pwr.
+set_pg_strategy M1_rail_strategy_gnd -core -pattern {{name: M1_rail} {nets: VSS} {parameters: {0.094 0.094}}}
+Successfully set PG strategy M1_rail_strategy_gnd.
+compile_pg -strategies M1_rail_strategy_pwr -ignore_drc
+Sanity check for inputs.
+No strategy-level via rule is specified, the default rule will be applied.
+DRC checking and fixing will be skipped for created shapes.
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy M1_rail_strategy_pwr.
+Loading library and design information.
+Number of Standard Cells: 0
+Number of Hard Macros: 0
+Number of Pads: 0
+Creating standard cell rails.
+Creating standard cell rails for strategy M1_rail_strategy_pwr.
+Creating via connection between strategies and existing shapes.
+via connection runtime: 0 seconds.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 25 wires.
+Committed 0 vias.
+Committed 0 wires for via creation.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+compile_pg -strategies M1_rail_strategy_gnd -ignore_drc
+Sanity check for inputs.
+No strategy-level via rule is specified, the default rule will be applied.
+DRC checking and fixing will be skipped for created shapes.
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy M1_rail_strategy_gnd.
+Loading library and design information.
+Number of Standard Cells: 0
+Number of Hard Macros: 0
+Number of Pads: 0
+Creating standard cell rails.
+Creating standard cell rails for strategy M1_rail_strategy_gnd.
+Creating via connection between strategies and existing shapes.
+via connection runtime: 0 seconds.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 24 wires.
+Committed 0 vias.
+Committed 0 wires for via creation.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+#### Create M5 Vertical PG Straps
+create_pg_mesh_pattern M5_PG \
+	-layers { {vertical_layer: M5}   {width: 0.1} {spacing: interleaving} {pitch: 4} {offset: 0.5} } 
+Successfully create mesh pattern M5_PG.
+set_pg_strategy M5_PG_Strategy \
+	-core \
+	-pattern   { {name: M5_PG} {nets:{VSS VDD}} } \
+	-extension { {stop: core_boundary} }
+Successfully set PG strategy M5_PG_Strategy.
+compile_pg -strategies {M5_PG_Strategy} -via_rule NO_PG_VIAS
+Sanity check for inputs.
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy M5_PG_Strategy.
+Loading library and design information.
+Number of Standard Cells: 0
+Number of Hard Macros: 0
+Number of Pads: 0
+Creating straps and vias in power plan.
+Creating wire shapes for strategies M5_PG_Strategy .
+Creating wire shapes runtime: 0 seconds
+Blockage cutting and DRC fixing for wire shapes for strategies M5_PG_Strategy .
+Check and fix DRC for 24 wires for strategy M5_PG_Strategy.
+Number of threads: 12
+Number of partitions: 3
+Direction of partitions: vertical
+Number of wires: 24
+Checking DRC for 24 wires:5% 15% 25% 30% 40% 50% 55% 65% 75% 80% 90% 100%
+Creating 24 wires after DRC fixing.
+Wire DRC checking runtime 0.00 seconds.
+Creating via shapes for strategies M5_PG_Strategy .
+Number of threads: 12
+Working on strategy M5_PG_Strategy.
+Number of detected intersections: 0
+Total runtime of via shapes creation: 0 seconds
+Runtime of via DRC checking for strategy M5_PG_Strategy: 0.00 seconds.
+Removing dangling/floating wire/vias after DRC check.
+Start iteration 1:
+Checking potential dangling/floating power plan wires.
+Finish removing all dangling or floating wires and vias.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 24 wires.
+Committed 0 vias.
+Committed 0 wires for via creation.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+#### Create M6 Horizontal PG Straps 
+create_pg_mesh_pattern M6_PG \
+	-layers { {horizontal_layer: M6}   {width: 0.2} {spacing: interleaving} {pitch: 4} {offset: 0.5} }
+Successfully create mesh pattern M6_PG.
+set_pg_strategy M6_PG_Strategy \
+	-core \
+	-pattern   { {name: M6_PG} {nets:{VSS VDD}} } \
+	-extension { {stop: design_boundary_and_generate_pin} }
+Successfully set PG strategy M6_PG_Strategy.
+compile_pg -strategies {M6_PG_Strategy} -via_rule NO_PG_VIAS
+Sanity check for inputs.
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy M6_PG_Strategy.
+Loading library and design information.
+Number of Standard Cells: 0
+Number of Hard Macros: 0
+Number of Pads: 0
+Creating straps and vias in power plan.
+Creating wire shapes for strategies M6_PG_Strategy .
+Creating wire shapes runtime: 0 seconds
+Blockage cutting and DRC fixing for wire shapes for strategies M6_PG_Strategy .
+Check and fix DRC for 15 wires for strategy M6_PG_Strategy.
+Number of threads: 12
+Number of partitions: 2
+Direction of partitions: horizontal
+Number of wires: 15
+Checking DRC for 15 wires:10% 25% 40% 50% 65% 80% 90% 100%
+Creating 15 wires after DRC fixing.
+Wire DRC checking runtime 0.00 seconds.
+Creating via shapes for strategies M6_PG_Strategy .
+Number of threads: 12
+Working on strategy M6_PG_Strategy.
+Number of detected intersections: 0
+Total runtime of via shapes creation: 0 seconds
+Runtime of via DRC checking for strategy M6_PG_Strategy: 0.00 seconds.
+Removing dangling/floating wire/vias after DRC check.
+Start iteration 1:
+Checking potential dangling/floating power plan wires.
+Finish removing all dangling or floating wires and vias.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 45 wires.
+Committed 0 vias.
+Committed 0 wires for via creation.
+Created 30 pins at design boundary.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+#### Create M7 Vertical PG Straps
+create_pg_mesh_pattern M7_PG \
+	-layers { {vertical_layer: M7}   {width: 0.2} {spacing: interleaving} {pitch: 4} {offset: 0.5} } 
+Successfully create mesh pattern M7_PG.
+set_pg_strategy M7_PG_Strategy \
+	-core \
+	-pattern   { {name: M7_PG} {nets:{VSS VDD}} } \
+	-extension { {stop: design_boundary_and_generate_pin} }
+Successfully set PG strategy M7_PG_Strategy.
+compile_pg -strategies {M7_PG_Strategy} -via_rule NO_PG_VIAS
+Sanity check for inputs.
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy M7_PG_Strategy.
+Loading library and design information.
+Number of Standard Cells: 0
+Number of Hard Macros: 0
+Number of Pads: 0
+Creating straps and vias in power plan.
+Creating wire shapes for strategies M7_PG_Strategy .
+Creating wire shapes runtime: 0 seconds
+Blockage cutting and DRC fixing for wire shapes for strategies M7_PG_Strategy .
+Check and fix DRC for 24 wires for strategy M7_PG_Strategy.
+Number of threads: 12
+Number of partitions: 3
+Direction of partitions: vertical
+Number of wires: 24
+Checking DRC for 24 wires:5% 15% 25% 30% 50% 55% 65% 75% 80% 90% 100%
+Creating 24 wires after DRC fixing.
+Wire DRC checking runtime 0.00 seconds.
+Creating via shapes for strategies M7_PG_Strategy .
+Number of threads: 12
+Working on strategy M7_PG_Strategy.
+Number of detected intersections: 0
+Total runtime of via shapes creation: 0 seconds
+Runtime of via DRC checking for strategy M7_PG_Strategy: 0.00 seconds.
+Removing dangling/floating wire/vias after DRC check.
+Start iteration 1:
+Checking potential dangling/floating power plan wires.
+Finish removing all dangling or floating wires and vias.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 72 wires.
+Committed 0 vias.
+Committed 0 wires for via creation.
+Created 48 pins at design boundary.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+#### Create PG Rings
+create_pg_ring_pattern \
+                 PG_Ring \
+                 -horizontal_layer M6  -vertical_layer M7 \
+                 -horizontal_width 1 -vertical_width 1 \
+                 -horizontal_spacing 1 -vertical_spacing 1
+Successfully create PG ring pattern PG_Ring.
+set_pg_strategy PG_Ring_Strategy -core -pattern {{ name: PG_Ring} { nets: "VDD VSS" } {offset: 0.5}}
+Successfully set PG strategy PG_Ring_Strategy.
+compile_pg -strategies PG_Ring_Strategy -via_rule NO_PG_VIAS
+Sanity check for inputs.
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy PG_Ring_Strategy.
+Loading library and design information.
+Number of Standard Cells: 0
+Number of Hard Macros: 0
+Number of Pads: 0
+Creating rings.
+Removing dangling/floating wire/vias after DRC check.
+Start iteration 1:
+Checking potential dangling/floating power plan wires.
+Checking dangling/floating vias inside strategy PG_Ring_Strategy.
+Checking 8 stacked vias:0% 10% 20% 30% 50% 60% 70% 80% 100%
+Finish removing all dangling or floating wires and vias.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 8 wires.
+Committed 8 vias.
+Committed 0 wires for via creation.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+#### Create PG VIAs
+create_pg_vias -from_layers M5 -to_layers M1 -via_masters default -nets {VDD VSS}
+Query intersections and create vias.
+Object query runtime: 0 seconds.
+Determining intersections for 73 shapes starts
+Intersection detection runtime: 0 seconds.
+Instantiating vias for 588 intersections starts
+Via instantiation runtime: 0 seconds.
+Starting via DRC checking ...
+Number of threads: 12
+Number of partitions: 5
+Direction of partitions: horizontal
+Number of vias: 588
+Checking DRC for 588 stacked vias:5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 75% 80% 90% 100%
+Overall via DRC checking runtime: 1 seconds.
+Checking dangling/floating vias.
+Start iteration 1: Checking 588 stacked vias:0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Committed 2352 vias.
+Committing vias takes 0.00 seconds.
+Overall runtime: 1 seconds.
+Successfully created PG Vias.
+create_pg_vias -from_layers M6 -to_layers M5 -via_masters default -nets {VDD VSS}
+Query intersections and create vias.
+Object query runtime: 0 seconds.
+Determining intersections for 43 shapes starts
+Intersection detection runtime: 0 seconds.
+Instantiating vias for 180 intersections starts
+Via instantiation runtime: 0 seconds.
+Starting via DRC checking ...
+Number of threads: 12
+Number of partitions: 2
+Direction of partitions: horizontal
+Number of vias: 180
+Checking DRC for 180 stacked vias:5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100%
+Overall via DRC checking runtime: 0 seconds.
+Checking dangling/floating vias.
+Start iteration 1: Checking 180 stacked vias:0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Committed 180 vias.
+Committing vias takes 0.00 seconds.
+Overall runtime: 0 seconds.
+Successfully created PG Vias.
+create_pg_vias -from_layers M7 -to_layers M6 -via_masters default -nets {VDD VSS}
+Query intersections and create vias.
+Object query runtime: 0 seconds.
+Determining intersections for 47 shapes starts
+Intersection detection runtime: 0 seconds.
+Instantiating vias for 258 intersections starts
+Via instantiation runtime: 0 seconds.
+Starting via DRC checking ...
+Number of threads: 12
+Number of partitions: 3
+Direction of partitions: vertical
+Number of vias: 48
+Checking DRC for 48 stacked vias:10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100%
+Number of threads: 12
+Number of partitions: 2
+Direction of partitions: horizontal
+Number of vias: 210
+Checking DRC for 210 stacked vias:5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100%
+180 regular vias are not fixed
+Overall via DRC checking runtime: 0 seconds.
+Checking dangling/floating vias.
+Start iteration 1: Checking 78 stacked vias:0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Committed 78 vias.
+Committing vias takes 0.00 seconds.
+Overall runtime: 0 seconds.
+Successfully created PG Vias.
+#### Connect PG nets
+connect_pg_net -net VDD [get_pins -hierarchical  */VDD]
+connect_pg_net -net VSS [get_pins -hierarchical  */VSS]
+#### Check created PG structure
+check_pg_connectivity
+Information: The command 'check_pg_connectivity' cleared the undo history. (UNDO-016)
+Checking secondary net through power switch is enabled. 
+Secondary net will be checked together from primary net. They will be treated as the same net
+Primary Net : VDD    Secondary Net:
+Primary Net : VSS    Secondary Net:
+Loading cell instances...
+Number of Standard Cells: 2037
+Number of Macro Cells: 0
+Number of IO Pad Cells: 0
+Number of Blocks: 0
+Loading P/G wires and vias...
+Number of VDD Wires: 960
+Number of VDD Vias: 1326
+Number of VDD Terminals: 38
+**************Verify net VDD connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 0
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Loading cell instances...
+Loading P/G wires and vias...
+Number of VSS Wires: 924
+Number of VSS Vias: 1292
+Number of VSS Terminals: 40
+**************Verify net VSS connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 0
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Overall runtime: 0 seconds.
+check_pg_drc
+Command check_pg_drc started  at Wed Jun 18 11:05:56 2025
+Command check_pg_drc finished at Wed Jun 18 11:05:56 2025
+CPU usage for check_pg_drc: 0.17 seconds ( 0.00 hours)
+Elapsed time for check_pg_drc: 0.02 seconds ( 0.00 hours)
+No errors found.
+#### Analyze the design
+generateReports ${DesignStage}
+Generating reports for the design stage: create_pg_network ...
+[Tim-Power] Info: Cleared Leakage libCell cache.
+Reports have been generated for the design stage: create_pg_network.
+save_block
+Information: Saving block 'dut_toplevel.dlib:dut_toplevel/final_floorplan.design'
+1
+save_lib
+Saving library 'dut_toplevel.dlib'
+1
+close_blocks
+Information: Decrementing open_count of block 'dut_toplevel.dlib:dut_toplevel/final_floorplan.design' to 1. (DES-022)
+1
+close_lib
+Closing library 'dut_toplevel.dlib'
+1
+exit
+Maximum memory usage for this session: 741.76 MB
+Maximum memory usage for this session including child processes: 741.76 MB
+CPU usage for this session:     40 seconds (  0.01 hours)
+Elapsed time for this session:     15 seconds (  0.00 hours)
+Thank you for using Fusion Compiler.

@@ -1,0 +1,930 @@
+# 
+# Fusion Compiler write_def
+# Release      : V-2023.12
+# User Name    : student
+# Date         : Wed Jun 18 11:05:46 2025
+# 
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN dut_toplevel ;
+UNITS DISTANCE MICRONS 1000 ;
+PROPERTYDEFINITIONS
+COMPONENTPIN ACCESS_DIRECTION STRING ;
+END PROPERTYDEFINITIONS
+DIEAREA ( 0 0 ) ( 0 38800 ) ( 58100 38800 ) ( 58100 0 ) ;
+ROW unit_row_1 unit 5000 5000 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_2 unit 5000 5600 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_3 unit 5000 6200 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_4 unit 5000 6800 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_5 unit 5000 7400 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_6 unit 5000 8000 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_7 unit 5000 8600 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_8 unit 5000 9200 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_9 unit 5000 9800 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_10 unit 5000 10400 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_11 unit 5000 11000 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_12 unit 5000 11600 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_13 unit 5000 12200 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_14 unit 5000 12800 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_15 unit 5000 13400 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_16 unit 5000 14000 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_17 unit 5000 14600 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_18 unit 5000 15200 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_19 unit 5000 15800 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_20 unit 5000 16400 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_21 unit 5000 17000 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_22 unit 5000 17600 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_23 unit 5000 18200 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_24 unit 5000 18800 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_25 unit 5000 19400 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_26 unit 5000 20000 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_27 unit 5000 20600 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_28 unit 5000 21200 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_29 unit 5000 21800 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_30 unit 5000 22400 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_31 unit 5000 23000 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_32 unit 5000 23600 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_33 unit 5000 24200 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_34 unit 5000 24800 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_35 unit 5000 25400 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_36 unit 5000 26000 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_37 unit 5000 26600 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_38 unit 5000 27200 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_39 unit 5000 27800 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_40 unit 5000 28400 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_41 unit 5000 29000 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_42 unit 5000 29600 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_43 unit 5000 30200 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_44 unit 5000 30800 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_45 unit 5000 31400 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_46 unit 5000 32000 N DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_47 unit 5000 32600 FS DO 650 BY 1 STEP 74 0 ;
+ROW unit_row_48 unit 5000 33200 N DO 650 BY 1 STEP 74 0 ;
+TRACKS Y 42 DO 524 STEP 74 LAYER M1 ;
+TRACKS X 42 DO 785 STEP 74 LAYER M1 ;
+TRACKS Y 20 DO 647 STEP 60 LAYER M2 ;
+TRACKS X 20 DO 969 STEP 60 LAYER M2 ;
+TRACKS Y 42 DO 524 STEP 74 LAYER M3 ;
+TRACKS X 42 DO 785 STEP 74 LAYER M3 ;
+TRACKS Y 0 DO 389 STEP 100 LAYER M4 ;
+TRACKS X 0 DO 582 STEP 100 LAYER M4 ;
+TRACKS Y 0 DO 389 STEP 100 LAYER M5 ;
+TRACKS X 0 DO 582 STEP 100 LAYER M5 ;
+TRACKS Y 0 DO 389 STEP 100 LAYER M6 ;
+TRACKS X 0 DO 582 STEP 100 LAYER M6 ;
+TRACKS Y 0 DO 389 STEP 100 LAYER M7 ;
+TRACKS X 0 DO 582 STEP 100 LAYER M7 ;
+TRACKS Y 0 DO 389 STEP 100 LAYER M8 ;
+TRACKS X 0 DO 582 STEP 100 LAYER M8 ;
+TRACKS Y 0 DO 389 STEP 100 LAYER M9 ;
+TRACKS X 0 DO 582 STEP 100 LAYER M9 ;
+TRACKS Y 1000 DO 10 STEP 4000 LAYER MRDL ;
+TRACKS X 1000 DO 15 STEP 4000 LAYER MRDL ;
+PINS 170 ;
+ - clk + NET clk + DIRECTION INPUT + USE SIGNAL
+   + LAYER M5 ( 0 0 ) ( 110 110 )
+   + PLACED ( 28945 0 ) N ;
+ - nreset + NET nreset + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 36545 ) N ;
+ - proc_req + NET proc_req + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 35745 ) N ;
+ - proc_req_in0_en + NET proc_req_in0_en + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 35145 ) N ;
+ - proc_req_in0_arb_mode_id[0] + NET proc_req_in0_arb_mode_id[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 34245 ) N ;
+ - proc_req_in1_en + NET proc_req_in1_en + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 33445 ) N ;
+ - proc_req_in1_arb_mode_id[0] + NET proc_req_in1_arb_mode_id[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 32545 ) N ;
+ - proc_req_in2_en + NET proc_req_in2_en + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 31845 ) N ;
+ - proc_req_in2_arb_mode_id[0] + NET proc_req_in2_arb_mode_id[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 31045 ) N ;
+ - proc_ack + NET proc_ack + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 30245 ) N ;
+ - in0_valid + NET in0_valid + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 29645 ) N ;
+ - in0_ready + NET in0_ready + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 28645 ) N ;
+ - in0_data[35] + NET in0_data[35] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 27945 ) N ;
+ - in0_data[34] + NET in0_data[34] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 27045 ) N ;
+ - in0_data[33] + NET in0_data[33] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 26345 ) N ;
+ - in0_data[32] + NET in0_data[32] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 25545 ) N ;
+ - in0_data[31] + NET in0_data[31] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 24745 ) N ;
+ - in0_data[30] + NET in0_data[30] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 24045 ) N ;
+ - in0_data[29] + NET in0_data[29] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 23145 ) N ;
+ - in0_data[28] + NET in0_data[28] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 22345 ) N ;
+ - in0_data[27] + NET in0_data[27] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 21445 ) N ;
+ - in0_data[26] + NET in0_data[26] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 20845 ) N ;
+ - in0_data[25] + NET in0_data[25] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 20045 ) N ;
+ - in0_data[24] + NET in0_data[24] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 19245 ) N ;
+ - in0_data[23] + NET in0_data[23] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 18545 ) N ;
+ - in0_data[22] + NET in0_data[22] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 17645 ) N ;
+ - in0_data[21] + NET in0_data[21] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 16845 ) N ;
+ - in0_data[20] + NET in0_data[20] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 15945 ) N ;
+ - in0_data[19] + NET in0_data[19] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 15345 ) N ;
+ - in0_data[18] + NET in0_data[18] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 14545 ) N ;
+ - in0_data[17] + NET in0_data[17] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 13745 ) N ;
+ - in0_data[16] + NET in0_data[16] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 12945 ) N ;
+ - in0_data[15] + NET in0_data[15] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 12145 ) N ;
+ - in0_data[14] + NET in0_data[14] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 11345 ) N ;
+ - in0_data[13] + NET in0_data[13] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 10745 ) N ;
+ - in0_data[12] + NET in0_data[12] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 9745 ) N ;
+ - in0_data[11] + NET in0_data[11] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 9045 ) N ;
+ - in0_data[10] + NET in0_data[10] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 8145 ) N ;
+ - in0_data[9] + NET in0_data[9] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 7445 ) N ;
+ - in0_data[8] + NET in0_data[8] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 6645 ) N ;
+ - in0_data[7] + NET in0_data[7] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 5845 ) N ;
+ - in0_data[6] + NET in0_data[6] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 5245 ) N ;
+ - in0_data[5] + NET in0_data[5] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 4245 ) N ;
+ - in0_data[4] + NET in0_data[4] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 3445 ) N ;
+ - in0_data[3] + NET in0_data[3] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 2645 ) N ;
+ - in0_data[2] + NET in0_data[2] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 1945 ) N ;
+ - in0_data[1] + NET in0_data[1] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 1545 ) N ;
+ - in0_data[0] + NET in0_data[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 445 ) N ;
+ - in0_data_last + NET in0_data_last + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 2845 ) N ;
+ - in1_valid + NET in1_valid + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 3945 ) N ;
+ - in1_ready + NET in1_ready + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 5045 ) N ;
+ - in1_data[35] + NET in1_data[35] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 6145 ) N ;
+ - in1_data[34] + NET in1_data[34] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 7245 ) N ;
+ - in1_data[33] + NET in1_data[33] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 8345 ) N ;
+ - in1_data[32] + NET in1_data[32] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 9445 ) N ;
+ - in1_data[31] + NET in1_data[31] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 10545 ) N ;
+ - in1_data[30] + NET in1_data[30] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 11645 ) N ;
+ - in1_data[29] + NET in1_data[29] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 12745 ) N ;
+ - in1_data[28] + NET in1_data[28] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 13945 ) N ;
+ - in1_data[27] + NET in1_data[27] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 15045 ) N ;
+ - in1_data[26] + NET in1_data[26] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 16145 ) N ;
+ - in1_data[25] + NET in1_data[25] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 17245 ) N ;
+ - in1_data[24] + NET in1_data[24] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 18345 ) N ;
+ - in1_data[23] + NET in1_data[23] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 19445 ) N ;
+ - in1_data[22] + NET in1_data[22] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 20545 ) N ;
+ - in1_data[21] + NET in1_data[21] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 21645 ) N ;
+ - in1_data[20] + NET in1_data[20] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 22745 ) N ;
+ - in1_data[19] + NET in1_data[19] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 23845 ) N ;
+ - in1_data[18] + NET in1_data[18] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 24945 ) N ;
+ - in1_data[17] + NET in1_data[17] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 26145 ) N ;
+ - in1_data[16] + NET in1_data[16] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 27245 ) N ;
+ - in1_data[15] + NET in1_data[15] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 28345 ) N ;
+ - in1_data[14] + NET in1_data[14] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 29445 ) N ;
+ - in1_data[13] + NET in1_data[13] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 30545 ) N ;
+ - in1_data[12] + NET in1_data[12] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 31645 ) N ;
+ - in1_data[11] + NET in1_data[11] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 32745 ) N ;
+ - in1_data[10] + NET in1_data[10] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 33845 ) N ;
+ - in1_data[9] + NET in1_data[9] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 34945 ) N ;
+ - in1_data[8] + NET in1_data[8] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 36045 ) N ;
+ - in1_data[7] + NET in1_data[7] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 37145 ) N ;
+ - in1_data[6] + NET in1_data[6] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 57990 38245 ) N ;
+ - in1_data[5] + NET in1_data[5] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 56967 38690 ) N ;
+ - in1_data[4] + NET in1_data[4] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 55857 38690 ) N ;
+ - in1_data[3] + NET in1_data[3] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 54747 38690 ) N ;
+ - in1_data[2] + NET in1_data[2] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 53637 38690 ) N ;
+ - in1_data[1] + NET in1_data[1] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 52527 38690 ) N ;
+ - in1_data[0] + NET in1_data[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 51417 38690 ) N ;
+ - in1_data_last + NET in1_data_last + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 50307 38690 ) N ;
+ - in2_valid + NET in2_valid + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 49197 38690 ) N ;
+ - in2_ready + NET in2_ready + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 48087 38690 ) N ;
+ - in2_data[35] + NET in2_data[35] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 46977 38690 ) N ;
+ - in2_data[34] + NET in2_data[34] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 45867 38690 ) N ;
+ - in2_data[33] + NET in2_data[33] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 44757 38690 ) N ;
+ - in2_data[32] + NET in2_data[32] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 43647 38690 ) N ;
+ - in2_data[31] + NET in2_data[31] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 42537 38690 ) N ;
+ - in2_data[30] + NET in2_data[30] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 41427 38690 ) N ;
+ - in2_data[29] + NET in2_data[29] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 40317 38690 ) N ;
+ - in2_data[28] + NET in2_data[28] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 39207 38690 ) N ;
+ - in2_data[27] + NET in2_data[27] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 38097 38690 ) N ;
+ - in2_data[26] + NET in2_data[26] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 36987 38690 ) N ;
+ - in2_data[25] + NET in2_data[25] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 35877 38690 ) N ;
+ - in2_data[24] + NET in2_data[24] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 34767 38690 ) N ;
+ - in2_data[23] + NET in2_data[23] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 33657 38690 ) N ;
+ - in2_data[22] + NET in2_data[22] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 32547 38690 ) N ;
+ - in2_data[21] + NET in2_data[21] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 31437 38690 ) N ;
+ - in2_data[20] + NET in2_data[20] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 30327 38690 ) N ;
+ - in2_data[19] + NET in2_data[19] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 29217 38690 ) N ;
+ - in2_data[18] + NET in2_data[18] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 28107 38690 ) N ;
+ - in2_data[17] + NET in2_data[17] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 26997 38690 ) N ;
+ - in2_data[16] + NET in2_data[16] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 25887 38690 ) N ;
+ - in2_data[15] + NET in2_data[15] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 24777 38690 ) N ;
+ - in2_data[14] + NET in2_data[14] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 23667 38690 ) N ;
+ - in2_data[13] + NET in2_data[13] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 22557 38690 ) N ;
+ - in2_data[12] + NET in2_data[12] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 21447 38690 ) N ;
+ - in2_data[11] + NET in2_data[11] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 20337 38690 ) N ;
+ - in2_data[10] + NET in2_data[10] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 19227 38690 ) N ;
+ - in2_data[9] + NET in2_data[9] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 18117 38690 ) N ;
+ - in2_data[8] + NET in2_data[8] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 17007 38690 ) N ;
+ - in2_data[7] + NET in2_data[7] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 15897 38690 ) N ;
+ - in2_data[6] + NET in2_data[6] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 14787 38690 ) N ;
+ - in2_data[5] + NET in2_data[5] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 13677 38690 ) N ;
+ - in2_data[4] + NET in2_data[4] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 12567 38690 ) N ;
+ - in2_data[3] + NET in2_data[3] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 11457 38690 ) N ;
+ - in2_data[2] + NET in2_data[2] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 10347 38690 ) N ;
+ - in2_data[1] + NET in2_data[1] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 9237 38690 ) N ;
+ - in2_data[0] + NET in2_data[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 8127 38690 ) N ;
+ - in2_data_last + NET in2_data_last + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 7017 38690 ) N ;
+ - out_valid + NET out_valid + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 5907 38690 ) N ;
+ - out_ready + NET out_ready + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 4797 38690 ) N ;
+ - out_data[35] + NET out_data[35] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 3687 38690 ) N ;
+ - out_data[34] + NET out_data[34] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 2577 38690 ) N ;
+ - out_data[33] + NET out_data[33] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 1467 38690 ) N ;
+ - out_data[32] + NET out_data[32] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 110 110 )
+   + PLACED ( 357 38690 ) N ;
+ - out_data[31] + NET out_data[31] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 38045 ) N ;
+ - out_data[30] + NET out_data[30] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 36945 ) N ;
+ - out_data[29] + NET out_data[29] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 35845 ) N ;
+ - out_data[28] + NET out_data[28] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 34745 ) N ;
+ - out_data[27] + NET out_data[27] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 33645 ) N ;
+ - out_data[26] + NET out_data[26] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 32545 ) N ;
+ - out_data[25] + NET out_data[25] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 31445 ) N ;
+ - out_data[24] + NET out_data[24] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 30345 ) N ;
+ - out_data[23] + NET out_data[23] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 29245 ) N ;
+ - out_data[22] + NET out_data[22] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 28145 ) N ;
+ - out_data[21] + NET out_data[21] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 27045 ) N ;
+ - out_data[20] + NET out_data[20] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 25945 ) N ;
+ - out_data[19] + NET out_data[19] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 24745 ) N ;
+ - out_data[18] + NET out_data[18] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 23645 ) N ;
+ - out_data[17] + NET out_data[17] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 22545 ) N ;
+ - out_data[16] + NET out_data[16] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 21445 ) N ;
+ - out_data[15] + NET out_data[15] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 20345 ) N ;
+ - out_data[14] + NET out_data[14] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 19245 ) N ;
+ - out_data[13] + NET out_data[13] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 18145 ) N ;
+ - out_data[12] + NET out_data[12] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 17045 ) N ;
+ - out_data[11] + NET out_data[11] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 15945 ) N ;
+ - out_data[10] + NET out_data[10] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 14845 ) N ;
+ - out_data[9] + NET out_data[9] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 13745 ) N ;
+ - out_data[8] + NET out_data[8] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 12545 ) N ;
+ - out_data[7] + NET out_data[7] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 11445 ) N ;
+ - out_data[6] + NET out_data[6] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 10345 ) N ;
+ - out_data[5] + NET out_data[5] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 9245 ) N ;
+ - out_data[4] + NET out_data[4] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 8145 ) N ;
+ - out_data[3] + NET out_data[3] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 7045 ) N ;
+ - out_data[2] + NET out_data[2] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 5945 ) N ;
+ - out_data[1] + NET out_data[1] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 4845 ) N ;
+ - out_data[0] + NET out_data[0] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 3745 ) N ;
+ - out_data_source_id[1] + NET out_data_source_id[1] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 2645 ) N ;
+ - out_data_source_id[0] + NET out_data_source_id[0] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 1545 ) N ;
+ - out_data_last + NET out_data_last + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M4 ( 0 0 ) ( 110 110 )
+   + PLACED ( 0 445 ) N ;
+ - VDD + NET _dummynet0 + DIRECTION INPUT + USE SIGNAL ;
+ - VSS + NET _dummynet1 + DIRECTION INPUT + USE SIGNAL ;
+END PINS
+PINPROPERTIES 168 ;
+ - PIN clk
+   + PROPERTY ACCESS_DIRECTION "0 bottom" ;
+ - PIN nreset
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN proc_req
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN proc_req_in0_en
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN proc_req_in0_arb_mode_id[0]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN proc_req_in1_en
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN proc_req_in1_arb_mode_id[0]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN proc_req_in2_en
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN proc_req_in2_arb_mode_id[0]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN proc_ack
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_valid
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_ready
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[35]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[34]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[33]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[32]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[31]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[30]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[29]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[28]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[27]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[26]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[25]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[24]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[23]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[22]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[21]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[20]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[19]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[18]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[17]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[16]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[15]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[14]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[13]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[12]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[11]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[10]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[9]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[8]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[7]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[6]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[5]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[4]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[3]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[2]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[1]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data[0]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in0_data_last
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_valid
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_ready
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[35]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[34]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[33]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[32]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[31]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[30]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[29]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[28]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[27]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[26]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[25]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[24]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[23]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[22]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[21]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[20]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[19]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[18]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[17]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[16]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[15]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[14]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[13]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[12]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[11]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[10]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[9]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[8]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[7]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[6]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN in1_data[5]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in1_data[4]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in1_data[3]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in1_data[2]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in1_data[1]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in1_data[0]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in1_data_last
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_valid
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_ready
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[35]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[34]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[33]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[32]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[31]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[30]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[29]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[28]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[27]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[26]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[25]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[24]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[23]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[22]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[21]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[20]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[19]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[18]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[17]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[16]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[15]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[14]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[13]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[12]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[11]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[10]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[9]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[8]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[7]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[6]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[5]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[4]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[3]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[2]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[1]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data[0]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN in2_data_last
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN out_valid
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN out_ready
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN out_data[35]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN out_data[34]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN out_data[33]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN out_data[32]
+   + PROPERTY ACCESS_DIRECTION "0 top" ;
+ - PIN out_data[31]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[30]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[29]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[28]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[27]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[26]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[25]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[24]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[23]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[22]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[21]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[20]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[19]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[18]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[17]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[16]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[15]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[14]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[13]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[12]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[11]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[10]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[9]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[8]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[7]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[6]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[5]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[4]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[3]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[2]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[1]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data[0]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data_source_id[1]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data_source_id[0]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN out_data_last
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+END PINPROPERTIES
+END DESIGN

@@ -1,0 +1,353 @@
+
+
+
+                              Fusion Compiler (TM)
+
+                  Version V-2023.12 for linux64 - Nov 23, 2023
+  This release has significant feature enhancements. Please review the Release
+                       Notes associated with this release.
+
+                    Copyright (c) 1988 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+Error: This script has expired. Please contact Aditya/Amir/Wei-Chih.
+Loading user preference file /home/student/.synopsys_fc_gui/preferences.tcl
+#####################################################################
+#####     Task 1 - Manual Floorplan Creation                          
+#####################################################################
+set DesignStage manual_floorplan
+manual_floorplan
+#### Sourcing main setup script
+source -echo  ../../../setup/main_setup.tcl
+#####################################################################
+###           Main Setup Script for Fusion Compiler
+#####################################################################
+set LabRootDir			"[pwd]/../../../.."     ; # root dir for the labs
+set LabDir				"${LabRootDir}/lab" ; # directory for lab exercises
+set SrcDir				"${LabRootDir}/src"  ; # directory for source files (RTL, SDC)
+#set TechLibDir			"${LabRootDir}/tech" ; # technology library path
+set TechLibDir			"/eda/synopsys/files/FC_Labs/common" ; # technology library path
+set SetupDir			"${LabDir}/setup"   ; # directory with setup files
+set TechLibName			"saed14rvt"			 ; # define library name
+set CellPrefix			"SAEDRVT14"			 ; # define cell prefix
+set TechNodeName		"saed14nm"			 ; # define technology node name
+set MetalStack			"1p9m"				 ; # define metal stack
+#set RefNdmType			"frame_only"		 ; # define reference ndm type: "frame_only" or "frame_timing"
+set RefNdmType			"frame_timing"		 ; # define reference ndm type: "frame_only" or "frame_timing"
+set RefLibDir			"${TechLibDir}/ndm" ; # reference library path
+set RefLib				"${RefLibDir}/${TechLibName}_${RefNdmType}.ndm" ; # reference library
+set TechFileDir    		"${TechLibDir}/tf"  ; # directory with technology file(s)
+set TechFile			"${TechFileDir}/${TechNodeName}_${MetalStack}.tf" ; # technology file
+#set TechNdm				""
+set LibertyDir			"${TechLibDir}/liberty" ; # 
+set TlupDir				"${TechLibDir}/tlup" ; # 
+set TlupMinFile			"${TlupDir}/${TechNodeName}_${MetalStack}_Cmin.tlup" ; # 
+set TlupNomFile			"${TlupDir}/${TechNodeName}_${MetalStack}_Cnom.tlup" ; # 
+set TlupMaxFile			"${TlupDir}/${TechNodeName}_${MetalStack}_Cmax.tlup" ; # 
+set NxtGrdDir			"${TechLibDir}/nxtgrd" ; # 
+set NxtGrdMinFile		"${NxtGrdDir}/${TechNodeName}_${MetalStack}_Cmin.nxtgrd" ; # 
+set NxtGrdNomFile		"${NxtGrdDir}/${TechNodeName}_${MetalStack}_Cnom.nxtgrd" ; # 
+set NxtGrdMaxFile		"${NxtGrdDir}/${TechNodeName}_${MetalStack}_Cmax.nxtgrd" ; # 
+set MapDir				"${TechLibDir}/map" ; # 
+set GdsDir				"${TechLibDir}/gds" ; # 
+set RunsetDir			"${TechLibDir}/runsets" ; # 
+set GdsFile				"${GdsDir}/saed14rvt.gds" ; # 
+set GdsMapFile			"${MapDir}/saed14nm_1p9m_gdsout_mw.map" ; # 
+set LayerMapFile		"${MapDir}/${TechNodeName}_tf_itf_tluplus.map" ; # 
+set DrcRunsetFile		"${RunsetDir}/saed14nm_1p9m_drc_rules.rs" ; # 
+set MetalFillRunsetFile	"${RunsetDir}/saed14nm_1p9m_mfill_rules.rs" ; # 
+set RtlDir				"${SrcDir}/rtl" ; # directory with source files
+set SystemVerilogDir	"${RtlDir}/sverilog" ; # directory containing SystemVerilog HDL source files
+set VerilogDir			"${RtlDir}/verilog" ; # directory containing Verilog HDL source files
+set VhdlDir				"${RtlDir}/vhdl" ; # directory containing VHDL source files
+set SdcDir				"${SrcDir}/sdc" ; # directory with constraint files
+set ResultsDir			"${LabDir}/results" ; # directory for outcomes of the lab
+set SolutionDir			"${LabDir}/solution" ; # backup directory for outcomes of the lab
+set ReportsDir			"${LabDir}/reports" ; # directory for report files
+echo					${SetupDir}
+/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/lab/tasks/task1/work/../../../../lab/setup
+source 					${SetupDir}/utilities.tcl
+#### Sourcing project specyfic setup script
+source -echo  ${SetupDir}/design_setup.tcl
+#####################################################################
+###                           Design Setup Script for Fusion Compiler
+#####################################################################
+set DesignName				"dut_toplevel"			; # define design name # 
+set DesignLibrary			"${DesignName}.dlib"	; # define design library name # 
+set WorkDir					"[pwd]"					; # define current working directory # 
+set TechFlowType			"tf"					; # set "tf" for TECH_FILE-based flow or set "ndm" for TECH_NDM-based flow. # 
+set ParasiticModel			"tlup"					; # set "tlup" for using TLUP files or  set "nxtgrd" for using NXTGRD files. # 
+set HDL						"sverilog"				; # set "sverilog", "verilog" or "vhdl" for reading SystemVerilog, Verilog or VHDL RTL, respectively.
+set SdcFile					"${SdcDir}/${DesignName}.sdc" ; # specify file with design constraints # 
+set NormalModeSdcFile		"${SdcDir}/${DesignName}_normal.sdc" ; # specify file with design constraints for normal mode 
+set PowerSaveModeSdcFile	"${SdcDir}/${DesignName}_power_save.sdc" ; # specify file with design constraints for low power mode 
+set PVT_FF					"ff0p88v125c"			; # set FF PVT
+set PVT_TT					"tt0p8v25c"				; # set TT PVT
+set PVT_SS					"ss0p72vm40c"			; # set SS PVT
+set DB_FF					"${LibertyDir}/${TechLibName}_${PVT_FF}.db"
+set DB_TT					"${LibertyDir}/${TechLibName}_${PVT_TT}.db"
+set DB_SS					"${LibertyDir}/${TechLibName}_${PVT_SS}.db"
+set ClockName               "clk"
+set CoreUtilization         0.65
+set CoreOffset              5
+set CoreShape               "R"
+set CoreSideRatio           [list 2.5 1.5]
+set FlipFirstRow            "true"
+set BlockPinLayers          [list "M3" "M4"]
+set BlockPinSides           [list 1 2 3]
+set BlockPinSpacing         1
+set BlockPinWidth           0.11
+set BlockPinLength          0.11
+set ClockPinLayers          "M5"
+set ClockPinSides           4
+set TapCellDistance			40
+#Configure host file/options
+set_host_options -max_cores 12
+1
+# Open the design library
+open_lib ${ResultsDir}/${DesignLibrary}
+Information: Loading library file '/home/student/Documents/kdz/ASIC/labs/Lab_5/asic_lab5/lab/results/dut_toplevel.dlib' (FILE-007)
+Information: Loading library file '/eda/synopsys/files/FC_Labs/common/ndm/saed14rvt_frame_timing.ndm' (FILE-007)
+{dut_toplevel.dlib}
+# Open the design library
+open_lib ${ResultsDir}/${DesignLibrary}
+Information: Incrementing open_count of library 'dut_toplevel.dlib' to 2. (LIB-017)
+{dut_toplevel.dlib}
+# Copy and open block
+copy_block -from ${DesignName}/auto_floorplan -to ${DesignName}/manual_floorplan
+Information: User units loaded from library 'saed14rvt_frame_timing' (LNK-040)
+{dut_toplevel.dlib:dut_toplevel/manual_floorplan.design}
+open_block ${DesignName}/manual_floorplan
+Information: Incrementing open_count of block 'dut_toplevel.dlib:dut_toplevel/manual_floorplan.design' to 2. (DES-021)
+{dut_toplevel.dlib:dut_toplevel/manual_floorplan.design}
+#### Initialize the floorplan
+initialize_floorplan  \
+	-control_type core \
+	-core_utilization ${CoreUtilization} \
+	-core_offset ${CoreOffset} \
+	-shape ${CoreShape} \
+	-side_ratio ${CoreSideRatio} \
+	-flip_first_row ${FlipFirstRow}
+Using libraries: dut_toplevel.dlib saed14rvt_frame_timing
+Visiting block dut_toplevel.dlib:dut_toplevel/manual_floorplan.design
+Information: Cellem using advance interpolation.
+Design 'dut_toplevel' was successfully linked.
+Removing existing floorplan objects
+Creating core...
+Core utilization ratio = 65.29%
+Unplacing all cells...
+Creating site array...
+Creating routing tracks...
+Initializing floorplan completed.
+#### Set pin placement constraints
+set ports [remove_from_collection [get_ports] {VDD VSS}]
+{clk nreset proc_req proc_req_in0_en {proc_req_in0_arb_mode_id[0]} proc_req_in1_en {proc_req_in1_arb_mode_id[0]} proc_req_in2_en {proc_req_in2_arb_mode_id[0]} proc_ack in0_valid in0_ready {in0_data[35]} {in0_data[34]} {in0_data[33]} {in0_data[32]} {in0_data[31]} {in0_data[30]} {in0_data[29]} {in0_data[28]} {in0_data[27]} {in0_data[26]} {in0_data[25]} {in0_data[24]} {in0_data[23]} {in0_data[22]} {in0_data[21]} {in0_data[20]} {in0_data[19]} {in0_data[18]} {in0_data[17]} {in0_data[16]} {in0_data[15]} {in0_data[14]} {in0_data[13]} {in0_data[12]} {in0_data[11]} {in0_data[10]} {in0_data[9]} {in0_data[8]} {in0_data[7]} {in0_data[6]} {in0_data[5]} {in0_data[4]} {in0_data[3]} {in0_data[2]} {in0_data[1]} {in0_data[0]} in0_data_last in1_valid in1_ready {in1_data[35]} {in1_data[34]} {in1_data[33]} {in1_data[32]} {in1_data[31]} {in1_data[30]} {in1_data[29]} {in1_data[28]} {in1_data[27]} {in1_data[26]} {in1_data[25]} {in1_data[24]} {in1_data[23]} {in1_data[22]} {in1_data[21]} {in1_data[20]} {in1_data[19]} {in1_data[18]} {in1_data[17]} {in1_data[16]} {in1_data[15]} {in1_data[14]} {in1_data[13]} {in1_data[12]} {in1_data[11]} {in1_data[10]} {in1_data[9]} {in1_data[8]} {in1_data[7]} {in1_data[6]} {in1_data[5]} {in1_data[4]} {in1_data[3]} {in1_data[2]} {in1_data[1]} {in1_data[0]} in1_data_last in2_valid in2_ready {in2_data[35]} {in2_data[34]} {in2_data[33]} {in2_data[32]} {in2_data[31]} {in2_data[30]} {in2_data[29]} {in2_data[28]} {in2_data[27]} {in2_data[26]} ...}
+set_block_pin_constraints -self \
+	-allowed_layers ${BlockPinLayers} \
+	-sides ${BlockPinSides} \
+	-pin_spacing_distance ${BlockPinSpacing} \
+	-width ${BlockPinWidth} \
+	-length ${BlockPinLength} 
+Information: The command 'set_block_pin_constraints' cleared the undo history. (UNDO-016)
+Information: Block pin constraints pin_spacing_distance, allowed_layers, sides are set for top block dut_toplevel/manual_floorplan. (DPPA-403)
+1
+set_individual_pin_constraints \
+	-ports [get_ports ${ClockName}] \
+	-sides ${ClockPinSides} \
+	-allowed_layers ${ClockPinLayers}
+1
+place_pins -self -ports ${ports}
+Information: Starting 'place_pins' (FLW-8000)
+Information: Time: 2025-06-18 11:05:40 / Session:  00:00:07 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 439 MB (FLW-8100)
+Load DB...
+CPU Time for load db: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+
+Min routing layer: M1
+Max routing layer: MRDL
+
+Non default block pin constraint setting(s) of top block: dut_toplevel
+pin_spacing_distance: 1.0000
+allowed_layers:       M3 M4 
+sides:                1 2 3
+
+CPU Time for Top Level Pre-Route Processing: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+Warning: Block sides pin constraints conflict with pin clk. (DPPA-113)
+Warning: The individual pin constraints allowed layers on port clk are in conflict with block pin constraints allowed layers or min/max routing layers. (DPPA-417)
+Number of block ports: 170
+Number of block pin locations assigned from router: 0
+CPU Time for Pin Preparation: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+Warning: Not enough slots available for pin placement. Ignore pin spacing constraints. (DPPA-004)
+Warning: Pin in0_data[2] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin in0_data[3] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin in0_data[4] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin in0_data[5] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin in0_data[6] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin in0_data[7] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin in0_data[8] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin in0_data[9] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin in0_data[10] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin in0_data[11] is placed with relaxed spacing constraint. (DPPA-379)
+Note - message 'DPPA-379' limit (10) exceeded. Remainder will be suppressed.
+Number of PG ports on blocks: 0
+Number of pins created: 168
+Warning: 45 pins on block dut_toplevel have been placed with relaxed pin spacing constraint(s). (DPPA-089)
+CPU Time for Pin Creation: 00:00:00.01u 00:00:00.00s 00:00:00.01e: 
+Total Pin Placement CPU Time: 00:00:00.02u 00:00:00.00s 00:00:00.02e: 
+Information: Ending   'place_pins' (FLW-8001)
+Information: Time: 2025-06-18 11:05:40 / Session:  00:00:07 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 441 MB (FLW-8100)
+1
+#### Insert Boundary and TAP cells in the design
+source -echo ../scripts/insert_special_physical_cells.tcl
+#####################################################################
+#####     Boundary/TAP cell insertion
+#####################################################################         
+#### Inserting boundary cells
+set_boundary_cell_rules  \
+        -top_boundary_cells                */${CellPrefix}_CAPT2 \
+        -bottom_boundary_cells             */${CellPrefix}_CAPB2 \
+	-left_boundary_cell                */${CellPrefix}_CAPT2 \
+	-right_boundary_cell               */${CellPrefix}_CAPB2 \
+        -top_left_outside_corner_cell      */${CellPrefix}_CAPTIN13 \
+        -top_right_outside_corner_cell     */${CellPrefix}_CAPTIN13 \
+        -bottom_left_outside_corner_cell   */${CellPrefix}_CAPBIN13 \
+        -bottom_right_outside_corner_cell  */${CellPrefix}_CAPBIN13 \
+        -mirror_left_outside_corner_cell \
+        -mirror_right_outside_corner_cell 
+compile_boundary_cells
+Warning: Detected use of obsolete/unsupported feature.  The following
+        	will not be available in a future release of the application:
+        	compile_boundary_cells. Use compile_targeted_boundary_cells instead (CMD-100)
+Using AL to insert boundary cells
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 0 total shapes.
+Layer M2: cached 0 shapes out of 0 total shapes.
+Layer M3: cached 0 shapes out of 0 total shapes.
+Cached 0 vias out of 0 total vias.
+Warning: No 1x or 2x + 3x wide cells provided for top or bottom option. (CHF-125)
+Information: Starting boundary cell insertion into dut_toplevel/manual_floorplan using site master "unit". (CHF-200)
+	20% complete ...
+	40% complete ...
+	50% complete ...
+	60% complete ...
+	70% complete ...
+	80% complete ...
+Information: Total 46 left cells inserted successfully into dut_toplevel/manual_floorplan. (CHF-100)
+Information: Total 0 bottom cells inserted successfully into dut_toplevel/manual_floorplan. (CHF-100)
+Information: Total 46 right cells inserted successfully into dut_toplevel/manual_floorplan. (CHF-100)
+Information: Total 310 top cells inserted successfully into dut_toplevel/manual_floorplan. (CHF-100)
+Information: Total 0 bottom left outside cells inserted successfully into dut_toplevel/manual_floorplan. (CHF-100)
+Information: Total 0 bottom right outside cells inserted successfully into dut_toplevel/manual_floorplan. (CHF-100)
+Information: Total 2 top left outside cells inserted successfully into dut_toplevel/manual_floorplan. (CHF-100)
+Information: Total 2 top right outside cells inserted successfully into dut_toplevel/manual_floorplan. (CHF-100)
+Information: Total 406 boundary cells inserted successfully into dut_toplevel/manual_floorplan. (CHF-100)
+#### Inserting TAP cells
+create_tap_cells   \
+         -lib_cell  */${CellPrefix}_TAPDS \
+         -distance ${TapCellDistance}  \
+         -pattern stagger \
+         -skip_fixed_cells         
+* Disjointed site row process : FALSE
+Using AL to insert tap cells
+Information: tap_to_tap_distance is not a hard rule at tap insertion stage. Please set place.legalize.ignore_tap_to_tap_distance_rule to true to bypass the check.
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 0 total shapes.
+Layer M2: cached 0 shapes out of 0 total shapes.
+Layer M3: cached 0 shapes out of 0 total shapes.
+Cached 0 vias out of 0 total vias.
+Information: Starting tap cell insertion into dut_toplevel/manual_floorplan using site master "unit". (CHF-200)
+	20% complete ...
+	40% complete ...
+	50% complete ...
+	60% complete ...
+	70% complete ...
+	80% complete ...
+Information: Total 72 tap cells inserted successfully into dut_toplevel/manual_floorplan. (CHF-100)
+#### Analyze the design
+generateReports ${DesignStage}
+Generating reports for the design stage: manual_floorplan ...
+[Tim-Power] Info: Cleared Leakage libCell cache.
+Reports have been generated for the design stage: manual_floorplan.
+#### Write out the created floorplan 
+write_floorplan -output ${ResultsDir}/manual_floorplan_files -exclude {cells nets} 
+Writing floorplan for dut_toplevel.design
+Since nets are selected, cells will be added as well, to satisfy DEF dependency.
+Information: Creating dummy net '_dummynet0' for unconnected port 'VDD'. (DEFW-006)
+Information: Creating dummy net '_dummynet1' for unconnected port 'VSS'. (DEFW-006)
+1
+#### Wrtl_readrite DEF for created floorplan
+write_def -exclude {cells nets} ${ResultsDir}/manual_floorplan.def
+****************************************
+Report : Data Mismatches
+Version: V-2023.12
+Date   : Wed Jun 18 11:05:46 2025
+****************************************
+No mismatches exist on the design.
+Information: Creating dummy net '_dummynet0' for unconnected port 'VDD'. (DEFW-006)
+Information: Creating dummy net '_dummynet1' for unconnected port 'VSS'. (DEFW-006)
+---------------------------------------
+Number of Written DEF Constructs
+---------------------------------------
+VERSION                        : 1
+DIVIDERCHAR                    : 1
+BUSBITCHARS                    : 1
+DESIGN                         : 1
+UNITS                          : 1
+PROPERTYDEFINITIONS            : 1
+DIEAREA                        : 1
+ROW                            : 48
+TRACKS                         : 20
+PINS                           : 170
+PINPROPERTIES                  : 168
+1
+get_blocks -all
+{dut_toplevel.dlib:dut_toplevel.design dut_toplevel.dlib:dut_toplevel/rtl_read.design dut_toplevel.dlib:dut_toplevel/auto_floorplan.design dut_toplevel.dlib:dut_toplevel/manual_floorplan.design}
+save_block
+Information: The command 'save_block' cleared the undo history. (UNDO-016)
+Information: Saving block 'dut_toplevel.dlib:dut_toplevel/manual_floorplan.design'
+1
+save_lib
+Saving library 'dut_toplevel.dlib'
+1
+close_blocks
+Information: Decrementing open_count of block 'dut_toplevel.dlib:dut_toplevel/manual_floorplan.design' to 1. (DES-022)
+1
+close_lib
+Information: Decrementing open_count of library 'dut_toplevel.dlib' to 1. (LIB-018)
+1
+exit
+Maximum memory usage for this session: 764.75 MB
+Maximum memory usage for this session including child processes: 764.75 MB
+CPU usage for this session:     29 seconds (  0.01 hours)
+Elapsed time for this session:     13 seconds (  0.00 hours)
+Thank you for using Fusion Compiler.

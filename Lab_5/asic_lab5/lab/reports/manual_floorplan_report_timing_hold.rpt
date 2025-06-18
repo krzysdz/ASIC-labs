@@ -1,0 +1,46 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 1
+        -report_by design
+Design : dut_toplevel
+Version: V-2023.12
+Date   : Wed Jun 18 11:05:46 2025
+****************************************
+
+  Startpoint: math_wrapper_INST/out_data_source_id_r_reg[0] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: dut_fifo_INST/fifo_data_r_reg[0][0] (rising edge-triggered flip-flop clocked by clk)
+  Mode: Normal
+  Corner: Fast
+  Scenario: Normal_Fast
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  math_wrapper_INST/out_data_source_id_r_reg[0]/CK (SAEDRVT14_FSDPRBQ_V2_1)
+                                                   0.00      0.00 r
+  math_wrapper_INST/out_data_source_id_r_reg[0]/Q (SAEDRVT14_FSDPRBQ_V2_1)
+                                                   0.03      0.03 f
+  dut_fifo_INST/fifo_data_r_reg[0][0]/D (SAEDRVT14_FSDPRBQ_V2_0P5)
+                                                   0.00      0.03 f
+  data arrival time                                          0.03
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  dut_fifo_INST/fifo_data_r_reg[0][0]/CK (SAEDRVT14_FSDPRBQ_V2_0P5)
+                                                   0.00      0.00 r
+  library hold time                                0.00      0.00
+  data required time                                         0.00
+  ------------------------------------------------------------------------
+  data required time                                         0.00
+  data arrival time                                         -0.03
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.03
+
+
+1

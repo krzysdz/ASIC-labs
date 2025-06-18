@@ -1,0 +1,23 @@
+****************************************
+Report : area
+Design : dut_toplevel
+Version: V-2023.12
+Date   : Wed Jun 18 14:52:30 2025
+****************************************
+
+Number of ports:                          170
+Number of nets:                          1676
+Number of cells:                         1252
+Number of combinational cells:            913
+Number of sequential cells:               339
+Number of macros/black boxes:               0
+Number of buf/inv:                         60
+Number of references:                      62
+
+Combinational area:                    498.57
+Buf/Inv area:                           16.69
+Noncombinational area:                 431.43
+Macro/Black Box area:                    0.00
+
+Total cell area:                       930.00
+1

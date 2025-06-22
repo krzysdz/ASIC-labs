@@ -1,0 +1,792 @@
+Invoking simulator...
+
+./simv -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./simv.daidir"
+*Verdi* Loading libsscore_vcs202312.so
+
+*Verdi* : Enable RPC Server(460336)
+
+srcTBInvokeSim
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version V-2023.12_Full64; Runtime version V-2023.12_Full64;  Jun 22 23:19 2025
+Verdi>fsdbDumpvars 1 "fifo_tb.fifo_synch_i.i_rst"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (fifo_tb.fifo_synch_i.i_rst).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "fifo_tb.fifo_synch_i.i_clk_a"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (fifo_tb.fifo_synch_i.i_clk_a).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "fifo_tb.fifo_synch_i.i_valid_clk_a"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (fifo_tb.fifo_synch_i.i_valid_clk_a).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "fifo_tb.fifo_synch_i.o_ready_clk_a"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (fifo_tb.fifo_synch_i.o_ready_clk_a).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "fifo_tb.fifo_synch_i.i_data_clk_a"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (fifo_tb.fifo_synch_i.i_data_clk_a).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "fifo_tb.fifo_synch_i.i_clk_b"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (fifo_tb.fifo_synch_i.i_clk_b).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "fifo_tb.fifo_synch_i.o_valid_clk_b"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (fifo_tb.fifo_synch_i.o_valid_clk_b).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "fifo_tb.fifo_synch_i.i_ready_clk_b"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (fifo_tb.fifo_synch_i.i_ready_clk_b).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "fifo_tb.fifo_synch_i.o_data_clk_b"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (fifo_tb.fifo_synch_i.o_data_clk_b).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>run
+--------------------------SENDER---------------------------------
+Data pkg:           1 send in domain A (Val in hex):    00000000, at Time:                72000
+Delay in setting up signal valid (Testbench sender):            8 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:           1 recived in domain B (Val in hex): 00000000, at Time:               160000
+Send: 00000000 , Recived: 00000000 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          17 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:           2 send in domain A (Val in hex):    00000009, at Time:               180000
+Delay in setting up signal valid (Testbench sender):            7 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:           3 send in domain A (Val in hex):    0000000d, at Time:               276000
+Delay in setting up signal valid (Testbench sender):           17 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:           4 send in domain A (Val in hex):    00000065, at Time:               492000
+Delay in setting up signal valid (Testbench sender):            2 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:           2 recived in domain B (Val in hex): 00000009, at Time:               520000
+Send: 00000009 , Recived: 00000009 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           9 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:           5 send in domain A (Val in hex):    00000001, at Time:               528000
+Delay in setting up signal valid (Testbench sender):           18 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:           3 recived in domain B (Val in hex): 0000000d, at Time:               720000
+Send: 0000000d , Recived: 0000000d ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          17 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:           6 send in domain A (Val in hex):    000000ed, at Time:               756000
+Delay in setting up signal valid (Testbench sender):           12 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:           7 send in domain A (Val in hex):    000000f9, at Time:               912000
+Delay in setting up signal valid (Testbench sender):            6 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:           8 send in domain A (Val in hex):    000000c5, at Time:               996000
+Delay in setting up signal valid (Testbench sender):            2 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:           9 send in domain A (Val in hex):    000000e5, at Time:              1032000
+Delay in setting up signal valid (Testbench sender):           15 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:           4 recived in domain B (Val in hex): 00000065, at Time:              1080000
+Send: 00000065 , Recived: 00000065 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          14 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          10 send in domain A (Val in hex):    0000008f, at Time:              1224000
+Delay in setting up signal valid (Testbench sender):            6 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:          11 send in domain A (Val in hex):    000000ce, at Time:              1308000
+Delay in setting up signal valid (Testbench sender):            8 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:           5 recived in domain B (Val in hex): 00000001, at Time:              1380000
+Send: 00000001 , Recived: 00000001 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          13 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          12 send in domain A (Val in hex):    0000005c, at Time:              1428000
+Delay in setting up signal valid (Testbench sender):           13 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:           6 recived in domain B (Val in hex): 000000ed, at Time:              1660000
+Send: 000000ed , Recived: 000000ed ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           9 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          13 send in domain A (Val in hex):    0000002d, at Time:              1704000
+Delay in setting up signal valid (Testbench sender):            3 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:           7 recived in domain B (Val in hex): 000000f9, at Time:              1860000
+Send: 000000f9 , Recived: 000000f9 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           8 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          14 send in domain A (Val in hex):    0000000a, at Time:              1908000
+Delay in setting up signal valid (Testbench sender):           16 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:           8 recived in domain B (Val in hex): 000000c5, at Time:              2040000
+Send: 000000c5 , Recived: 000000c5 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          14 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          15 send in domain A (Val in hex):    0000009d, at Time:              2112000
+Delay in setting up signal valid (Testbench sender):            2 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:           9 recived in domain B (Val in hex): 000000e5, at Time:              2340000
+Send: 000000e5 , Recived: 000000e5 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           1 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          16 send in domain A (Val in hex):    00000013, at Time:              2388000
+Delay in setting up signal valid (Testbench sender):            3 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          10 recived in domain B (Val in hex): 0000008f, at Time:              2400000
+Send: 0000008f , Recived: 0000008f ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          15 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          17 send in domain A (Val in hex):    000000d5, at Time:              2448000
+Delay in setting up signal valid (Testbench sender):           18 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          11 recived in domain B (Val in hex): 000000ce, at Time:              2720000
+Send: 000000ce , Recived: 000000ce ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           1 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          18 send in domain A (Val in hex):    000000ae, at Time:              2760000
+Delay in setting up signal valid (Testbench sender):           19 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          12 recived in domain B (Val in hex): 0000005c, at Time:              2780000
+Send: 0000005c , Recived: 0000005c ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           7 clock B cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          13 recived in domain B (Val in hex): 0000002d, at Time:              2940000
+Send: 0000002d , Recived: 0000002d ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          10 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          19 send in domain A (Val in hex):    000000ca, at Time:              3000000
+Delay in setting up signal valid (Testbench sender):            8 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:          20 send in domain A (Val in hex):    000000f2, at Time:              3108000
+Delay in setting up signal valid (Testbench sender):           10 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          14 recived in domain B (Val in hex): 0000000a, at Time:              3160000
+Send: 0000000a , Recived: 0000000a ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          17 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          21 send in domain A (Val in hex):    000000d8, at Time:              3240000
+Delay in setting up signal valid (Testbench sender):            0 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          15 recived in domain B (Val in hex): 0000009d, at Time:              3520000
+Send: 0000009d , Recived: 0000009d ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           7 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          22 send in domain A (Val in hex):    00000089, at Time:              3564000
+Delay in setting up signal valid (Testbench sender):            6 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          16 recived in domain B (Val in hex): 00000013, at Time:              3680000
+Send: 00000013 , Recived: 00000013 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           6 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          23 send in domain A (Val in hex):    000000c6, at Time:              3720000
+Delay in setting up signal valid (Testbench sender):            4 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          17 recived in domain B (Val in hex): 000000d5, at Time:              3820000
+Send: 000000d5 , Recived: 000000d5 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           3 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          24 send in domain A (Val in hex):    0000002a, at Time:              3864000
+Delay in setting up signal valid (Testbench sender):           13 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          18 recived in domain B (Val in hex): 000000ae, at Time:              3900000
+Send: 000000ae , Recived: 000000ae ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           1 clock B cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          19 recived in domain B (Val in hex): 000000ca, at Time:              3960000
+Send: 000000ca , Recived: 000000ca ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          15 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          25 send in domain A (Val in hex):    0000003b, at Time:              4032000
+Delay in setting up signal valid (Testbench sender):           14 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:          26 send in domain A (Val in hex):    0000007e, at Time:              4212000
+Delay in setting up signal valid (Testbench sender):            1 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          20 recived in domain B (Val in hex): 000000f2, at Time:              4280000
+Send: 000000f2 , Recived: 000000f2 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           1 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          27 send in domain A (Val in hex):    000000f1, at Time:              4320000
+Delay in setting up signal valid (Testbench sender):           14 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          21 recived in domain B (Val in hex): 000000d8, at Time:              4340000
+Send: 000000d8 , Recived: 000000d8 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           8 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          28 send in domain A (Val in hex):    0000009f, at Time:              4500000
+Delay in setting up signal valid (Testbench sender):           15 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          22 recived in domain B (Val in hex): 00000089, at Time:              4520000
+Send: 00000089 , Recived: 00000089 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           0 clock B cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          23 recived in domain B (Val in hex): 000000c6, at Time:              4580000
+Send: 000000c6 , Recived: 000000c6 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           3 clock B cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          24 recived in domain B (Val in hex): 0000002a, at Time:              4660000
+Send: 0000002a , Recived: 0000002a ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           3 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          29 send in domain A (Val in hex):    0000005c, at Time:              4692000
+Delay in setting up signal valid (Testbench sender):           19 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          25 recived in domain B (Val in hex): 0000003b, at Time:              4740000
+Send: 0000003b , Recived: 0000003b ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          17 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          30 send in domain A (Val in hex):    00000049, at Time:              4932000
+Delay in setting up signal valid (Testbench sender):           12 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:          31 send in domain A (Val in hex):    000000d7, at Time:              5088000
+Delay in setting up signal valid (Testbench sender):            5 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          26 recived in domain B (Val in hex): 0000007e, at Time:              5100000
+Send: 0000007e , Recived: 0000007e ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          10 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          32 send in domain A (Val in hex):    0000000c, at Time:              5160000
+Delay in setting up signal valid (Testbench sender):           14 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          27 recived in domain B (Val in hex): 000000f1, at Time:              5320000
+Send: 000000f1 , Recived: 000000f1 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           4 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          33 send in domain A (Val in hex):    00000077, at Time:              5340000
+Delay in setting up signal valid (Testbench sender):            5 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:          34 send in domain A (Val in hex):    00000012, at Time:              5412000
+Delay in setting up signal valid (Testbench sender):            2 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          28 recived in domain B (Val in hex): 0000009f, at Time:              5420000
+Send: 0000009f , Recived: 0000009f ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           1 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          35 send in domain A (Val in hex):    00000039, at Time:              5460000
+Delay in setting up signal valid (Testbench sender):           19 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          29 recived in domain B (Val in hex): 0000005c, at Time:              5480000
+Send: 0000005c , Recived: 0000005c ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          15 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          36 send in domain A (Val in hex):    00000085, at Time:              5700000
+Delay in setting up signal valid (Testbench sender):            4 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          30 recived in domain B (Val in hex): 00000049, at Time:              5800000
+Send: 00000049 , Recived: 00000049 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          13 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          37 send in domain A (Val in hex):    0000005b, at Time:              5844000
+Delay in setting up signal valid (Testbench sender):            3 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          31 recived in domain B (Val in hex): 000000d7, at Time:              6080000
+Send: 000000d7 , Recived: 000000d7 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          12 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          38 send in domain A (Val in hex):    0000002a, at Time:              6120000
+Delay in setting up signal valid (Testbench sender):           18 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          32 recived in domain B (Val in hex): 0000000c, at Time:              6340000
+Send: 0000000c , Recived: 0000000c ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          16 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          39 send in domain A (Val in hex):    0000008e, at Time:              6384000
+Delay in setting up signal valid (Testbench sender):            6 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          33 recived in domain B (Val in hex): 00000077, at Time:              6680000
+Send: 00000077 , Recived: 00000077 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          15 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          40 send in domain A (Val in hex):    00000026, at Time:              6720000
+Delay in setting up signal valid (Testbench sender):           11 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          34 recived in domain B (Val in hex): 00000012, at Time:              7000000
+Send: 00000012 , Recived: 00000012 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           7 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          41 send in domain A (Val in hex):    0000002f, at Time:              7044000
+Delay in setting up signal valid (Testbench sender):            7 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          35 recived in domain B (Val in hex): 00000039, at Time:              7160000
+Send: 00000039 , Recived: 00000039 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          11 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          42 send in domain A (Val in hex):    00000044, at Time:              7200000
+Delay in setting up signal valid (Testbench sender):           11 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          36 recived in domain B (Val in hex): 00000085, at Time:              7400000
+Send: 00000085 , Recived: 00000085 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          14 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          43 send in domain A (Val in hex):    000000e6, at Time:              7440000
+Delay in setting up signal valid (Testbench sender):            1 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          37 recived in domain B (Val in hex): 0000005b, at Time:              7700000
+Send: 0000005b , Recived: 0000005b ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           6 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          44 send in domain A (Val in hex):    000000ed, at Time:              7740000
+Delay in setting up signal valid (Testbench sender):            5 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          38 recived in domain B (Val in hex): 0000002a, at Time:              7840000
+Send: 0000002a , Recived: 0000002a ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          15 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          45 send in domain A (Val in hex):    000000b5, at Time:              7884000
+Delay in setting up signal valid (Testbench sender):           17 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          39 recived in domain B (Val in hex): 0000008e, at Time:              8160000
+Send: 0000008e , Recived: 0000008e ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           8 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          46 send in domain A (Val in hex):    00000044, at Time:              8208000
+Delay in setting up signal valid (Testbench sender):           18 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          40 recived in domain B (Val in hex): 00000026, at Time:              8340000
+Send: 00000026 , Recived: 00000026 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          15 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          47 send in domain A (Val in hex):    0000000e, at Time:              8436000
+Delay in setting up signal valid (Testbench sender):           16 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          41 recived in domain B (Val in hex): 0000002f, at Time:              8660000
+Send: 0000002f , Recived: 0000002f ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           9 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          48 send in domain A (Val in hex):    0000009a, at Time:              8700000
+Delay in setting up signal valid (Testbench sender):            3 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          42 recived in domain B (Val in hex): 00000044, at Time:              8860000
+Send: 00000044 , Recived: 00000044 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           6 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          49 send in domain A (Val in hex):    00000056, at Time:              8904000
+Delay in setting up signal valid (Testbench sender):            7 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          43 recived in domain B (Val in hex): 000000e6, at Time:              9000000
+Send: 000000e6 , Recived: 000000e6 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          14 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          50 send in domain A (Val in hex):    0000000a, at Time:              9048000
+Delay in setting up signal valid (Testbench sender):            4 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          44 recived in domain B (Val in hex): 000000ed, at Time:              9300000
+Send: 000000ed , Recived: 000000ed ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           8 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          51 send in domain A (Val in hex):    00000079, at Time:              9348000
+Delay in setting up signal valid (Testbench sender):            4 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          45 recived in domain B (Val in hex): 000000b5, at Time:              9480000
+Send: 000000b5 , Recived: 000000b5 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          16 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          52 send in domain A (Val in hex):    00000093, at Time:              9528000
+Delay in setting up signal valid (Testbench sender):            1 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          46 recived in domain B (Val in hex): 00000044, at Time:              9820000
+Send: 00000044 , Recived: 00000044 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          17 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          53 send in domain A (Val in hex):    000000db, at Time:              9864000
+Delay in setting up signal valid (Testbench sender):            9 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          47 recived in domain B (Val in hex): 0000000e, at Time:             10180000
+Send: 0000000e , Recived: 0000000e ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          10 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          54 send in domain A (Val in hex):    0000006d, at Time:             10224000
+Delay in setting up signal valid (Testbench sender):           10 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          48 recived in domain B (Val in hex): 0000009a, at Time:             10400000
+Send: 0000009a , Recived: 0000009a ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          13 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          55 send in domain A (Val in hex):    000000b6, at Time:             10440000
+Delay in setting up signal valid (Testbench sender):            6 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          49 recived in domain B (Val in hex): 00000056, at Time:             10680000
+Send: 00000056 , Recived: 00000056 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           7 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          56 send in domain A (Val in hex):    00000004, at Time:             10728000
+Delay in setting up signal valid (Testbench sender):            1 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          50 recived in domain B (Val in hex): 0000000a, at Time:             10840000
+Send: 0000000a , Recived: 0000000a ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          16 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          57 send in domain A (Val in hex):    000000b4, at Time:             10884000
+Delay in setting up signal valid (Testbench sender):           16 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          51 recived in domain B (Val in hex): 00000079, at Time:             11180000
+Send: 00000079 , Recived: 00000079 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          11 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          58 send in domain A (Val in hex):    0000002d, at Time:             11220000
+Delay in setting up signal valid (Testbench sender):           10 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          52 recived in domain B (Val in hex): 00000093, at Time:             11420000
+Send: 00000093 , Recived: 00000093 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          16 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          59 send in domain A (Val in hex):    00000008, at Time:             11460000
+Delay in setting up signal valid (Testbench sender):            5 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          53 recived in domain B (Val in hex): 000000db, at Time:             11760000
+Send: 000000db , Recived: 000000db ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           4 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          60 send in domain A (Val in hex):    00000029, at Time:             11808000
+Delay in setting up signal valid (Testbench sender):            2 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          54 recived in domain B (Val in hex): 0000006d, at Time:             11860000
+Send: 0000006d , Recived: 0000006d ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           5 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          61 send in domain A (Val in hex):    000000da, at Time:             11904000
+Delay in setting up signal valid (Testbench sender):           18 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          55 recived in domain B (Val in hex): 000000b6, at Time:             11980000
+Send: 000000b6 , Recived: 000000b6 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          12 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          62 send in domain A (Val in hex):    00000073, at Time:             12132000
+Delay in setting up signal valid (Testbench sender):           10 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          56 recived in domain B (Val in hex): 00000004, at Time:             12240000
+Send: 00000004 , Recived: 00000004 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          18 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          63 send in domain A (Val in hex):    000000fa, at Time:             12288000
+Delay in setting up signal valid (Testbench sender):            1 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          57 recived in domain B (Val in hex): 000000b4, at Time:             12620000
+Send: 000000b4 , Recived: 000000b4 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           5 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          64 send in domain A (Val in hex):    0000001a, at Time:             12660000
+Delay in setting up signal valid (Testbench sender):           19 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          58 recived in domain B (Val in hex): 0000002d, at Time:             12740000
+Send: 0000002d , Recived: 0000002d ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          14 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          65 send in domain A (Val in hex):    000000c0, at Time:             12900000
+Delay in setting up signal valid (Testbench sender):           18 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          59 recived in domain B (Val in hex): 00000008, at Time:             13040000
+Send: 00000008 , Recived: 00000008 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           2 clock B cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          60 recived in domain B (Val in hex): 00000029, at Time:             13100000
+Send: 00000029 , Recived: 00000029 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           1 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          66 send in domain A (Val in hex):    000000dc, at Time:             13128000
+Delay in setting up signal valid (Testbench sender):           10 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          61 recived in domain B (Val in hex): 000000da, at Time:             13160000
+Send: 000000da , Recived: 000000da ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           8 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          67 send in domain A (Val in hex):    0000007e, at Time:             13260000
+Delay in setting up signal valid (Testbench sender):           15 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          62 recived in domain B (Val in hex): 00000073, at Time:             13340000
+Send: 00000073 , Recived: 00000073 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          15 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          68 send in domain A (Val in hex):    00000079, at Time:             13452000
+Delay in setting up signal valid (Testbench sender):            6 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:          69 send in domain A (Val in hex):    00000061, at Time:             13536000
+Delay in setting up signal valid (Testbench sender):           11 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          63 recived in domain B (Val in hex): 000000fa, at Time:             13660000
+Send: 000000fa , Recived: 000000fa ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           9 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          70 send in domain A (Val in hex):    00000086, at Time:             13704000
+Delay in setting up signal valid (Testbench sender):           12 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          64 recived in domain B (Val in hex): 0000001a, at Time:             13860000
+Send: 0000001a , Recived: 0000001a ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          13 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          71 send in domain A (Val in hex):    000000f5, at Time:             13908000
+Delay in setting up signal valid (Testbench sender):            1 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          65 recived in domain B (Val in hex): 000000c0, at Time:             14140000
+Send: 000000c0 , Recived: 000000c0 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          13 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          72 send in domain A (Val in hex):    000000c1, at Time:             14184000
+Delay in setting up signal valid (Testbench sender):           12 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          66 recived in domain B (Val in hex): 000000dc, at Time:             14420000
+Send: 000000dc , Recived: 000000dc ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          11 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          73 send in domain A (Val in hex):    0000004b, at Time:             14460000
+Delay in setting up signal valid (Testbench sender):           16 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          67 recived in domain B (Val in hex): 0000007e, at Time:             14660000
+Send: 0000007e , Recived: 0000007e ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          14 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          74 send in domain A (Val in hex):    0000008a, at Time:             14700000
+Delay in setting up signal valid (Testbench sender):            8 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          68 recived in domain B (Val in hex): 00000079, at Time:             14960000
+Send: 00000079 , Recived: 00000079 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           1 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          75 send in domain A (Val in hex):    000000a9, at Time:             15000000
+Delay in setting up signal valid (Testbench sender):            2 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          69 recived in domain B (Val in hex): 00000061, at Time:             15020000
+Send: 00000061 , Recived: 00000061 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           2 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          76 send in domain A (Val in hex):    0000009f, at Time:             15060000
+Delay in setting up signal valid (Testbench sender):            6 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          70 recived in domain B (Val in hex): 00000086, at Time:             15080000
+Send: 00000086 , Recived: 00000086 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           2 clock B cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          71 recived in domain B (Val in hex): 000000f5, at Time:             15140000
+Send: 000000f5 , Recived: 000000f5 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          14 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          77 send in domain A (Val in hex):    0000008d, at Time:             15144000
+Delay in setting up signal valid (Testbench sender):           16 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:          78 send in domain A (Val in hex):    00000079, at Time:             15348000
+Delay in setting up signal valid (Testbench sender):           12 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          72 recived in domain B (Val in hex): 000000c1, at Time:             15440000
+Send: 000000c1 , Recived: 000000c1 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           2 clock B cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          73 recived in domain B (Val in hex): 0000004b, at Time:             15500000
+Send: 0000004b , Recived: 0000004b ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          11 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          79 send in domain A (Val in hex):    00000013, at Time:             15504000
+Delay in setting up signal valid (Testbench sender):            3 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:          80 send in domain A (Val in hex):    000000b6, at Time:             15552000
+Delay in setting up signal valid (Testbench sender):            6 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          74 recived in domain B (Val in hex): 0000008a, at Time:             15740000
+Send: 0000008a , Recived: 0000008a ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           1 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          81 send in domain A (Val in hex):    000000c4, at Time:             15780000
+Delay in setting up signal valid (Testbench sender):            2 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          75 recived in domain B (Val in hex): 000000a9, at Time:             15800000
+Send: 000000a9 , Recived: 000000a9 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           0 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          82 send in domain A (Val in hex):    0000007f, at Time:             15840000
+Delay in setting up signal valid (Testbench sender):           14 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          76 recived in domain B (Val in hex): 0000009f, at Time:             15860000
+Send: 0000009f , Recived: 0000009f ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          14 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          83 send in domain A (Val in hex):    000000f2, at Time:             16020000
+Delay in setting up signal valid (Testbench sender):            2 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          77 recived in domain B (Val in hex): 0000008d, at Time:             16160000
+Send: 0000008d , Recived: 0000008d ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          12 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          84 send in domain A (Val in hex):    000000bd, at Time:             16200000
+Delay in setting up signal valid (Testbench sender):           12 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          78 recived in domain B (Val in hex): 00000079, at Time:             16420000
+Send: 00000079 , Recived: 00000079 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          17 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          85 send in domain A (Val in hex):    000000ca, at Time:             16464000
+Delay in setting up signal valid (Testbench sender):            1 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          79 recived in domain B (Val in hex): 00000013, at Time:             16780000
+Send: 00000013 , Recived: 00000013 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          19 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          86 send in domain A (Val in hex):    0000008e, at Time:             16824000
+Delay in setting up signal valid (Testbench sender):            3 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          80 recived in domain B (Val in hex): 000000b6, at Time:             17180000
+Send: 000000b6 , Recived: 000000b6 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          17 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          87 send in domain A (Val in hex):    000000ef, at Time:             17220000
+Delay in setting up signal valid (Testbench sender):            6 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          81 recived in domain B (Val in hex): 000000c4, at Time:             17540000
+Send: 000000c4 , Recived: 000000c4 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          15 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          88 send in domain A (Val in hex):    00000075, at Time:             17580000
+Delay in setting up signal valid (Testbench sender):           11 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          82 recived in domain B (Val in hex): 0000007f, at Time:             17860000
+Send: 0000007f , Recived: 0000007f ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           2 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          89 send in domain A (Val in hex):    00000088, at Time:             17904000
+Delay in setting up signal valid (Testbench sender):           19 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          83 recived in domain B (Val in hex): 000000f2, at Time:             17920000
+Send: 000000f2 , Recived: 000000f2 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          10 clock B cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          84 recived in domain B (Val in hex): 000000bd, at Time:             18140000
+Send: 000000bd , Recived: 000000bd ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           1 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          90 send in domain A (Val in hex):    00000028, at Time:             18144000
+Delay in setting up signal valid (Testbench sender):           15 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          85 recived in domain B (Val in hex): 000000ca, at Time:             18200000
+Send: 000000ca , Recived: 000000ca ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          10 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          91 send in domain A (Val in hex):    0000001e, at Time:             18336000
+Delay in setting up signal valid (Testbench sender):           13 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          86 recived in domain B (Val in hex): 0000008e, at Time:             18420000
+Send: 0000008e , Recived: 0000008e ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           8 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          92 send in domain A (Val in hex):    00000018, at Time:             18504000
+Delay in setting up signal valid (Testbench sender):            9 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          87 recived in domain B (Val in hex): 000000ef, at Time:             18600000
+Send: 000000ef , Recived: 000000ef ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          10 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          93 send in domain A (Val in hex):    00000041, at Time:             18624000
+Delay in setting up signal valid (Testbench sender):            7 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:          94 send in domain A (Val in hex):    000000d8, at Time:             18720000
+Delay in setting up signal valid (Testbench sender):           11 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          88 recived in domain B (Val in hex): 00000075, at Time:             18820000
+Send: 00000075 , Recived: 00000075 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          10 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          95 send in domain A (Val in hex):    0000005b, at Time:             18864000
+Delay in setting up signal valid (Testbench sender):           14 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          89 recived in domain B (Val in hex): 00000088, at Time:             19040000
+Send: 00000088 , Recived: 00000088 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           7 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          96 send in domain A (Val in hex):    00000004, at Time:             19080000
+Delay in setting up signal valid (Testbench sender):           12 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          90 recived in domain B (Val in hex): 00000028, at Time:             19200000
+Send: 00000028 , Recived: 00000028 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           6 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          97 send in domain A (Val in hex):    000000b8, at Time:             19248000
+Delay in setting up signal valid (Testbench sender):            5 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          91 recived in domain B (Val in hex): 0000001e, at Time:             19340000
+Send: 0000001e , Recived: 0000001e ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           1 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          98 send in domain A (Val in hex):    000000e5, at Time:             19380000
+Delay in setting up signal valid (Testbench sender):           11 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          92 recived in domain B (Val in hex): 00000018, at Time:             19400000
+Send: 00000018 , Recived: 00000018 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           5 clock B cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          93 recived in domain B (Val in hex): 00000041, at Time:             19520000
+Send: 00000041 , Recived: 00000041 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          19 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:          99 send in domain A (Val in hex):    000000c8, at Time:             19524000
+Delay in setting up signal valid (Testbench sender):           13 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:         100 send in domain A (Val in hex):    0000001f, at Time:             19692000
+Delay in setting up signal valid (Testbench sender):           16 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          94 recived in domain B (Val in hex): 000000d8, at Time:             19920000
+Send: 000000d8 , Recived: 000000d8 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          18 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:         101 send in domain A (Val in hex):    00000058, at Time:             19968000
+Delay in setting up signal valid (Testbench sender):           12 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          95 recived in domain B (Val in hex): 0000005b, at Time:             20300000
+Send: 0000005b , Recived: 0000005b ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          14 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:         102 send in domain A (Val in hex):    00000012, at Time:             20340000
+Delay in setting up signal valid (Testbench sender):            1 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          96 recived in domain B (Val in hex): 00000004, at Time:             20600000
+Send: 00000004 , Recived: 00000004 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           5 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:         103 send in domain A (Val in hex):    00000055, at Time:             20640000
+Delay in setting up signal valid (Testbench sender):           11 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          97 recived in domain B (Val in hex): 000000b8, at Time:             20720000
+Send: 000000b8 , Recived: 000000b8 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           1 clock B cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          98 recived in domain B (Val in hex): 000000e5, at Time:             20780000
+Send: 000000e5 , Recived: 000000e5 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):           3 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:         104 send in domain A (Val in hex):    000000ad, at Time:             20784000
+Delay in setting up signal valid (Testbench sender):           16 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:          99 recived in domain B (Val in hex): 000000c8, at Time:             20860000
+Send: 000000c8 , Recived: 000000c8 ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          19 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:         105 send in domain A (Val in hex):    000000e7, at Time:             20988000
+Delay in setting up signal valid (Testbench sender):           13 clock A cycles
+--------------------------SENDER---------------------------------
+Data pkg:         106 send in domain A (Val in hex):    00000049, at Time:             21156000
+Delay in setting up signal valid (Testbench sender):           19 clock A cycles
+--------------------------RECIVER---------------------------------
+Data pkg:         100 recived in domain B (Val in hex): 0000001f, at Time:             21260000
+Send: 0000001f , Recived: 0000001f ================================================================> OK
+Delay in setting up signal ready (Testbench reciver):          17 clock B cycles
+--------------------------SENDER---------------------------------
+Data pkg:         107 send in domain A (Val in hex):    00000051, at Time:             21396000
+Delay in setting up signal valid (Testbench sender):            1 clock A cycles
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++ The simulation was completed successfully +++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+$finish called from file "fifo_tb.v", line 180.
+$finish at simulation time             21600000
+Simulation complete, time is 21600000 ps.
+fifo_tb.v, 180 :             $finish;
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 21600000 ps
+CPU Time:      1.100 seconds;       Data structure size:   0.0Mb
+Sun Jun 22 23:53:21 2025
+debExit

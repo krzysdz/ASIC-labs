@@ -1,7 +1,7 @@
 // fifo_synch: Dual-clock FIFO with async active-low reset and valid-ready interface
 module fifo_synch #
 (
-    parameter SYNCH_FF_LENGHT = 2,
+    parameter SYNCH_FF_LENGTH = 2,
     parameter DATA_WIDTH      = 8,        // Width of data bus
     parameter PTR_WIDTH       = 3        // Address pointer width (FIFO depth = 2^PTR_WIDTH)
 )
@@ -20,13 +20,6 @@ module fifo_synch #
     input                       i_ready_clk_b,
     output [DATA_WIDTH-1:0]     o_data_clk_b
 );
-
-reg [1:0] rst_a_r;
-wire rst_a;
-
-reg [1:0] rst_b_r;
-wire rst_b;
-
 wire                        wr_en;
 wire [(DATA_WIDTH-1):0]     data_i;
 wire                        fifo_full;
@@ -35,33 +28,17 @@ wire [(DATA_WIDTH-1):0]     data_o;
 wire [(PTR_WIDTH-1):0]      wr_ptr_gray_clk_a;
 wire [(PTR_WIDTH-1):0]      rd_ptr_gray_clk_b;
 
+wire rst_a;
+wire rst_b;
+
 // Synchronised control signals (and intermediate registers)
-reg [(PTR_WIDTH-1):0]      wr_ptr_gray_clk_b_sync;
-reg [(PTR_WIDTH-1):0]      wr_ptr_gray_clk_b;
-reg [(PTR_WIDTH-1):0]      rd_ptr_gray_clk_a_sync;
-reg [(PTR_WIDTH-1):0]      rd_ptr_gray_clk_a;
+wire [(PTR_WIDTH-1):0] wr_ptr_gray_clk_b;
+wire [(PTR_WIDTH-1):0] rd_ptr_gray_clk_a;
 
-always @(posedge i_clk_a, negedge i_rst) begin
-  if (!i_rst) rst_a_r <= 2'b00;
-  else rst_a_r <= {1'b1, rst_a_r[1]};
-end
-assign rst_a = rst_a_r[0];
-
-always @(posedge i_clk_b, negedge i_rst) begin
-  if (!i_rst) rst_b_r <= 2'b00;
-  else rst_b_r <= {1'b1, rst_b_r[1]};
-end
-assign rst_b = rst_b_r[0];
-
-always @(posedge i_clk_b, negedge rst_b) begin
-  if (!rst_b) {wr_ptr_gray_clk_b_sync, wr_ptr_gray_clk_b} <= 0;
-  else {wr_ptr_gray_clk_b_sync, wr_ptr_gray_clk_b} <= {wr_ptr_gray_clk_a, wr_ptr_gray_clk_b_sync};
-end
-
-always @(posedge i_clk_a, negedge rst_a) begin
-  if (!rst_a) {rd_ptr_gray_clk_a_sync, rd_ptr_gray_clk_a} <= 0;
-  else {rd_ptr_gray_clk_a_sync, rd_ptr_gray_clk_a} <= {rd_ptr_gray_clk_b, rd_ptr_gray_clk_a_sync};
-end
+ff_synchronizer #(.SYNCH_FF_LENGTH(SYNCH_FF_LENGTH)) ff_sync_rst_a_i (.i_clk(i_clk_a), .i_rst(i_rst), .i_in(1'b1), .o_out(rst_a));
+ff_synchronizer #(.SYNCH_FF_LENGTH(SYNCH_FF_LENGTH)) ff_sync_rst_b_i (.i_clk(i_clk_b), .i_rst(i_rst), .i_in(1'b1), .o_out(rst_b));
+ff_synchronizer #(.SYNCH_FF_LENGTH(SYNCH_FF_LENGTH), .DATA_WIDTH(PTR_WIDTH)) ff_sync_wr_ptr_b_i (.i_clk(i_clk_b), .i_rst(rst_b), .i_in(wr_ptr_gray_clk_a), .o_out(wr_ptr_gray_clk_b));
+ff_synchronizer #(.SYNCH_FF_LENGTH(SYNCH_FF_LENGTH), .DATA_WIDTH(PTR_WIDTH)) ff_sync_rd_ptr_a_i (.i_clk(i_clk_a), .i_rst(rst_a), .i_in(rd_ptr_gray_clk_b), .o_out(rd_ptr_gray_clk_a));
 
 fifo_writer #
 (

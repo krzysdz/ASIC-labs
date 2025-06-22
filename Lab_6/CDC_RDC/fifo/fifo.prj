@@ -10,14 +10,11 @@
 
 ##Data Import Section
 
+read_file -type verilog ff_synchronizer.v
 read_file -type verilog fifo_mem.v
-#BackRefFile:fifo.prj #LineNumber:13
 read_file -type verilog fifo_reader.v
-#BackRefFile:fifo.prj #LineNumber:15
 read_file -type verilog fifo_synch.v
-#BackRefFile:fifo.prj #LineNumber:17
 read_file -type verilog fifo_writer.v
-#BackRefFile:fifo.prj #LineNumber:19
 read_file -type sgdc fifo_synch.sgdc
 
 ##Common Options Section

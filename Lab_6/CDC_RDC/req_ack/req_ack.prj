@@ -10,15 +10,11 @@
 
 ##Data Import Section
 
-read_file -type sourcelist req_ack.f
-#BackRefFile:req_ack.prj #LineNumber:13
-read_file -type sgdc req_ack_synch.sgdc
-read_file -type hdl req_ack_synch.v
-#BackRefFile:N.A. #LineNumber:1
+read_file -type verilog ff_synchronizer.v
 read_file -type hdl req_ack_sender.v
-#BackRefFile:N.A. #LineNumber:1
 read_file -type hdl req_ack_receiver.v
-#BackRefFile:N.A. #LineNumber:1
+read_file -type hdl req_ack_synch.v
+read_file -type sgdc req_ack_synch.sgdc
 
 ##Common Options Section
 

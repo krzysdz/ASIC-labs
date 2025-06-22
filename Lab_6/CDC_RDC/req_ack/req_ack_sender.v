@@ -33,36 +33,13 @@ module req_ack_sender #
 
  reg [(DATA_WIDTH-1):0] r_data;
 
-  // Reset sync
-  reg [1:0] r_rst;
-  wire rst;
-  assign rst = r_rst[0];
-  always @(posedge i_clk or negedge i_rst) begin
-    if (!i_rst) r_rst <= 2'b00;
-    else r_rst <= {1'b1, r_rst[1]};
-  end
-
-  // Input control signal sync
-  reg r_ack_sync;
-  reg r_ack;
-
-  always @(posedge i_clk or negedge rst) begin
-    if (!rst) begin
-      r_ack_sync <= 0;
-      r_ack <= 0;
-    end else begin
-      r_ack_sync <= i_ack;
-      r_ack <= r_ack_sync;
-    end
-  end
-
   always @ (*)
     begin: FSM_COMBO
         case (r_state)
            ACK_WAIT_0:
            begin
             next_state = ACK_WAIT_0;
-            if (r_ack == 1'b0)
+            if (i_ack == 1'b0)
                 begin
                     next_state = VALID;
                 end
@@ -71,7 +48,7 @@ module req_ack_sender #
            VALID:
            begin
             next_state = VALID;
-            if ((i_valid) && (r_ack == 1'b0) && (o_ready))
+            if ((i_valid) && (i_ack == 1'b0) && (o_ready))
                 begin
                     next_state = CAPTURE;
                 end
@@ -85,7 +62,7 @@ module req_ack_sender #
            ACK_WAIT_1:
            begin
             next_state = ACK_WAIT_1;
-            if (r_ack == 1'b1)
+            if (i_ack == 1'b1)
                 begin
                     next_state = ACK_WAIT_0;
                 end
@@ -99,9 +76,9 @@ module req_ack_sender #
     end
 
 
-   always @(posedge i_clk or negedge rst)
+   always @(posedge i_clk or negedge i_rst)
    begin: FSM_SEQ
-    if (!rst)
+    if (!i_rst)
         begin
             r_state <= ACK_WAIT_0;
         end
@@ -111,9 +88,9 @@ module req_ack_sender #
         end
    end
 
-   always @(posedge i_clk or negedge rst)
+   always @(posedge i_clk or negedge i_rst)
    begin: OUTPUT_LOGIC
-    if (!rst)
+    if (!i_rst)
         begin
             r_req <= 1'b0;
             r_data <= {DATA_WIDTH{1'b0}};

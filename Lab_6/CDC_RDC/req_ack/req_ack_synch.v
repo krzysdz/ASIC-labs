@@ -1,12 +1,12 @@
 module req_ack_synch #
 (
-    parameter SYNCH_FF_LENGHT = 2,
+    parameter SYNCH_FF_LENGTH = 2,
     parameter DATA_WIDTH = 8         //Data Width of input/output
 )
 (
-  
+
   input                       i_rst, // Global asyn active low reset
-  
+
   // Write clock domain
   input                       i_clk_a,
   input                       i_valid_clk_a,
@@ -20,14 +20,21 @@ module req_ack_synch #
   output [(DATA_WIDTH-1):0]   o_data_clk_b
 
 );
+  wire req_clk_a;
+  wire ack_clk_b;
+  // After sync
+  wire rst_clk_a;
+  wire rst_clk_b;
+  wire req_clk_b;
+  wire ack_clk_a;
 
- 
- wire req_clk_a;
- wire ack_clk_b;
- 
- wire [(DATA_WIDTH-1):0]   data_clk_a;
+  wire [(DATA_WIDTH-1):0]   data_clk_a;
 
- 
+  ff_synchronizer #(.SYNCH_FF_LENGTH(SYNCH_FF_LENGTH)) ff_sync_rst_a_i (.i_clk(i_clk_a), .i_rst(i_rst), .i_in(1'b1), .o_out(rst_clk_a));
+  ff_synchronizer #(.SYNCH_FF_LENGTH(SYNCH_FF_LENGTH)) ff_sync_rst_b_i (.i_clk(i_clk_b), .i_rst(i_rst), .i_in(1'b1), .o_out(rst_clk_b));
+  ff_synchronizer #(.SYNCH_FF_LENGTH(SYNCH_FF_LENGTH)) ff_sync_req_b_i (.i_clk(i_clk_b), .i_rst(rst_clk_b), .i_in(req_clk_a), .o_out(req_clk_b));
+  ff_synchronizer #(.SYNCH_FF_LENGTH(SYNCH_FF_LENGTH)) ff_sync_ack_a_i (.i_clk(i_clk_a), .i_rst(rst_clk_a), .i_in(ack_clk_b), .o_out(ack_clk_a));
+
 req_ack_sender #
 (
     .DATA_WIDTH (DATA_WIDTH)
@@ -35,19 +42,19 @@ req_ack_sender #
 req_ack_sender_clk_a
 (
   .i_clk   (i_clk_a),
-  .i_rst   (i_rst),
+  .i_rst   (rst_clk_a),
 
   .i_valid (i_valid_clk_a),
   .o_ready (o_ready_clk_a),
   .i_data  (i_data_clk_a),
 
   .o_req   (req_clk_a),
-  .i_ack   (ack_clk_b),
+  .i_ack   (ack_clk_a),
   .o_data  (data_clk_a)
 
 );
-  
-  
+
+
 req_ack_receiver #
 (
   .DATA_WIDTH (DATA_WIDTH)
@@ -55,10 +62,10 @@ req_ack_receiver #
 req_ack_receiver_clk_b
 (
   .i_clk    (i_clk_b),
-  .i_rst    (i_rst),
-  
+  .i_rst    (rst_clk_b),
 
-  .i_req    (req_clk_a),
+
+  .i_req    (req_clk_b),
   .o_ack    (ack_clk_b),
   .i_data   (data_clk_a),
 
@@ -67,7 +74,7 @@ req_ack_receiver_clk_b
   .o_data   (o_data_clk_b)
 
 );
-  
+
 
 
 endmodule

@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi_V-2023.12
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 25 1908 384 198 65
+viewPort 0 25 1920 457 228 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,7 +16,7 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 2024474.002419
+zoom 0.000000 1987598.337530
 cursor 21600000.000000
 marker 0.000000
 
@@ -52,6 +52,12 @@ addSignal -h 15 /fifo_tb/fifo_synch_i/i_clk_a
 addSignal -h 15 /fifo_tb/fifo_synch_i/i_valid_clk_a
 addSignal -h 15 /fifo_tb/fifo_synch_i/o_ready_clk_a
 addSignal -h 15 -UNSIGNED -HEX /fifo_tb/fifo_synch_i/i_data_clk_a[7:0]
+addSignal -h 15 -UNSIGNED -BIN /fifo_tb/fifo_synch_i/wr_ptr_gray_clk_a[2:0]
+addSignal -h 15 -UNSIGNED -BIN /fifo_tb/fifo_synch_i/rd_ptr_gray_clk_a[2:0]
+addSignal -h 15 /fifo_tb/fifo_synch_i/fifo_full
+addSignal -h 15 /fifo_tb/fifo_synch_i/fifo_reader_b/fifo_empty
+addSignal -h 15 -UNSIGNED -BIN /fifo_tb/fifo_synch_i/wr_ptr_gray_clk_b[2:0]
+addSignal -h 15 -UNSIGNED -BIN /fifo_tb/fifo_synch_i/rd_ptr_gray_clk_b[2:0]
 addSignal -h 15 /fifo_tb/fifo_synch_i/i_clk_b
 addSignal -h 15 /fifo_tb/fifo_synch_i/o_valid_clk_b
 addSignal -h 15 /fifo_tb/fifo_synch_i/i_ready_clk_b

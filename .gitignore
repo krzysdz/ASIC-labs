@@ -19,5 +19,6 @@
 .vcs_checkpoint_*
 ucli.key
 novas.*
+verdi_config_file
 
 .vscode

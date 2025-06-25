@@ -49,12 +49,17 @@ addGroup "G1"
 activeDirFile "" "/home/student/Documents/kdz/ASIC/labs/Lab_6/CDC_RDC/req_ack/inter.fsdb"
 addSignal -h 15 /req_ack_tb/req_ack_synch_i/i_rst
 addSignal -h 15 /req_ack_tb/req_ack_synch_i/i_clk_a
-addSignal -h 15 -UNSIGNED -HEX /req_ack_tb/req_ack_synch_i/req_ack_receiver_clk_b/r_state[1:0]
+addSignal -h 15 -UNSIGNED -HEX /req_ack_tb/req_ack_synch_i/req_ack_sender_clk_a/r_state[1:0]
 addSignal -h 15 /req_ack_tb/req_ack_synch_i/i_valid_clk_a
 addSignal -h 15 /req_ack_tb/req_ack_synch_i/o_ready_clk_a
 addSignal -h 15 -UNSIGNED -HEX /req_ack_tb/req_ack_synch_i/i_data_clk_a[7:0]
+addSignal -h 15 /req_ack_tb/req_ack_synch_i/req_clk_a
+addSignal -h 15 /req_ack_tb/req_ack_synch_i/ack_clk_a
+addSignal -h 15 -UNSIGNED -HEX /req_ack_tb/req_ack_synch_i/data_clk_a
+addSignal -h 15 /req_ack_tb/req_ack_synch_i/req_clk_b
+addSignal -h 15 /req_ack_tb/req_ack_synch_i/ack_clk_b
 addSignal -h 15 /req_ack_tb/req_ack_synch_i/i_clk_b
-addSignal -h 15 -UNSIGNED -HEX /req_ack_tb/req_ack_synch_i/req_ack_sender_clk_a/r_state[1:0]
+addSignal -h 15 -UNSIGNED -HEX /req_ack_tb/req_ack_synch_i/req_ack_receiver_clk_b/r_state[1:0]
 addSignal -h 15 /req_ack_tb/req_ack_synch_i/o_valid_clk_b
 addSignal -h 15 /req_ack_tb/req_ack_synch_i/i_ready_clk_b
 addSignal -h 15 -UNSIGNED -HEX /req_ack_tb/req_ack_synch_i/o_data_clk_b[7:0]

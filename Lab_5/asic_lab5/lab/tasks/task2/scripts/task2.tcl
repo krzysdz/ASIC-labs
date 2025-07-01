@@ -11,11 +11,11 @@ source -echo  ${SetupDir}/design_setup.tcl
 set TaskPrefix "task2_"
 
 proc analyzeDesign {DesignStage} {
-	variable ReportsDir
+    variable ReportsDir
 
-	redirect -file ${ReportsDir}/${DesignStage}_check_legality.rpt {check_legality}
-	redirect -file ${ReportsDir}/${DesignStage}_report_congestion.rpt {report_congestion}
-	redirect -file ${ReportsDir}/${DesignStage}_report_utilization.rpt {report_utilization}
+    redirect -file ${ReportsDir}/${DesignStage}_check_legality.rpt {check_legality}
+    redirect -file ${ReportsDir}/${DesignStage}_report_congestion.rpt {report_congestion}
+    redirect -file ${ReportsDir}/${DesignStage}_report_utilization.rpt {report_utilization}
 }
 
 proc make_layout_screenshot {suffix} {
@@ -29,11 +29,11 @@ proc make_layout_screenshot {suffix} {
     gui_show_window -window $top -show_state {maximized}
     gui_show_window -window $layout -show_state {maximized}
 
-	# Hide power network
-	gui_set_setting -window $layout -setting showRoutedPower -value false
-	gui_set_setting -window $layout -setting showRoutedGround -value false
-	# Hide layers with power networks (this includes pins)
-	gui_set_layout_layer_visibility {M6 M7} -window $layout -toggle
+    # Hide power network
+    gui_set_setting -window $layout -setting showRoutedPower -value false
+    gui_set_setting -window $layout -setting showRoutedGround -value false
+    # Hide layers with power networks (this includes pins)
+    gui_set_layout_layer_visibility {M6 M7} -window $layout -toggle
 
     gui_write_window_image -window $layout -clip -file ${ScreenshotsDir}/${TaskPrefix}floorplan_layout_${suffix}.png
     gui_stop
@@ -60,10 +60,10 @@ set DesignStage classic_placement
 reset_placement
 
 create_placement \
-	-timing_driven \
-	-congestion \
-	-congestion_effort medium \
-	-buffering_aware_timing_driven
+    -timing_driven \
+    -congestion \
+    -congestion_effort medium \
+    -buffering_aware_timing_driven
 
 legalize_placement
 
@@ -93,8 +93,8 @@ generateReports ${DesignStage}
 set DesignStage create_placement_blockage
 
 create_placement_blockage \
-	-boundary {{22.9780 21.6000} {22.9780 27.4000} {31.8940 27.4000} {31.8940 21.6000}} \
-	-type hard
+    -boundary {{22.9780 21.6000} {22.9780 27.4000} {31.8940 27.4000} {31.8940 21.6000}} \
+    -type hard
 
 check_legality
 redirect -file ${ReportsDir}/${DesignStage}_check_legality.rpt {check_legality}

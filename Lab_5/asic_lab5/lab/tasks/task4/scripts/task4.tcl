@@ -57,7 +57,7 @@ set_ignored_layers \
 
 #### Routing blockage example
 create_routing_blockage -boundary {{22.9780 21.6000} {22.9780 27.4000} {31.8940 27.4000} {31.8940 21.6000}} -net_types {signal} -layers {M4} -name_prefix RB -zero_spacing
-# create_routing_blockage -boundary {{22.9780 21.6000} {22.9780 27.4000} {31.8940 27.4000} {31.8940 21.6000}} -net_types {signal} -layers {M4} -name_prefix RB -zero_spacing
+# create_routing_blockage -boundary {{? ?} {? ?} {? ?} {? ?}} -net_types {signal} -layers {M4} -name_prefix RB -zero_spacing
 
 #### Routing flow
 sizeof_collection [get_nets -hierarchical *]

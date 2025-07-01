@@ -1,0 +1,26 @@
+****************************************
+Report : report_utilization
+Design : dut_toplevel
+Version: V-2023.12
+Date   : Wed Jun 18 14:52:29 2025
+****************************************
+Utilization Ratio:			0.7015
+Utilization options:
+ - Area calculation based on:		site_row of block dut_toplevel/routing
+ - Categories of objects excluded:	hard_macros macro_keepouts soft_macros io_cells hard_blockages
+Total Area:				1385.2800
+Total Capacity Area:			1325.6952
+Total Area of cells:			930.0024
+Area of excluded objects:
+ - hard_macros         :		0.0000
+ - macro_keepouts      :		0.0000
+ - soft_macros         :		0.0000
+ - io_cells            :		0.0000
+ - hard_blockages      :		59.5848
+Total Area of excluded objects:		59.5848
+Ratio of excluded objects:		0.0430
+
+Utilization of site-rows with:
+ - Site 'unit':				0.7015
+
+0.7015

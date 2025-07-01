@@ -529,7 +529,7 @@ The final circuit does not meet our timing requirements---both setup and hold ti
 | **- Number of buffers** | 37 |
 | **- Number of inverters** | 23 |
 
-Table: Final circuit parameters. Generated in the same way as Tables \ref{table-placement}, \ref{table-cts} and \label{table-routing}.\label{table-signoff}
+Table: Final circuit parameters. Generated in the same way as Tables \ref{table-placement}, \ref{table-cts} and \ref{table-routing}.\label{table-signoff}
 
 Interesting details observed in logs and reports:
 
